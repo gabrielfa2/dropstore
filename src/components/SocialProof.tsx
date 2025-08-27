@@ -78,7 +78,6 @@ const SocialProof = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <><img src="public/fototabelaprototipo.PNG"></img> </>
-            <><img src="/foto2.png"></img> </>
             <><img src="/foto3.png"></img> </>
             <div className="text-gray-600 font-medium">Colocar aquela tabela de dúvidas frequetnes com as principais duvidas e um botão para a pessoa enviar duvida pelo whatsapp que com uma descrição de resposta 24/7 (que aí responde o wpp por IA, as duvidas, tirada de pedido, etc, com a IA dizendo que também faz o pedido)      o codigo do antes e depois vai ficar entre as camisas e o botão de ver todos os produtos</div>
           </div>
