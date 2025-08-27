@@ -35,7 +35,7 @@ const LimitedOffers = () => {
         {/* Grid de Produtos */}
         <div className="grid md:grid-cols-3 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div key={product.id} className="rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               {/* Badge */}
               <div className="relative">
                 <img 
