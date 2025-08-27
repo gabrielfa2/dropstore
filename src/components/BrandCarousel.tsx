@@ -23,8 +23,8 @@ const BrandCarousel = () => {
         
         <div className="relative w-full overflow-hidden">
           {/* Opcional: Efeito de fade nas laterais para suavizar a entrada e saída */}
-          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-cream to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-cream to-transparent z-10"></div>
           
           {/* A classe animate-scroll virá do arquivo de configuração do Tailwind */}
           <div className="flex animate-scroll items-center space-x-16">
