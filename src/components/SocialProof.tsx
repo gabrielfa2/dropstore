@@ -1,5 +1,5 @@
-import React from 'react';
-import { Star, Heart, MessageCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Star, Heart, MessageCircle, Plus, Minus } from 'lucide-react'; // Ícones adicionados
 
 const SocialProof = () => {
   const testimonials = [
@@ -26,6 +26,46 @@ const SocialProof = () => {
     }
   ];
 
+  // --- INÍCIO DA LÓGICA DO FAQ ---
+
+  // Dados para o FAQ, baseados nas suas imagens
+  const faqs = [
+    {
+      id: 1,
+      question: 'Como funciona?',
+      answer: 'Nossos produtos são desenvolvidos com a mais alta tecnologia para garantir conforto e durabilidade. Basta escolher o seu estilo e nós cuidamos do resto!'
+    },
+    {
+      id: 2,
+      question: 'A fricção causa escurecimento?',
+      answer: 'Não, de forma alguma. Nossos tecidos são premium e passam por rigorosos testes de qualidade para garantir que não causem irritação ou escurecimento na pele.'
+    },
+    {
+      id: 3,
+      question: 'Ajuda com "strawberry skin" e bolinhas?',
+      answer: 'Sim! Os tecidos que usamos permitem que a pele respire, o que pode ajudar a reduzir a aparência de bolinhas e "strawberry skin" (queratose pilar).'
+    },
+    {
+      id: 4,
+      question: 'Envio & Entrega',
+      answer: 'Oferecemos frete grátis para todo o Brasil em compras acima de R$99. O prazo de entrega médio é de 5 a 10 dias úteis.'
+    },
+    {
+      id: 5,
+      question: 'Política de Troca & Reembolso',
+      answer: 'Você tem até 30 dias após o recebimento do produto para solicitar a troca ou devolução de forma totalmente gratuita. Sua satisfação é nossa prioridade.'
+    }
+  ];
+
+  // Estado para controlar qual item do FAQ está aberto
+  const [openFaqId, setOpenFaqId] = useState<number | null>(null);
+
+  const toggleFaq = (id: number) => {
+    setOpenFaqId(openFaqId === id ? null : id);
+  };
+  
+  // --- FIM DA LÓGICA DO FAQ ---
+
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
@@ -42,7 +82,7 @@ const SocialProof = () => {
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
+            <div key={testimonial.id} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
               <div className="flex items-center gap-3 mb-4">
                 <img 
                   src={testimonial.image} 
@@ -74,13 +114,41 @@ const SocialProof = () => {
           ))}
         </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <><img src="public/fototabelaprototipo.PNG"></img> </>
-            <div className="text-gray-600 font-medium">Colocar aquela tabela de dúvidas frequetnes com as principais duvidas e um botão para a pessoa enviar duvida pelo whatsapp que com uma descrição de resposta 24/7 (que aí responde o wpp por IA, as duvidas, tirada de pedido, etc, com a IA dizendo que também faz o pedido)</div>
+        {/* --- INÍCIO DA NOVA SEÇÃO DE FAQ --- */}
+        <div className="max-w-3xl mx-auto mt-16">
+          <h3 className="text-3xl font-black text-center text-black mb-8">
+            Dúvidas Frequentes
+          </h3>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div key={faq.id} className="bg-white rounded-xl shadow-md overflow-hidden">
+                <button
+                  onClick={() => toggleFaq(faq.id)}
+                  className="w-full flex justify-between items-center text-left p-5 font-semibold text-black focus:outline-none"
+                >
+                  <span>{faq.question}</span>
+                  {openFaqId === faq.id ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                </button>
+                <div
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    openFaqId === faq.id ? 'max-h-screen' : 'max-h-0'
+                  }`}
+                >
+                  <p className="p-5 pt-0 text-gray-600">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
+           <div className="text-center mt-8">
+             <a href="#" className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all">
+                Ainda com dúvidas? Fale conosco!
+             </a>
+           </div>
         </div>
+        {/* --- FIM DA NOVA SEÇÃO DE FAQ --- */}
+
       </div>
     </section>
   );
