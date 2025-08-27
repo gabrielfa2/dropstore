@@ -29,7 +29,7 @@ const LimitedOffers = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Grid de Produtos */}
