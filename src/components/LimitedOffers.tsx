@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactCompareImage from 'react-compare-image'; // 1. Importa a biblioteca
+// 1. Importa a nova biblioteca
+import { ImgComparisonSlider } from '@img-comparison-slider/react';
 
 const LimitedOffers = () => {
   const products = [
@@ -29,9 +30,9 @@ const LimitedOffers = () => {
     }
   ];
 
-  // Imagens para o slider de comparação
-  const beforeImage = "/foto2.PNG"; // Imagem "antes" que você já tem
-  const afterImage = "/foto3.PNG";  // Imagem "depois" que você já tem
+  // As imagens para o slider continuam as mesmas
+  const beforeImage = "/foto2.PNG";
+  const afterImage = "/foto3.PNG";
 
   return (
     <section className="py-16">
@@ -41,7 +42,6 @@ const LimitedOffers = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              {/* Badge */}
               <div className="relative">
                 <img 
                   src={product.image} 
@@ -52,13 +52,10 @@ const LimitedOffers = () => {
                   {product.badge}
                 </div>
               </div>
-
-              {/* Conteúdo */}
               <div className="p-6">
                 <h4 className="text-xl font-bold text-black mb-3">
                   {product.name}
                 </h4>
-                
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl font-black text-orange-500">
                     R$ {product.price.toFixed(2).replace('.', ',')}
@@ -67,7 +64,6 @@ const LimitedOffers = () => {
                     R$ {product.originalPrice.toFixed(2).replace('.', ',')}
                   </span>
                 </div>
-
                 <button className="w-full bg-gradient-to-r from-orange-400 to-yellow-400 text-black font-bold py-3 rounded-full hover:from-orange-500 hover:to-yellow-500 transition-all duration-300 transform hover:scale-105">
                   Adicionar ao Carrinho 🛒
                 </button>
@@ -76,7 +72,7 @@ const LimitedOffers = () => {
           ))}
         </div>
 
-        {/* --- INÍCIO DA SEÇÃO DO COMPARADOR DE IMAGENS --- */}
+        {/* --- INÍCIO DA SEÇÃO DO COMPARADOR DE IMAGENS (COM A NOVA BIBLIOTECA) --- */}
         <div className="my-16 text-center">
             <h3 className="text-4xl font-black text-black mb-4">
                 Resultados que você <span className="text-orange-500">Vê na Hora!</span>
@@ -85,11 +81,14 @@ const LimitedOffers = () => {
                 Arraste para comparar o antes e depois.
             </p>
             <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
-                <ReactCompareImage leftImage={beforeImage} rightImage={afterImage} />
+                {/* 2. Usa o novo componente com a sintaxe correta */}
+                <ImgComparisonSlider>
+                    <img slot="first" src={beforeImage} alt="Antes" />
+                    <img slot="second" src={afterImage} alt="Depois" />
+                </ImgComparisonSlider>
             </div>
         </div>
         {/* --- FIM DA SEÇÃO DO COMPARADOR DE IMAGENS --- */}
-
 
         {/* CTA Final */}
         <div className="text-center mt-12">
