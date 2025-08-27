@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-center gap-2 text-sm md:text-base">
           <span>🔥</span>
           <span>Frete grátis termina em</span>
-          <span className="bg-white text-red-600 px-2 py-1 rounded font-mono">
+          <span className="text-red-600 px-2 py-1 rounded font-mono">
             {String(timeLeft.hours).padStart(2, '0')}:
             {String(timeLeft.minutes).padStart(2, '0')}:
             {String(timeLeft.seconds).padStart(2, '0')}
