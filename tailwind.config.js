@@ -8,7 +8,7 @@ export default {
     extend: {
       // Adicionando sua cor personalizada
       colors: {
-        'cream': '#f9dbbb',
+        'cream': '#fdead6',
       },
       // Mantendo a animação existente
       animation: {
