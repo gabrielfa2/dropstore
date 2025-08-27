@@ -6,9 +6,13 @@ export default {
   ],
   theme: {
     extend: {
-      // Adicione esta parte para a animação
+      // Adicionando sua cor personalizada
+      colors: {
+        'cream': '#f9dbbb',
+      },
+      // Mantendo a animação existente
       animation: {
-        scroll: 'scroll 20s linear infinite', // Aumentei a duração para um scroll mais lento com imagens
+        scroll: 'scroll 20s linear infinite',
       },
       keyframes: {
         scroll: {
