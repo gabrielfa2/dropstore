@@ -8,23 +8,24 @@ const FeaturesSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        // Atualiza o estado baseado se o elemento está visível ou não
+        setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.2, // Trigger when 20% of the section is visible
-        rootMargin: '0px 0px -50px 0px' // Start animation a bit before the section is fully visible
+        threshold: 0.2, // A animação começa quando 20% do elemento está visível
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -72,8 +73,8 @@ const FeaturesSection = () => {
                 className={`
                   bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl
                   transition-all duration-700 transform
-                  ${isVisible 
-                    ? 'translate-y-0 opacity-100' 
+                  ${isVisible
+                    ? 'translate-y-0 opacity-100'
                     : 'translate-y-8 opacity-0'
                   }
                   hover:scale-105 hover:-translate-y-2
