@@ -41,7 +41,7 @@ const Header = () => {
       </div>
 
       {/* Header Principal */}
-      <div className="bg-white shadow-sm py-4 px-4">
+      <div className="shadow-sm py-4 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Menu Mobile */}
           <button className="md:hidden">
