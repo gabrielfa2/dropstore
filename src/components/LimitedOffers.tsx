@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCompareImage from 'react-compare-image'; // 1. Importa a biblioteca
 
 const LimitedOffers = () => {
   const products = [
@@ -28,6 +29,10 @@ const LimitedOffers = () => {
     }
   ];
 
+  // Imagens para o slider de comparação
+  const beforeImage = "/foto2.PNG"; // Imagem "antes" que você já tem
+  const afterImage = "/foto3.PNG";  // Imagem "depois" que você já tem
+
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
@@ -35,7 +40,7 @@ const LimitedOffers = () => {
         {/* Grid de Produtos */}
         <div className="grid md:grid-cols-3 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+            <div key={product.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               {/* Badge */}
               <div className="relative">
                 <img 
@@ -64,12 +69,28 @@ const LimitedOffers = () => {
                 </div>
 
                 <button className="w-full bg-gradient-to-r from-orange-400 to-yellow-400 text-black font-bold py-3 rounded-full hover:from-orange-500 hover:to-yellow-500 transition-all duration-300 transform hover:scale-105">
-                  Remover esse botões e deixar só ver outras ideias de design para foto de produto, lembrando do hover 🛒
+                  Adicionar ao Carrinho 🛒
                 </button>
               </div>
             </div>
           ))}
         </div>
+
+        {/* --- INÍCIO DA SEÇÃO DO COMPARADOR DE IMAGENS --- */}
+        <div className="my-16 text-center">
+            <h3 className="text-4xl font-black text-black mb-4">
+                Resultados que você <span className="text-orange-500">Vê na Hora!</span>
+            </h3>
+            <p className="text-xl text-gray-600 mb-8">
+                Arraste para comparar o antes e depois.
+            </p>
+            <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
+                <ReactCompareImage leftImage={beforeImage} rightImage={afterImage} />
+            </div>
+        </div>
+        {/* --- FIM DA SEÇÃO DO COMPARADOR DE IMAGENS --- */}
+
+
         {/* CTA Final */}
         <div className="text-center mt-12">
           <button className="bg-black text-white px-12 py-4 rounded-full text-xl font-bold hover:bg-gray-800 transform hover:scale-105 transition-all duration-300">
