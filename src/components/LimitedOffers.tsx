@@ -75,7 +75,7 @@ const LimitedOffers = () => {
         {/* --- INÍCIO DA SEÇÃO DO COMPARADOR DE IMAGENS (COM A NOVA BIBLIOTECA) --- */}
         <div className="my-16 text-center">
             <h3 className="text-4xl font-black text-black mb-4">
-                Resultados que você <span className="text-orange-500">Vê na Hora!</span>
+                O que é usar <span className="text-orange-500">DROP!</span>
             </h3>
             <p className="text-xl text-gray-600 mb-8">
                 Arraste para comparar o antes e depois.
