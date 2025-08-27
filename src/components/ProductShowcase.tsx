@@ -95,7 +95,7 @@ const ProductShowcase = () => {
         {/* Call to Action */}
         <div className="text-center mt-12">
           <button className="bg-gradient-to-r from-orange-400 to-yellow-400 text-black font-bold px-8 py-4 rounded-full text-lg hover:from-orange-500 hover:to-yellow-500 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Quero fazer parte! (deixar com efeito noise nos botões)🔥
+            Quero fazer parte! (isso leva para todos os produtos)(deixar com efeito noise nos botões)🔥
           </button>
         </div>
       </div>
