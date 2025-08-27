@@ -61,7 +61,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="bg-gray-50 py-16">
+    <section ref={sectionRef} className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {features.map((feature) => {
