@@ -6,6 +6,8 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'cream': '#f9dbbb',
       // Adicione esta parte para a animação
       animation: {
         scroll: 'scroll 20s linear infinite', // Aumentei a duração para um scroll mais lento com imagens
