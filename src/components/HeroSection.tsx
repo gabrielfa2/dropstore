@@ -1,0 +1,35 @@
+import React from 'react';
+
+const HeroSection = () => {
+  return (
+    <section className="w-full">
+      {/* Banner Mobile - Sem alterações */}
+      <img
+        src="/bannermobile.png"
+        alt="Banner principal da página - Mobile"
+        className="
+          block
+          md:hidden
+          w-full
+          aspect-[3/4]
+          object-cover
+        "
+      />
+      
+      {/* Banner Desktop - com altura vertical diminuída */}
+      <img
+        src="/bannerpc.png"
+        alt="Banner principal da página - Desktop"
+        className="
+          hidden
+          md:block
+          w-full          // Mantém a largura total
+          aspect-[21/9]   // -> ALTERADO! De 16/9 para 21/9. Isso diminui a altura.
+          object-cover    // Garante que a imagem cubra o novo espaço, cortando o excesso verticalmente
+        "
+      />
+    </section>
+  );
+};
+
+export default HeroSection;
