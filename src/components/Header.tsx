@@ -46,8 +46,13 @@ const Header = () => {
           
           {/* --- Coluna da Esquerda --- */}
           <div className="flex items-center justify-start w-1/3">
-            {/* Ícone de Roupas */}
-            <nav className="flex items-center">
+            {/* Ícone da Lista (Menu Hambúrguer) - APENAS NO MOBILE */}
+            <button className="md:hidden p-2">
+              <Menu className="w-6 h-6" />
+            </button>
+
+            {/* Ícone de Roupas - APENAS NO DESKTOP */}
+            <nav className="hidden md:flex items-center">
               <a href="#produtos" className="hover:opacity-75 transition-opacity">
                 <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-7 h-7" />
               </a>
@@ -65,9 +70,9 @@ const Header = () => {
 
           {/* --- Coluna da Direita --- */}
           <div className="flex items-center justify-end w-1/3 space-x-4">
-            {/* Ícone da Lupa (Movido para cá) */}
+            {/* Ícone da Lupa */}
             <a href="#busca" className="hover:opacity-75 transition-opacity">
-              <img src="/iconlupa.PNG" alt="Ícone de Busca" className="w-6 h-6" />
+              <img src="/iconlupa.PNG" alt="Ícone de Busca" className="w-7 h-7" />
             </a>
             
             {/* Carrinho */}
