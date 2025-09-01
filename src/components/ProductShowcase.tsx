@@ -53,7 +53,7 @@ const ProductShowcase = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h3 className="text-4xl font-black text-black mb-4">
-            Quem usa DROP <span className="text-orange-500">usa MODA!</span>
+            Quem usa DROP, <span className="text-orange-500">usa MODA!</span>
           </h3>
           <p className="text-xl text-gray-600">
             Vai ficar de fora?
