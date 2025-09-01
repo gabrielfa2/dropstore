@@ -82,7 +82,7 @@ const LimitedOffers = () => {
             </p>
             <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
                 {/* 2. Usa o novo componente com a sintaxe correta */}
-                <ImgComparisonSlider>
+                <ImgComparisonSlider value="30">
                   
                     <img slot="first" src={"/depoiscerto.PNG"} alt="Antes" />
                     <img slot="second" src={"/antescerto.PNG"} alt="Depois" />
