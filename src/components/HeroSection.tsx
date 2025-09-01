@@ -18,8 +18,8 @@ const HeroSection = () => {
       
       {/* Banner Desktop - com altura vertical diminuída */}
       <img
-        src="/bannerpc.png"
-        alt="Banner principal da página - Desktop"
+        src="/bannerpc.PNG"
+        alt="bannerpc"
         className="
           hidden
           md:block
