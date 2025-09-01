@@ -16,7 +16,7 @@ function App() {
         className="
           fixed bottom-0 left-0 w-full h-2/3
           bg-glow
-          blur-3xl opacity-30
+          blur-3xl opacity-100
           -z-10 pointer-events-none
         "
       />
