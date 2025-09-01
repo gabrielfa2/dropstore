@@ -51,7 +51,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-1 flex justify-center md:justify-start">
             <img 
-              src="/image.png" 
+              src="/logodrop.png" 
               alt="DROP Logo"
               className="h-12 md:h-12 w-auto"
             />
