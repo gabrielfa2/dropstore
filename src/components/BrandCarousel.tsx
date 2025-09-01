@@ -5,7 +5,7 @@ const BrandCarousel = () => {
   //    Cada item é um objeto com 'src' (caminho da imagem) e 'alt' (texto alternativo)
   const brands = [
   { src: '/shopifylogo.png', alt: 'Shopify' },
-  { src: '/google.png', alt: 'Google' },
+  { src: '/public/google.png', alt: 'Google' },
   { src: '/meta.png', alt: 'Meta' },
   { src: '/picpay-1.svg', alt: 'PicPay' },
   { src: '/mercado-pago-logo.png', alt: 'Mercado Pago' },
