@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, ShoppingBag } from 'lucide-react';
-import dropLogo from '/logodrop.PNG'; // Importe a imagem
+import dropLogo from '/public/logodrop.PNG'; // Importe a imagem
 
 const Header = () => {
   const [timeLeft, setTimeLeft] = useState({
