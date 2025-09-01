@@ -105,7 +105,7 @@ const LimitedOffers = () => {
         {/* CTA Final */}
         <div className="text-center mt-12">
           <button className="bg-black text-white px-12 py-4 rounded-full text-xl font-bold hover:bg-gray-800 transform hover:scale-105 transition-all duration-300">
-            Ver todos os produtos 👀
+            Ver todos os produtos
           </button>
         </div>
       </div>
