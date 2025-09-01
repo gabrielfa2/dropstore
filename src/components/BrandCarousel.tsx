@@ -5,11 +5,11 @@ const BrandCarousel = () => {
   //    Cada item é um objeto com 'src' (caminho da imagem) e 'alt' (texto alternativo)
   const brands = [
   { src: '/shopifylogo.png', alt: 'Shopify' },
-  { src: '/google.webp', alt: 'Google' },
-  { src: '/meta.png', alt: 'Meta' },
+  { src: '/google.WEBP', alt: 'Google' },
+  { src: '/meta.PNG', alt: 'Meta' },
   { src: '/picpay-1.svg', alt: 'PicPay' },
-  { src: '/mercado-pago-logo.png', alt: 'Mercado Pago' },
-  { src: '/Nubank_logo_2021.svg.png', alt: 'Nubank' },
+  { src: '/mercado.PNG', alt: 'Mercado Pago' },
+  { src: '/nubank.PNG', alt: 'Nubank' },
   // Você pode adicionar mais objetos aqui quando tiver os logos correspondentes.
   ];
 
