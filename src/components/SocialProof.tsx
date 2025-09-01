@@ -29,21 +29,22 @@ const SocialProof = () => {
   // --- INÍCIO DA LÓGICA DO FAQ ---
 
   // Dados para o FAQ, baseados nas suas imagens
+  // Dados para o FAQ, baseados na sua loja
   const faqs = [
     {
       id: 1,
-      question: 'Como funciona?',
-      answer: 'Nossos produtos são desenvolvidos com a mais alta tecnologia para garantir conforto e durabilidade. Basta escolher o seu estilo e nós cuidamos do resto!'
+      question: 'Como funciona a DROP?',
+      answer: 'Lançamos coleções exclusivas, os "drops", com peças limitadas e cheias de estilo. Fique de olho no site, escolha os produtos que são a sua cara e garanta os seus antes que esgotem!'
     },
     {
       id: 2,
-      question: 'A fricção causa escurecimento?',
-      answer: 'Não, de forma alguma. Nossos tecidos são premium e passam por rigorosos testes de qualidade para garantir que não causem irritação ou escurecimento na pele.'
+      question: 'Qual a qualidade do tecido e das estampas?',
+      answer: 'Usamos malha de algodão premium, com toque macio e caimento mais pesado, perfeito para o estilo oversized. Nossas estampas são feitas em silk de alta definição para garantir que não vão desbotar ou rachar com o tempo.'
     },
     {
       id: 3,
-      question: 'Ajuda com "strawberry skin" e bolinhas?',
-      answer: 'Sim! Os tecidos que usamos permitem que a pele respire, o que pode ajudar a reduzir a aparência de bolinhas e "strawberry skin" (queratose pilar).'
+      question: 'Como escolher o tamanho da minha oversized?',
+      answer: 'Nossa modelagem já é oversized! A dica é escolher o tamanho que você costuma usar para ter um caimento solto e estiloso. Se curte um visual ainda mais largo, pode pegar um tamanho acima. Sempre confira a tabela de medidas na página do produto!'
     },
     {
       id: 4,
