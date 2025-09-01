@@ -71,7 +71,7 @@ const FeaturesSection = () => {
               <div
                 key={feature.id}
                 className={`
-                  bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl
+                  bg-card-bg rounded-2xl p-6 text-center shadow-lg hover:shadow-xl
                   transition-all duration-700 transform
                   ${isVisible
                     ? 'translate-y-0 opacity-100'
