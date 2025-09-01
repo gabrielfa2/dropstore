@@ -49,7 +49,7 @@ const Header = () => {
           </button>
 
           {/* Logo */}
-          <div className="flex-1 flex justify-center md:justify-start">
+          <div className="flex-1 flex justify-center">
             <img 
               src="/logodrop.PNG" 
               alt="DROP Logo"
