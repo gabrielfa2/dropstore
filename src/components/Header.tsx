@@ -59,11 +59,11 @@ const Header = () => {
 
           {/* Menu Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#masculino" className="font-semibold text-gray-800 hover:text-orange-500 transition-colors">
-              icon da camisa e calça do lado do logo da lista no superior esquerdo da tela
+            <a href="#produtos" className="hover:opacity-75 transition-opacity">
+              <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-8 h-8" />
             </a>
-            <a href="#feminino" className="font-semibold text-gray-800 hover:text-orange-500 transition-colors">
-              icon da lupa
+            <a href="#busca" className="hover:opacity-75 transition-opacity">
+              <img src="/iconlupa.PNG" alt="Ícone de Busca" className="w-8 h-8" />
             </a>
           </nav>
 
