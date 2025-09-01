@@ -43,13 +43,27 @@ const Header = () => {
       {/* Header Principal */}
       <div className="shadow-sm py-4 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Menu Mobile */}
-          <button className="md:hidden">
-            <Menu className="w-6 h-6" />
-          </button>
+          
+          {/* --- Coluna da Esquerda --- */}
+          <div className="flex items-center justify-start w-1/3">
+            {/* Menu Mobile (Hamburguer) */}
+            <button className="md:hidden">
+              <Menu className="w-6 h-6" />
+            </button>
 
-          {/* Logo */}
-          <div className="flex-1 flex justify-center">
+            {/* Menu Desktop (Ícones) */}
+            <nav className="hidden md:flex items-center space-x-4">
+              <a href="#produtos" className="hover:opacity-75 transition-opacity">
+                <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-7 h-7" />
+              </a>
+              <a href="#busca" className="hover:opacity-75 transition-opacity">
+                <img src="/iconlupa.PNG" alt="Ícone de Busca" className="w-7 h-7" />
+              </a>
+            </nav>
+          </div>
+
+          {/* --- Coluna Central (Logo) --- */}
+          <div className="flex items-center justify-center w-1/3">
             <img 
               src="/logodrop.PNG" 
               alt="DROP Logo"
@@ -57,23 +71,17 @@ const Header = () => {
             />
           </div>
 
-          {/* Menu Desktop */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#produtos" className="hover:opacity-75 transition-opacity">
-              <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-8 h-8" />
-            </a>
-            <a href="#busca" className="hover:opacity-75 transition-opacity">
-              <img src="/iconlupa.PNG" alt="Ícone de Busca" className="w-8 h-8" />
-            </a>
-          </nav>
+          {/* --- Coluna da Direita --- */}
+          <div className="flex items-center justify-end w-1/3">
+            {/* Carrinho */}
+            <button className="relative">
+              <ShoppingBag className="w-6 h-6" />
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                0
+              </span>
+            </button>
+          </div>
 
-          {/* Carrinho */}
-          <button className="relative">
-            <ShoppingBag className="w-6 h-6" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-              0
-            </span>
-          </button>
         </div>
       </div>
     </header>
