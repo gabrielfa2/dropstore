@@ -38,6 +38,16 @@ const LimitedOffers = () => {
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
 
+        {/* Header da Seção */}
+        <div className="text-center mb-12">
+          <h3 className="text-4xl font-black text-black mb-4">
+            <span className="text-orange-500">Promoções</span> Imperdíveis
+          </h3>
+          <p className="text-xl text-gray-600">
+            Aproveite antes que acabe! Estoque limitado.
+          </p>
+        </div>
+
         {/* Grid de Produtos */}
         <div className="grid md:grid-cols-3 gap-8">
           {products.map((product) => (
