@@ -4,12 +4,12 @@ const BrandCarousel = () => {
   // 1. Estrutura de dados modificada para aceitar imagens
   //    Cada item é um objeto com 'src' (caminho da imagem) e 'alt' (texto alternativo)
   const brands = [
-  { src: '/shopifylogo.svg', alt: 'Shopify' },
-  { src: '/google.svg', alt: 'Google' },
-  { src: '/meta.svg', alt: 'Meta' },
+  { src: '/shopifylogo.png', alt: 'Shopify' },
+  { src: '/google.png', alt: 'Google' },
+  { src: '/meta.png', alt: 'Meta' },
   { src: '/picpay-1.svg', alt: 'PicPay' },
-  { src: '/mercado-pago.svg', alt: 'Mercado Pago' },
-  { src: '/Nubank_logo_2021.svg.svg', alt: 'Nubank' },
+  { src: '/mercado-pago-logo.png', alt: 'Mercado Pago' },
+  { src: '/Nubank_logo_2021.svg.png', alt: 'Nubank' },
   // Os logos para Nike, Adidas, Supreme, etc., não foram encontrados.
   // Você pode adicionar mais objetos aqui quando tiver os logos correspondentes.
   ];
