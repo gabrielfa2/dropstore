@@ -85,6 +85,7 @@ const LimitedOffers = () => {
                 <ImgComparisonSlider>
                     <img slot="first" src={"/antescerto.PNG"} alt="Antes" />
                     <img slot="second" src={"/depoiscerto.PNG"} alt="Depois" />
+                  
                 </ImgComparisonSlider>
             </div>
         </div>
