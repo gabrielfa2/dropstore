@@ -6,9 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-      // Adicionando sua cor personalizada
+      // Adicionando suas cores personalizadas
       colors: {
         'cream': '#fcf0e4',
+        'card-bg': '#f9f5f0', // <-- NOVA COR ADICIONADA AQUI
       },
       // Mantendo a animação existente
       animation: {
