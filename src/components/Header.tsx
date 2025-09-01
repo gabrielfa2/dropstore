@@ -45,18 +45,16 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
           {/* --- Coluna da Esquerda --- */}
-          <div className="flex items-center justify-start w-1/3">
-            {/* Ícone da Lista (Menu Hambúrguer) - APENAS NO MOBILE */}
+          <div className="flex items-center justify-start w-1/3 space-x-2">
+            {/* Ícone da Lista (Menu Hambúrguer) - SÓ APARECE NO MOBILE */}
             <button className="md:hidden p-2">
               <Menu className="w-6 h-6" />
             </button>
 
-            {/* Ícone de Roupas - APENAS NO DESKTOP */}
-            <nav className="hidden md:flex items-center">
-              <a href="#produtos" className="hover:opacity-75 transition-opacity">
-                <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-7 h-7" />
-              </a>
-            </nav>
+            {/* Ícone de Roupas - APARECE EM TODAS AS TELAS */}
+            <a href="#produtos" className="hover:opacity-75 transition-opacity">
+              <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-7 h-7" />
+            </a>
           </div>
 
           {/* --- Coluna Central (Logo) --- */}
