@@ -71,7 +71,7 @@ const FeaturesSection = () => {
               <div
                 key={feature.id}
                 className={`
-                  bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-xl
+                  bg-black rounded-2xl p-6 text-center shadow-lg hover:shadow-xl
                   transition-all duration-700 transform
                   ${isVisible
                     ? 'translate-y-0 opacity-100'
@@ -89,11 +89,11 @@ const FeaturesSection = () => {
                   </div>
                 </div>
                 
-                <h4 className="text-lg font-bold text-black mb-2">
+                <h4 className="text-lg font-bold text-white mb-2">
                   {feature.title}
                 </h4>
                 
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-400 text-sm">
                   {feature.description}
                 </p>
               </div>
