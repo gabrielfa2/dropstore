@@ -53,7 +53,7 @@ const ProductShowcase = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h3 className="text-4xl font-black text-black mb-4">
-            Drop é a nova<span className="text-orange-500">onda!</span>
+            Drop é a nova <span className="text-orange-500">onda!</span>
           </h3>
           <p className="text-xl text-gray-600">
             Vai ficar de fora?
