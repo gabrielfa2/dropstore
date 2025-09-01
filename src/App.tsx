@@ -10,7 +10,18 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-cream">
+    // Removido "bg-cream" e adicionado "relative overflow-x-hidden"
+    <div className="min-h-screen relative overflow-x-hidden">
+      {/* --- Efeito de Luz e Profundidade --- */}
+      <div
+        className="
+          fixed bottom-0 left-1/2 -translate-x-1/2 w-[200%] h-2/3
+          bg-glow
+          blur-3xl opacity-25
+          -z-10 pointer-events-none
+        "
+      />
+
       <Header />
       <HeroSection />
       <BrandCarousel />
@@ -24,4 +35,3 @@ function App() {
 }
 
 export default App;
-
