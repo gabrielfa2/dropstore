@@ -11,11 +11,11 @@ export default {
         'cream': '#fcf0e4',
         'card-bg': '#f9f5f0',
       },
-      // ADICIONE A PARTIR DAQUI
+      // Efeito de luz adicionado aqui
       backgroundImage: {
         'glow': 'radial-gradient(ellipse at bottom, #fb923c 0%, transparent 60%)',
       },
-      // FIM DA ADIÇÃO
+      // Mantendo a animação existente
       animation: {
         scroll: 'scroll 20s linear infinite',
       },
