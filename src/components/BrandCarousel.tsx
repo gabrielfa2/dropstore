@@ -10,7 +10,6 @@ const BrandCarousel = () => {
   { src: '/picpay-1.svg', alt: 'PicPay' },
   { src: '/mercado-pago-logo.png', alt: 'Mercado Pago' },
   { src: '/Nubank_logo_2021.svg.png', alt: 'Nubank' },
-  // Os logos para Nike, Adidas, Supreme, etc., não foram encontrados.
   // Você pode adicionar mais objetos aqui quando tiver os logos correspondentes.
   ];
 
