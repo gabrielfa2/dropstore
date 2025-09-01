@@ -84,8 +84,8 @@ const LimitedOffers = () => {
                 {/* 2. Usa o novo componente com a sintaxe correta */}
                 <ImgComparisonSlider>
                   
-                    <img slot="first" src={"/antescerto.PNG"} alt="Antes" />
-                    <img slot="second" src={"/depoiscerto.PNG"} alt="Depois" />
+                    <img slot="first" src={"/depoiscerto.PNG"} alt="Antes" />
+                    <img slot="second" src={"/antescerto.PNG"} alt="Depois" />
                   
                 </ImgComparisonSlider>
             </div>
