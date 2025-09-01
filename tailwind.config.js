@@ -9,9 +9,13 @@ export default {
       // Adicionando suas cores personalizadas
       colors: {
         'cream': '#fcf0e4',
-        'card-bg': '#f9f5f0', // <-- NOVA COR ADICIONADA AQUI
+        'card-bg': '#f9f5f0',
       },
-      // Mantendo a animação existente
+      // ADICIONE A PARTIR DAQUI
+      backgroundImage: {
+        'glow': 'radial-gradient(ellipse at bottom, #fb923c 0%, transparent 60%)',
+      },
+      // FIM DA ADIÇÃO
       animation: {
         scroll: 'scroll 20s linear infinite',
       },
