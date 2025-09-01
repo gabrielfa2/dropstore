@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, ShoppingBag } from 'lucide-react';
-import dropLogo from '/public/logodrop.png'; // Importe a imagem
 
 const Header = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -52,7 +51,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-1 flex justify-center md:justify-start">
             <img 
-              src={dropLogo} // Use a variável importada
+              src="/logodrop.PNG" 
               alt="DROP Logo"
               className="h-12 md:h-12 w-auto"
             />
@@ -80,5 +79,6 @@ const Header = () => {
     </header>
   );
 };
+
 
 export default Header;
