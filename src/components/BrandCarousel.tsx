@@ -4,9 +4,9 @@ const BrandCarousel = () => {
   // 1. Estrutura de dados modificada para aceitar imagens
   //    Cada item é um objeto com 'src' (caminho da imagem) e 'alt' (texto alternativo)
   const brands = [
-  { src: '/public/shopifylogo.png', alt: 'Shopify' },
+  { src: '/shopifylogo.png', alt: 'Shopify' },
   { src: '/google.webp', alt: 'Google' },
-  { src: '/public/meta.png', alt: 'Meta' },
+  { src: '/meta.png', alt: 'Meta' },
   { src: '/picpay-1.svg', alt: 'PicPay' },
   { src: '/mercado-pago-logo.png', alt: 'Mercado Pago' },
   { src: '/Nubank_logo_2021.svg.png', alt: 'Nubank' },
