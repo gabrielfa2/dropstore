@@ -22,8 +22,8 @@ function App() {
           -z-10 pointer-events-none
         "
       />
-      <Header />
       <HeroSection />
+      <Header />
       <ProductShowcase />
       <CollectionsSection/>
       <FeaturesSection />
@@ -31,6 +31,7 @@ function App() {
       <BrandCarousel />
       <SocialProof />
       <Footer />
+
       
     </div>
   );
