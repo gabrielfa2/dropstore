@@ -71,7 +71,7 @@ const SocialProof = () => {
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-          <span className="font-medium">Marcas parceiras</span>
+        <div className="text-center mb-12">
           <h3 className="text-4xl font-black text-black mb-4">
             O futuro das roupas está <span className="text-purple-500">aqui!</span>
           </h3>
