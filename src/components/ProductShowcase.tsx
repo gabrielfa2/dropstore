@@ -63,8 +63,8 @@ const ProductShowcase = () => {
         {/* Carousel Container */}
         <div className="relative w-full overflow-hidden">
           {/* Fade effect nas laterais */}
-          <div className="absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-cream to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-cream to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 h-full w-10 bg-gradient-to-r from-cream to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-10 bg-gradient-to-l from-cream to-transparent z-10"></div>
           
           {/* Carrossel contínuo */}
           <div className="flex animate-[scroll_5s_linear_infinite] items-center space-x-6">
