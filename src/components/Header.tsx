@@ -50,6 +50,8 @@ const Header = () => {
             <button className="md:hidden p-2">
               <Menu className="w-6 h-6" />
             </button>
+          </div>
+
           {/* --- Coluna Central (Logo) --- */}
           <div className="flex items-center justify-center w-1/3">
             <img 
