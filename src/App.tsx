@@ -21,13 +21,12 @@ function App() {
           -z-10 pointer-events-none
         "
       />
-
       <Header />
       <HeroSection />
-      <BrandCarousel />
-      <FeaturesSection />
       <ProductShowcase />
+      <FeaturesSection />
       <LimitedOffers />
+      <BrandCarousel />
       <SocialProof />
       <Footer />
     </div>
