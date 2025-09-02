@@ -24,6 +24,7 @@ function App() {
       />
       <Header />
       <HeroSection />
+      <CollectionsSection/>
       <ProductShowcase />
       <FeaturesSection />
       <LimitedOffers />
