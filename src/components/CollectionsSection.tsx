@@ -16,7 +16,7 @@ const collections = [
     href: '#polo',
     imageSrc: 'https://images.pexels.com/photos/3765171/pexels-photo-3765171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     gridClasses: 'col-span-1 md:col-span-2',
-    heightClasses: 'h-56 md:h-80', // Altura menor no mobile
+    heightClasses: 'h-90 md:h-80', // Altura menor no mobile
   },
   {
     id: 3,
