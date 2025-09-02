@@ -6,16 +6,17 @@ export default {
   ],
   theme: {
     extend: {
-      // Adicionando suas cores personalizadas
+      // Adiciona a nova família de fontes
+      fontFamily: {
+        sans: ['"Sedgwick Ave Display"', 'cursive'],
+      },
       colors: {
         'cream': '#fcf0e4',
         'card-bg': '#f9f5f0',
       },
-      // Efeito de luz adicionado aqui
       backgroundImage: {
         'glow': 'radial-gradient(ellipse at bottom, #fb923c 0%, transparent 60%)',
       },
-      // Mantendo a animação existente
       animation: {
         scroll: 'scroll 20s linear infinite',
       },
