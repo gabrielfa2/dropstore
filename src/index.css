@@ -10,7 +10,7 @@
   font-family: 'Sedgwick Ave Display';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/sedgwick-ave-display.ttf') format('truetype'); /* <-- CAMINHO CORRIGIDO AQUI */
+  src: url('/src/assets/fonts/sedgwick-ave-display.ttf') format('truetype'); /* <-- CAMINHO CORRIGIDO AQUI */
 }
 
 * {
