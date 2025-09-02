@@ -48,7 +48,7 @@ const Header = () => {
           <div className="flex items-center justify-start w-1/3 space-x-2">
             {/* Ícone da Lista (Menu Hambúrguer) - SÓ APARECE NO MOBILE */}
             <button className="md:hidden p-2">
-              <Menu className="w-6 h-6" />
+              <Menu className="w-12 h-12" />
             </button>
           </div>
 
