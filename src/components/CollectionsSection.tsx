@@ -32,7 +32,7 @@ const collections = [
     href: '#tenis',
     imageSrc: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     gridClasses: 'col-span-2 md:col-span-1',
-    heightClasses: 'h-64 md:h-80', // Altura normal no mobile
+    heightClasses: 'h-64 md:h-50', // Altura normal no mobile
   },
 ];
 
