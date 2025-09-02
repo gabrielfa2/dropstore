@@ -48,13 +48,8 @@ const Header = () => {
           <div className="flex items-center justify-start w-1/3 space-x-2">
             {/* Ícone da Lista (Menu Hambúrguer) - SÓ APARECE NO MOBILE */}
             <button className="md:hidden p-2">
-              <Menu className="w-6 h-6" />
+              <Menu className="w-9 h-9" />
             </button>
-
-            {/* Ícone de Roupas - APARECE EM TODAS AS TELAS */}
-            <a href="#produtos" className="hover:opacity-100 transition-opacity">
-              <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-8 h-8" />
-            </a>
           </div>
 
           {/* --- Coluna Central (Logo) --- */}
@@ -62,7 +57,7 @@ const Header = () => {
             <img 
               src="/logodrop.PNG" 
               alt="DROP Logo"
-              className="h-12 md:h-12 w-auto"
+              className="h-12 md:h-12 w-auto font-black"
             />
           </div>
 

@@ -43,7 +43,7 @@ const LimitedOffers = () => {
           <h3 className="text-4xl font-black text-black mb-4">
             <span className="text-orange-500">Promoções</span> Imperdíveis
           </h3>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 font-medium">
             Aproveite antes que acabe! Estoque limitado.
           </p>
         </div>
@@ -70,7 +70,7 @@ const LimitedOffers = () => {
                   <span className="text-2xl font-black text-orange-500">
                     R$ {product.price.toFixed(2).replace('.', ',')}
                   </span>
-                  <span className="text-lg text-gray-400 line-through">
+                  <span className="text-lg text-gray-400 line-through font-medium">
                     R$ {product.originalPrice.toFixed(2).replace('.', ',')}
                   </span>
                 </div>
@@ -87,7 +87,7 @@ const LimitedOffers = () => {
             <h3 className="text-4xl font-black text-black mb-4">
                 O que é usar <span className="text-orange-500">DROP:</span>
             </h3>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-gray-600 mb-8 font-medium">
                 Arraste para comparar o antes e depois.
             </p>
             <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
