@@ -1,34 +1,38 @@
 import React from 'react';
 
-// Dados das coleções. Adicione as imagens corretas aqui.
+// Dados das coleções com classes de altura específicas para desktop
 const collections = [
   {
     id: 1,
     name: 'Oversized',
     href: '#oversized',
     imageSrc: 'https://images.pexels.com/photos/1484806/pexels-photo-1484806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    gridClasses: 'col-span-2 h-64', // Ocupa 2 colunas no mobile
+    mobileClasses: 'col-span-2 h-64',
+    desktopHeight: 'md:h-96', // <-- Card alto
   },
   {
     id: 2,
     name: 'Polo',
     href: '#polo',
     imageSrc: 'https://images.pexels.com/photos/3765171/pexels-photo-3765171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    gridClasses: 'col-span-1 h-64', // Ocupa 1 coluna no mobile
+    mobileClasses: 'col-span-1 h-64',
+    desktopHeight: 'md:h-80', // <-- Card baixo
   },
   {
     id: 3,
     name: 'Shorts',
     href: '#shorts',
     imageSrc: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    gridClasses: 'col-span-1 h-64', // Ocupa 1 coluna no mobile
+    mobileClasses: 'col-span-1 h-64',
+    desktopHeight: 'md:h-80', // <-- Card baixo
   },
   {
     id: 4,
     name: 'Tênis',
     href: '#tenis',
     imageSrc: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    gridClasses: 'col-span-2 h-64', // Ocupa 2 colunas no mobile
+    mobileClasses: 'col-span-2 h-64',
+    desktopHeight: 'md:h-96', // <-- Card alto
   },
 ];
 
@@ -52,8 +56,8 @@ const CollectionsSection = () => {
             <a
               key={collection.id}
               href={collection.href}
-              // As classes de grid mudam para desktop (md:)
-              className={`${collection.gridClasses} md:col-span-1 md:h-80 relative rounded-2xl overflow-hidden group shadow-lg`}
+              // Classes para layout mobile e desktop são aplicadas aqui
+              className={`${collection.mobileClasses} ${collection.desktopHeight} md:col-span-1 relative rounded-2xl overflow-hidden group shadow-lg`}
             >
               {/* Imagem de Fundo */}
               <img
