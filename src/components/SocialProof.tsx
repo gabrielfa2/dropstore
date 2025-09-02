@@ -26,9 +26,6 @@ const SocialProof = () => {
     }
   ];
 
-  // --- INÍCIO DA LÓGICA DO FAQ ---
-
-  // Dados para o FAQ, baseados nas suas imagens
   // Dados para o FAQ, baseados na sua loja
   const faqs = [
     {
@@ -70,7 +67,8 @@ const SocialProof = () => {
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
+        {/* Header - Estrutura Corrigida */}
+        <div className="text-center mb-12">
           <span className="font-medium">Marcas parceiras</span>
           <h3 className="text-4xl font-black text-black mb-4">
             O futuro das roupas está <span className="text-purple-500">aqui!</span>
