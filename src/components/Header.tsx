@@ -50,13 +50,6 @@ const Header = () => {
             <button className="md:hidden p-2">
               <Menu className="w-6 h-6" />
             </button>
-
-            {/* Ícone de Roupas - APARECE EM TODAS AS TELAS */}
-            <a href="#produtos" className="hover:opacity-100 transition-opacity">
-              <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-8 h-8" />
-            </a>
-          </div>
-
           {/* --- Coluna Central (Logo) --- */}
           <div className="flex items-center justify-center w-1/3">
             <img 
