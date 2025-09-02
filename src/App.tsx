@@ -3,6 +3,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import BrandCarousel from './components/BrandCarousel';
 import FeaturesSection from './components/FeaturesSection';
+import CollectionsSection from './components/CollectionsSection';
 import ProductShowcase from './components/ProductShowcase';
 import LimitedOffers from './components/LimitedOffers';
 import SocialProof from './components/SocialProof';
@@ -21,17 +22,18 @@ function App() {
           -z-10 pointer-events-none
         "
       />
-
       <Header />
       <HeroSection />
-      <BrandCarousel />
-      <FeaturesSection />
       <ProductShowcase />
+      <CollectionsSection/>
+      <FeaturesSection />
       <LimitedOffers />
+      <BrandCarousel />
       <SocialProof />
       <Footer />
     </div>
   );
 }
+
 
 export default App;
