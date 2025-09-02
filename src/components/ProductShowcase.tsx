@@ -52,10 +52,10 @@ const ProductShowcase = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h3 className="text-4xl font-black text-black mb-4">
+          <h3 className="text-4xl font-black text-black mb-4" style={{ fontFamily: "'Permanent Marker', cursive" }}>
             Quem usa DROP, <span className="text-orange-500">usa MODA!</span>
           </h3>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600" style={{ fontFamily: "'Permanent Marker', cursive" }}>
             Vai ficar de fora?
           </p>
         </div>
@@ -82,7 +82,7 @@ const ProductShowcase = () => {
                   />
                   {/* Overlay com caption */}
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-sm font-bold text-center">
+                    <p className="text-white text-sm font-bold text-center" style={{ fontFamily: "'Permanent Marker', cursive" }}>
                       {image.caption}
                     </p>
                   </div>
@@ -98,7 +98,7 @@ const ProductShowcase = () => {
              <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 rounded-lg transform translate-y-0.5 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-1 group-hover:duration-[250ms] group-active:translate-y-px" />
              <span className="absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-l from-[hsl(217,33%,16%)] via-[hsl(217,33%,32%)] to-[hsl(217,33%,16%)]" />
              <div className="relative flex items-center justify-between py-3 px-6 text-lg text-white rounded-lg transform -translate-y-1 bg-gradient-to-r from-[#f27121] via-[#e94057] to-[#8a2387] gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110">
-               <span className="select-none">Quero fazer parte! 🔥</span>
+               <span className="select-none" style={{ fontFamily: "'Permanent Marker', cursive" }}>Quero fazer parte! 🔥</span>
              </div>
            </button>
         </div>

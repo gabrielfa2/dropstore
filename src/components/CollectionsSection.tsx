@@ -86,7 +86,6 @@ const CollectionCard = ({ collection }) => {
           <h4 
             key={Date.now()} // Força a re-animação no hover
             className="text-white text-3xl font-black uppercase tracking-widest group-hover:spray-animation"
-            style={{ fontFamily: "'Permanent Marker', cursive" }}
           >
             {collection.name}
           </h4>
@@ -102,8 +101,8 @@ const CollectionsSection = () => {
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h3 className="text-4xl font-black text-black">COLEÇÕES</h3>
-          <p className="text-xl text-gray-600 mt-2">Explore nossos estilos únicos</p>
+          <h3 className="text-4xl font-black text-black" style={{ fontFamily: "'Permanent Marker', cursive" }}>COLEÇÕES</h3>
+          <p className="text-xl text-gray-600 mt-2" style={{ fontFamily: "'Permanent Marker', cursive" }}>Explore nossos estilos únicos</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {collections.map((collection) => (
