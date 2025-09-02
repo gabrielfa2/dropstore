@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 1. IMPORTAÇÃO DA NOVA FONTE */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Permanent+Marker&display=swap');
+/* 1. IMPORTAÇÃO DA FONTE ATUALIZADA */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sedgwick+Ave+Display&display=swap');
 
 * {
   margin: 0;
@@ -13,13 +13,13 @@
 
 
 body {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: #1a1a1a;
   background-color: #fcf0e4;
 }
 
-/* 2. NOVAS CLASSES DE ANIMAÇÃO E EFEITOS */
+/* 2. NOVAS CLASSES DE ANIMAÇÃO E EFEITOS (sem alterações aqui) */
 @layer components {
   /* Efeito de ruído */
   .noise-overlay::before {
