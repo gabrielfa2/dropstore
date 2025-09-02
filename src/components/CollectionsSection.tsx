@@ -1,38 +1,38 @@
 import React from 'react';
 
-// Dados das coleções com classes de LARGURA para desktop
+// Dados das coleções com classes de altura específicas para mobile e desktop
 const collections = [
   {
     id: 1,
     name: 'Oversized',
     href: '#oversized',
     imageSrc: 'https://images.pexels.com/photos/1484806/pexels-photo-1484806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    // Mobile: ocupa 2 colunas. Desktop: ocupa 1 de 3 colunas (mais estreito)
     gridClasses: 'col-span-2 md:col-span-1',
+    heightClasses: 'h-64 md:h-80', // Altura normal no mobile
   },
   {
     id: 2,
     name: 'Polo',
     href: '#polo',
     imageSrc: 'https://images.pexels.com/photos/3765171/pexels-photo-3765171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    // Mobile: ocupa 1 coluna. Desktop: ocupa 2 de 3 colunas (mais largo)
     gridClasses: 'col-span-1 md:col-span-2',
+    heightClasses: 'h-56 md:h-80', // Altura menor no mobile
   },
   {
     id: 3,
     name: 'Shorts',
     href: '#shorts',
     imageSrc: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    // Mobile: ocupa 1 coluna. Desktop: ocupa 2 de 3 colunas (mais largo)
     gridClasses: 'col-span-1 md:col-span-2',
+    heightClasses: 'h-56 md:h-80', // Altura menor no mobile
   },
   {
     id: 4,
     name: 'Tênis',
     href: '#tenis',
     imageSrc: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    // Mobile: ocupa 2 colunas. Desktop: ocupa 1 de 3 colunas (mais estreito)
     gridClasses: 'col-span-2 md:col-span-1',
+    heightClasses: 'h-64 md:h-80', // Altura normal no mobile
   },
 ];
 
@@ -50,14 +50,14 @@ const CollectionsSection = () => {
           </p>
         </div>
 
-        {/* Grid das Coleções - Alterado para 3 colunas no desktop */}
+        {/* Grid das Coleções */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {collections.map((collection) => (
             <a
               key={collection.id}
               href={collection.href}
-              // Adicionada altura fixa para todos os cards
-              className={`${collection.gridClasses} h-80 relative rounded-2xl overflow-hidden group shadow-lg`}
+              // Combina as classes de grid e de altura responsiva
+              className={`${collection.gridClasses} ${collection.heightClasses} relative rounded-2xl overflow-hidden group shadow-lg`}
             >
               {/* Imagem de Fundo */}
               <img
