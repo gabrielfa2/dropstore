@@ -24,8 +24,8 @@ function App() {
       />
       <Header />
       <HeroSection />
-      <CollectionsSection/>
       <ProductShowcase />
+      <CollectionsSection/>
       <FeaturesSection />
       <LimitedOffers />
       <BrandCarousel />
@@ -34,5 +34,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
