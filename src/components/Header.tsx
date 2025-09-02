@@ -57,7 +57,7 @@ const Header = () => {
             <img 
               src="/logodrop.PNG" 
               alt="DROP Logo"
-              className="h-20 md:h-20 w-auto"
+              className="h-10 md:h-10 w-auto"
             />
           </div>
 
