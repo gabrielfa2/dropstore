@@ -86,7 +86,6 @@ const CollectionCard = ({ collection }) => {
           <h4 
             key={Date.now()} // Força a re-animação no hover
             className="text-white text-3xl font-black uppercase tracking-widest group-hover:spray-animation"
-            style={{ fontFamily: "'Sedgwick Ave Display', cursive" }} // <-- FONTE ATUALIZADA AQUI
           >
             {collection.name}
           </h4>

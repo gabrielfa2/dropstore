@@ -2,9 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 1. IMPORTAÇÃO DA FONTE ATUALIZADA */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sedgwick+Ave+Display&display=swap');
-
+/* Global font application - Inter for all elements */
+@layer base {
+  * {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+  }
+  
+  button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+  
+  input, textarea, select {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+}
 
 * {
   margin: 0;
@@ -14,7 +37,6 @@
 
 
 body {
-  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: #1a1a1a;
   background-color: #fcf0e4;
