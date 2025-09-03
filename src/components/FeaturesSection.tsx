@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Truck, RotateCcw, CreditCard, Shield } from 'lucide-react';
 
@@ -64,38 +65,48 @@ const FeaturesSection = () => {
   return (
     <section ref={sectionRef} className="py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        {/* - Mobile (padrão): Grid de 1 coluna (lista vertical) com um espaçamento maior.
+          - Desktop (md+): Grid de 4 colunas com o espaçamento original.
+        */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-6 lg:gap-8">
           {features.map((feature) => {
             const IconComponent = feature.icon;
             return (
+              // Container de cada item. A animação é aplicada aqui.
               <div
                 key={feature.id}
                 className={`
-                  bg-card-bg rounded-2xl p-6 text-center shadow-lg hover:shadow-xl
                   transition-all duration-700 transform
-                  ${isVisible
-                    ? 'translate-y-0 opacity-100'
-                    : 'translate-y-8 opacity-0'
-                  }
-                  hover:scale-105 hover:-translate-y-2
+                  ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
+                  
+                  // Layout Mobile (padrão): flexível, alinhado à esquerda.
+                  flex items-start gap-5
+                  
+                  // Layout Desktop (md+): reverte para o estilo de card centralizado.
+                  md:flex-col md:items-center md:bg-card-bg md:rounded-2xl md:p-6 md:text-center md:shadow-lg md:hover:shadow-xl md:hover:scale-105 md:hover:-translate-y-2
                 `}
                 style={{
                   transitionDelay: isVisible ? feature.delay : '0ms'
                 }}
               >
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full flex items-center justify-center">
-                    <IconComponent className="w-8 h-8 text-black" />
+                {/* Container do Ícone */}
+                <div className="flex-shrink-0 md:mb-4">
+                  {/* Fundo colorido do ícone com cantos responsivos */}
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-xl flex items-center justify-center md:w-16 md:h-16 md:rounded-full">
+                    <IconComponent className="w-7 h-7 text-black md:w-8 md:h-8" />
                   </div>
                 </div>
                 
-                <h4 className="text-lg font-bold text-black mb-2">
-                  {feature.title}
-                </h4>
-                
-                <p className="text-gray-600 text-sm">
-                  {feature.description}
-                </p>
+                {/* Container do Texto */}
+                <div>
+                  <h4 className="text-lg font-bold text-black mb-1 md:mb-2">
+                    {feature.title}
+                  </h4>
+                  
+                  <p className="text-gray-600 text-sm">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             );
           })}
