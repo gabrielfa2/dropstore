@@ -73,7 +73,6 @@ const SocialProof = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header - Estrutura Corrigida */}
         <div className="text-center mb-12">
-          <span className="font-medium">Marcas parceiras</span>
           <h3 className="text-4xl font-black text-black mb-4 font-display">
             O futuro das roupas está <span className="text-purple-500">aqui!</span>
           </h3>
