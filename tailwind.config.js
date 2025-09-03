@@ -8,7 +8,8 @@ export default {
     extend: {
       // Adiciona a nova família de fontes
       fontFamily: {
-        sans: ['"Sedgwick Ave Display"', 'cursive'],
+        sans: ['Inter', 'sans-serif'],
+        display: ['"Sedgwick Ave Display"', 'cursive'],
       },
       colors: {
         'cream': '#fcf0e4',
