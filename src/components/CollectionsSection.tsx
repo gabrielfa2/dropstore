@@ -98,7 +98,7 @@ const CollectionCard = ({ collection }) => {
 
 const CollectionsSection = () => {
   return (
-    <section className="py-12">
+    <section className="py-6">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h3 className="text-4xl font-black text-black font-display">COLEÇÕES</h3>
