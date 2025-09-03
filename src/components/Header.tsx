@@ -94,7 +94,7 @@ const Header = () => {
           {/* --- Coluna da Direita --- */}
           <div className="flex items-center justify-end w-1/3 space-x-4">
             <a href="#busca" className="hover:opacity-75 transition-opacity">
-              <img src="/iconlupa.PNG" alt="Ícone de Busca" className="w-7 h-7" />
+              <img src="/iconlupa.PNG" alt="Ícone de Busca" className="w-6 h-6" />
             </a>
             
             <button className="relative">
