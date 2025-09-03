@@ -35,7 +35,7 @@ const SocialProof = () => {
     {
       id: 1,
       question: 'Como funciona a DRIP?',
-      answer: 'Lançamos coleções exclusivas, os "drops", com peças limitadas e cheias de estilo. Fique de olho no site, escolha os produtos que são a sua cara e garanta os seus antes que esgotem!'
+      answer: 'Lançamos coleções exclusivas, os "drips", com peças limitadas e cheias de estilo. Fique de olho no site, escolha os produtos que são a sua cara e garanta os seus antes que esgotem!'
     },
     {
       id: 2,
