@@ -56,7 +56,7 @@ const ProductShowcase = () => {
             Quem usa DROP, <span className="text-orange-500">usa MODA!</span>
           </h3>
           <p className="text-xl text-gray-600 font-medium">
-            Vai ficar de fora?
+            Não fique de fora!
           </p>
         </div>
 
