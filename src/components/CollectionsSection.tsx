@@ -85,7 +85,7 @@ const CollectionCard = ({ collection }) => {
         {isAnimated && (
           <h4 
             key={Date.now()} // Força a re-animação no hover
-            className="text-white text-3xl font-black uppercase tracking-widest group-hover:spray-animation"
+            className="text-white text-3xl font-black uppercase tracking-widest group-hover:spray-animation font-display"
           >
             {collection.name}
           </h4>
@@ -101,7 +101,7 @@ const CollectionsSection = () => {
     <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h3 className="text-4xl font-black text-black">COLEÇÕES</h3>
+          <h3 className="text-4xl font-black text-black font-display">COLEÇÕES</h3>
           <p className="text-xl text-gray-600 mt-2">Explore nossos estilos únicos</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
