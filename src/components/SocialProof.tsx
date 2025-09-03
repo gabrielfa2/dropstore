@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Heart, MessageCircle, Plus, Minus, Instagram, XIcon } from 'lucide-react';
+import { Star, Heart, MessageCircle, Plus, Minus, Instagram, Twitter } from 'lucide-react';
 
 const SocialProof = () => {
   // Dados dos depoimentos atualizados para incluir um ícone de rede social
@@ -18,7 +18,7 @@ const SocialProof = () => {
       text: 'Finalmente achei roupas que combinam comigo!',
       rating: 5,
       image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=150',
-      socialIcon: <XIcon className="w-6 h-6 text-gray-400" /> // Usando XIcon para o Twitter/X
+      socialIcon: <Twitter className="w-6 h-6 text-gray-400" /> // Usando XIcon para o Twitter/X
     },
     {
       id: 3,
