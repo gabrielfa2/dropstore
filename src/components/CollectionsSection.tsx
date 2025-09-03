@@ -14,7 +14,7 @@ const collections = [
     id: 2,
     name: 'Polo',
     href: '#polo',
-    imageSrc: 'https://images.pexels.com/photos/3765171/pexels-photo-3765171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    imageSrc: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/158184-camisa-polo-adulto-head-play-preto1.webp',
     gridClasses: 'col-span-1 md:col-span-2',
     heightClasses: 'h-56 md:h-80',
   },
