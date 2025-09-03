@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Star, Heart, MessageCircle, Plus, Minus, Instagram, Twitter } from 'lucide-react';
+import { Star, Heart, MessageCircle, Plus, Minus } from 'lucide-react';
 
 const SocialProof = () => {
-  // Dados dos depoimentos atualizados para incluir um ícone de rede social
+  // Dados dos depoimentos atualizados para usar caminhos de imagem local
   const testimonials = [
     {
       id: 1,
@@ -10,7 +10,7 @@ const SocialProof = () => {
       text: 'Comprei na DROP e já recebi mil elogios! 😍',
       rating: 5,
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
-      socialIcon: <Instagram className="w-6 h-6 text-gray-400" />
+      socialIcon: '/insta.PNG'
     },
     {
       id: 2,
@@ -18,7 +18,7 @@ const SocialProof = () => {
       text: 'Finalmente achei roupas que combinam comigo!',
       rating: 5,
       image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=150',
-      socialIcon: <Twitter className="w-6 h-6 text-gray-400" /> // Usando XIcon para o Twitter/X
+      socialIcon: '/xlogo.svg'
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ const SocialProof = () => {
       text: 'DROP é vida! Sempre na moda 🔥',
       rating: 5,
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
-      socialIcon: <Instagram className="w-6 h-6 text-gray-400" />
+      socialIcon: '/insta.PNG'
     }
   ];
 
@@ -104,7 +104,7 @@ const SocialProof = () => {
 
               {/* Ícone da Rede Social posicionado no canto superior direito */}
               <div className="absolute top-6 right-6">
-                {testimonial.socialIcon}
+                <img src={testimonial.socialIcon} alt="Ícone da rede social" className="w-6 h-6" />
               </div>
 
               <p className="text-gray-700 font-medium">"{testimonial.text}"</p>
@@ -164,3 +164,4 @@ const SocialProof = () => {
 };
 
 export default SocialProof;
+
