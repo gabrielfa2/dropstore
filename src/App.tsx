@@ -6,12 +6,12 @@ import FeaturesSection from './components/FeaturesSection';
 import CollectionsSection from './components/CollectionsSection';
 import ProductShowcase from './components/ProductShowcase';
 import LimitedOffers from './components/LimitedOffers';
+import ImageSliderSection from './components/ImageSliderSection'; // Importe o novo componente
 import SocialProof from './components/SocialProof';
 import Footer from './components/Footer';
 
 function App() {
   return (
-    // Removido "bg-cream" e adicionado "relative overflow-x-hidden"
     <div className="min-h-screen relative overflow-x-hidden">
       {/* --- Efeito de Luz e Profundidade --- */}
       <div
@@ -25,9 +25,10 @@ function App() {
       <Header />
       <HeroSection />
       <ProductShowcase />
-      <LimitedOffers />
-      <FeaturesSection />
       <CollectionsSection/>
+      <FeaturesSection />
+      <LimitedOffers />
+      <ImageSliderSection /> {/* Adicione o novo componente aqui */}
       <BrandCarousel />
       <SocialProof />
       <Footer />
