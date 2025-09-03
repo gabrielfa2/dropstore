@@ -81,28 +81,6 @@ const LimitedOffers = () => {
             </div>
           ))}
         </div>
-
-        {/* --- INÍCIO DA SEÇÃO DO COMPARADOR DE IMAGENS (COM A NOVA BIBLIOTECA) --- */}
-        <div className="my-16 text-center">
-            <h3 className="text-4xl font-black text-black mb-4 font-display">
-                O que é usar <span className="text-orange-500">DROP:</span>
-            </h3>
-            <p className="text-xl text-gray-600 mb-8 font-medium">
-                Arraste para comparar o antes e depois.
-            </p>
-            <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-lg">
-                {/* 2. Usa o novo componente com a sintaxe correta */}
-                <ImgComparisonSlider value="30">
-                  
-                    <img slot="first" src={"/depoiscerto.PNG"} alt="Antes" />
-                    <img slot="second" src={"/depoiscerto.PNG"} alt="Depois" />
-                  
-                  
-                </ImgComparisonSlider>
-            </div>
-        </div>
-        {/* --- FIM DA SEÇÃO DO COMPARADOR DE IMAGENS --- */}
-
         {/* CTA Final */}
         <div className="text-center mt-12">
           <button className="bg-black text-white px-12 py-4 rounded-full text-xl font-bold hover:bg-gray-800 transform hover:scale-105 transition-all duration-300">
