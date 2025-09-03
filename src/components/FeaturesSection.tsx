@@ -63,7 +63,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-16">
+    <section ref={sectionRef} className="py-8">
       <div className="max-w-7xl mx-auto px-4">
         {/* - Mobile (padrão): Grid de 1 coluna (lista vertical) com um espaçamento maior.
           - Desktop (md+): Grid de 4 colunas com o espaçamento original.
