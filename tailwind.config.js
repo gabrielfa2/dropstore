@@ -6,7 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-      // Adiciona a nova família de fontes
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         display: ['"Sedgwick Ave Display"', 'cursive'],
@@ -40,3 +39,4 @@ export default {
   },
   plugins: [],
 }
+
