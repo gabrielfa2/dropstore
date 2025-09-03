@@ -26,7 +26,7 @@ const ImageSliderSection = () => {
           <div className="relative z-10">
             <div className="text-center">
               <h3 className="text-4xl font-black text-black mb-4 font-display">
-                  O que é usar <span className="text-orange-500">DROP:</span>
+                  O que é usar <span className="text-orange-500">DRIP:</span>
               </h3>
               <p className="text-xl text-gray-600 mb-8 font-medium">
                   Arraste para comparar o antes e depois.
