@@ -34,7 +34,7 @@ const LimitedOffers = () => {
   ];
 
   return (
-    <section className="py-12">
+    <section className="py-3">
       <div className="max-w-7xl mx-auto px-2">
 
         {/* Header da Seção */}
