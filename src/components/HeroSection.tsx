@@ -24,7 +24,7 @@ const HeroSection = () => {
           hidden
           md:block
           w-full          // Mantém a largura total
-          aspect-[30/9]   // -> ALTERADO! De 16/9 para 21/9. Isso diminui a altura.
+          aspect-[24/9]   // -> ALTERADO! De 16/9 para 21/9. Isso diminui a altura.
           object-cover    // Garante que a imagem cubra o novo espaço, cortando o excesso verticalmente
         "
       />
