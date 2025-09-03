@@ -70,8 +70,8 @@ const FeaturesSection = () => {
               <div
                 key={feature.id}
                 className={`
-                  flex items-center gap-4 transition-all duration-700 transform
-                  md:flex-col md:text-center
+                  flex flex-col items-start text-left 
+                  transition-all duration-700 transform
                   ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                   md:hover:scale-105 md:hover:-translate-y-2
                 `}
@@ -80,12 +80,12 @@ const FeaturesSection = () => {
                 }}
               >
                 {/* Ícone */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 mb-4">
                   <IconComponent className="w-10 h-10 text-orange-500" />
                 </div>
                 
                 {/* Textos */}
-                <div className="text-left md:text-center">
+                <div>
                   <h4 className="text-lg font-bold text-black mb-1">
                     {feature.title}
                   </h4>
