@@ -25,15 +25,14 @@ function App() {
       <Header />
       <HeroSection />
       <ProductShowcase />
-      <CollectionsSection/>
-      <FeaturesSection />
       <LimitedOffers />
+      <FeaturesSection />
+      <CollectionsSection/>
       <BrandCarousel />
       <SocialProof />
       <Footer />
     </div>
   );
 }
-
 
 export default App;
