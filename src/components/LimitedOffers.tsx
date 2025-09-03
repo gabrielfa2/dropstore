@@ -29,7 +29,7 @@ const LimitedOffers = () => {
       brand: 'DROP',
       name: 'Tênis High Top',
       price: 219.90,
-      image: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/0aa24ecd8062b1acf005538baa23376d.png',
     }
   ];
 
