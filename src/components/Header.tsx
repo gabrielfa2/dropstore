@@ -4,8 +4,8 @@ import { Menu, ShoppingBag } from 'lucide-react';
 const Header = () => {
   const [timeLeft, setTimeLeft] = useState({
     hours: 2,
-    minutes: 59,
-    seconds: 30
+    minutes: 17,
+    seconds: 23
   });
 
   useEffect(() => {
