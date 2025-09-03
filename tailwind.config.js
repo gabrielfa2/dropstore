@@ -17,7 +17,7 @@ export default {
       backgroundImage: {
         'glow': 'radial-gradient(ellipse at bottom, #fb923c 0%, transparent 60%)',
         // ATUALIZADO: Referenciando o arquivo SVG externo
-        'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/public/brick-texture.svg")`,
+        'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.svg")`,
       },
       animation: {
         scroll: 'scroll 20s linear infinite',
