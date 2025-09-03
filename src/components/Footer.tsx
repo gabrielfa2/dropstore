@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h4 className="text-3xl font-black mb-4">DROP</h4>
+            <h4 className="text-3xl font-black mb-4 font-display">DROP</h4>
             <p className="text-gray-400 mb-4">
               Mais que roupa, é estilo.
             </p>
@@ -77,7 +77,7 @@ const Footer = () => {
 
         {/* Final Message */}
         <div className="text-center mt-8 pt-8 border-t border-gray-800">
-          <p className="text-2xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text">
+          <p className="text-2xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text font-display">
             DROP — mais que roupa, é estilo. 🔥
           </p>
         </div>
