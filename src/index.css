@@ -2,15 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 1. REMOVIDO O @import DO GOOGLE FONTS */
+/* REMOVIDO O @font-face, pois a fonte agora é importada no index.html */
 
-/* 2. ADICIONADO O @font-face PARA CARREGAR O ARQUIVO TTF LOCAL */
-@font-face {
-  font-display: swap;
-  font-family: 'Sedgwick Ave Display';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/src/assets/fonts/sedgwick-ave-display.ttf') format('truetype'); /* <-- CAMINHO CORRIGIDO AQUI */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: #fcf0e4;
 }
 
 * {
