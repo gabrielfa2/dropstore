@@ -25,9 +25,9 @@ function App() {
       <Header />
       <HeroSection />
       <ProductShowcase />
-      <CollectionsSection/>
-      <FeaturesSection />
       <LimitedOffers />
+      <FeaturesSection />
+      <CollectionsSection/>
       <ImageSliderSection /> {/* Adicione o novo componente aqui */}
       <BrandCarousel />
       <SocialProof />
@@ -35,5 +35,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
