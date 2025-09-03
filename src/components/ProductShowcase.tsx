@@ -48,10 +48,10 @@ const ProductShowcase = () => {
   ];
 
   return (
-    <section className="pt-8 pb-16">
+    <section className="pt-7 pb-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-7">
           <h3 className="text-4xl font-black text-black mb-4">
             Quem usa DROP, <span className="text-orange-500">usa MODA!</span>
           </h3>
