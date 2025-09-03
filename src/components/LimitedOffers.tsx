@@ -5,28 +5,28 @@ const LimitedOffers = () => {
   const products = [
     {
       id: 1,
-      brand: 'DROP',
+      brand: 'DRIP',
       name: 'Camiseta Oversized Urban',
       price: 89.90,
       image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/617SjBz-tgL._AC_SX569_.jpg',
     },
     {
       id: 2,
-      brand: 'DROP',
+      brand: 'DRIP',
       name: 'Oversized Street Style',
       price: 149.90,
       image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     },
     {
       id: 3,
-      brand: 'DROP',
+      brand: 'DRIP',
       name: 'Camiseta Cargo Premium',
       price: 179.90,
       image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     },
     {
       id: 4,
-      brand: 'DROP',
+      brand: 'DRIP',
       name: 'Tênis High Top',
       price: 219.90,
       image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/0aa24ecd8062b1acf005538baa23376d.png',
