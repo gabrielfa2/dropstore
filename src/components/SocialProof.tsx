@@ -7,7 +7,7 @@ const SocialProof = () => {
     {
       id: 1,
       name: 'Ana, 19 anos',
-      text: 'Comprei na DROP e já recebi mil elogios! 😍',
+      text: 'Comprei na DRIP e já recebi mil elogios! 😍',
       rating: 5,
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
       socialIcon: '/insta.PNG'
@@ -23,7 +23,7 @@ const SocialProof = () => {
     {
       id: 3,
       name: 'Júlia, 20 anos',
-      text: 'DROP é vida! Sempre na moda 🔥',
+      text: 'DRIP é vida! Sempre na moda 🔥',
       rating: 5,
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
       socialIcon: '/insta.PNG'
