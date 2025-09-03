@@ -65,7 +65,7 @@ const SocialProof = () => {
   // --- FIM DA LÓGICA DO FAQ ---
 
   return (
-    <section className="py-10">
+    <section className="py-2">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header - Estrutura Corrigida */}
         <div className="text-center mb-12">
