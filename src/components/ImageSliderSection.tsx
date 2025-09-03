@@ -34,8 +34,8 @@ const ImageSliderSection = () => {
             </div>
             <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
                 <ImgComparisonSlider value="30">
-                    <img slot="first" src={"/antescerto.PNG"} alt="Antes" />
-                    <img slot="second" src={"/depoiscerto.PNG"} alt="Depois" />
+                    <img slot="first" src={"/depoiscerto.PNG"} alt="Antes" />
+                    <img slot="second" src={"/antescerto.PNG"} alt="Depois" />
                 </ImgComparisonSlider>
             </div>
           </div>
