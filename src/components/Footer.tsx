@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h4 className="text-3xl font-black mb-4 font-display">DROP</h4>
+            <h4 className="text-3xl font-black mb-4 font-display">DRIP</h4>
             <p className="text-gray-400 mb-4">
               Mais que roupa, é estilo.
             </p>
