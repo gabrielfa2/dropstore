@@ -29,11 +29,7 @@ const LimitedOffers = () => {
       badge: 'EXCLUSIVO'
     }
   ];
-
-  // As imagens para o slider continuam as mesmas
-  const beforeImage = "/foto2.PNG";
-  const afterImage = "/foto3.PNG";
-
+  
   return (
     <section className="py-12">
       <div className="max-w-7xl mx-auto px-4">
