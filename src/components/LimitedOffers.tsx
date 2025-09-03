@@ -1,6 +1,4 @@
 import React from 'react';
-// 1. Importa a nova biblioteca
-import { ImgComparisonSlider } from '@img-comparison-slider/react';
 
 const LimitedOffers = () => {
   const products = [
