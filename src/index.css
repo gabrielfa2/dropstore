@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* REMOVIDO O @font-face, pois a fonte agora é importada no index.html */
-
 * {
   margin: 0;
   padding: 0;
@@ -15,21 +13,3 @@ body {
   color: #1a1a1a;
   background-color: #fcf0e4;
 }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  line-height: 1.6;
-  color: #1a1a1a;
-  background-color: #fcf0e4;
-}
-
-/* O resto do seu CSS continua exatamente igual... */
-@layer components {
-  /* ... */
-}
-/* ... */
