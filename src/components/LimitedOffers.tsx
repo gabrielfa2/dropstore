@@ -35,7 +35,7 @@ const LimitedOffers = () => {
   const afterImage = "/foto3.PNG";
 
   return (
-    <section className="py-2">
+    <section className="py-1">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Header da Seção */}
