@@ -1,50 +1,40 @@
-import React from 'react';
-import { ImgComparisonSlider } from '@img-comparison-slider/react';
-
-const ImageSliderSection = () => {
-  return (
-    // Container para o espaçamento vertical
-    <div className="my-16">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Container principal com fundo e posicionamento relativo */}
-        <div className="relative isolate overflow-hidden bg-cream rounded-3xl p-8 md:p-16">
-          
-          {/* Elemento para a textura de tijolos */}
-          <div className="absolute inset-0 bg-brick-wall opacity-60 mix-blend-multiply -z-10"></div>
-          
-          {/* Elementos para os brilhos pulsantes */}
-          <div 
-            className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-orange-400/50 to-yellow-400/0 rounded-full animate-pulse-glow -z-10"
-            style={{ animationDelay: '0s' }}
-          ></div>
-          <div 
-            className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-r from-yellow-300/50 to-orange-400/0 rounded-full animate-pulse-glow -z-10"
-            style={{ animationDelay: '3s' }}
-          ></div>
-
-          {/* Conteúdo que fica por cima do fundo */}
-          <div className="relative z-10">
-            <div className="text-center">
-              <h3 className="text-4xl font-black text-black mb-4 font-display">
-                  O que é usar <span className="text-orange-500">DROP:</span>
-              </h3>
-              <p className="text-xl text-gray-600 mb-8 font-medium">
-                  Arraste para comparar o antes e depois.
-              </p>
-            </div>
-            <div className="max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white p-2">
-                <ImgComparisonSlider value="30">
-                    <img slot="first" src={"/antescerto.PNG"} alt="Antes" />
-                    <img slot="second" src={"/depoiscerto.PNG"} alt="Depois" />
-                </ImgComparisonSlider>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default ImageSliderSection;
-
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['"Sedgwick Ave Display"', 'cursive'],
+      },
+      colors: {
+        'cream': '#fcf0e4',
+        'card-bg': '#f9f5f0',
+      },
+      backgroundImage: {
+        'glow': 'radial-gradient(ellipse at bottom, #fb923c 0%, transparent 60%)',
+        // ATUALIZADO: Referenciando o arquivo SVG externo
+        'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.svg")`,
+      },
+      animation: {
+        scroll: 'scroll 20s linear infinite',
+        'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { opacity: '0.1', transform: 'scale(0.8)' },
+          '50%': { opacity: '0.3', transform: 'scale(1.2)' },
+        },
+      },
+    },
+  },
+  plugins: [],
+}
 
