@@ -6,7 +6,7 @@ const collections = [
     id: 1,
     name: 'Oversized',
     href: '#oversized',
-    imageSrc: 'https://images.pexels.com/photos/1484806/pexels-photo-1484806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    imageSrc: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     gridClasses: 'col-span-2 md:col-span-1',
     heightClasses: 'h-64 md:h-80',
   },
