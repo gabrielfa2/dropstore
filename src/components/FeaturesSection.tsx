@@ -60,7 +60,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-1">
+    <section ref={sectionRef} className="py-5">
       {/* Aumentei o padding horizontal de px-4 para px-8 */}
       <div className="max-w-7xl mx-auto px-8">
         {/* A grade agora é de 1 coluna no mobile e 4 no desktop */}
