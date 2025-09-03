@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
-import { Star, Heart, MessageCircle, Plus, Minus } from 'lucide-react'; // Ícones adicionados
+import { Star, Heart, MessageCircle, Plus, Minus, Instagram, XIcon } from 'lucide-react';
 
 const SocialProof = () => {
+  // Dados dos depoimentos atualizados para incluir um ícone de rede social
   const testimonials = [
     {
       id: 1,
       name: 'Ana, 19 anos',
       text: 'Comprei na DROP e já recebi mil elogios! 😍',
       rating: 5,
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150'
+      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
+      socialIcon: <Instagram className="w-6 h-6 text-gray-400" />
     },
     {
       id: 2,
       name: 'Carlos, 22 anos',
       text: 'Finalmente achei roupas que combinam comigo!',
       rating: 5,
-      image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=150'
+      image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=150',
+      socialIcon: <XIcon className="w-6 h-6 text-gray-400" /> // Usando XIcon para o Twitter/X
     },
     {
       id: 3,
       name: 'Júlia, 20 anos',
       text: 'DROP é vida! Sempre na moda 🔥',
       rating: 5,
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150'
+      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
+      socialIcon: <Instagram className="w-6 h-6 text-gray-400" />
     }
   ];
 
@@ -65,10 +69,11 @@ const SocialProof = () => {
   // --- FIM DA LÓGICA DO FAQ ---
 
   return (
-    <section className="py-2">
+    <section className="py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header - Estrutura Corrigida */}
         <div className="text-center mb-12">
+          <span className="font-medium">Marcas parceiras</span>
           <h3 className="text-4xl font-black text-black mb-4 font-display">
             O futuro das roupas está <span className="text-purple-500">aqui!</span>
           </h3>
@@ -80,7 +85,7 @@ const SocialProof = () => {
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+            <div key={testimonial.id} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg relative">
               <div className="flex items-center gap-3 mb-4">
                 <img 
                   src={testimonial.image} 
@@ -96,6 +101,12 @@ const SocialProof = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Ícone da Rede Social posicionado no canto superior direito */}
+              <div className="absolute top-6 right-6">
+                {testimonial.socialIcon}
+              </div>
+
               <p className="text-gray-700 font-medium">"{testimonial.text}"</p>
               
               <div className="flex items-center gap-4 mt-4 text-gray-500">
