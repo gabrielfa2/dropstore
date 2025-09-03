@@ -51,11 +51,6 @@ const Header = () => {
               <Menu className="w-6 h-6" />
               <span>MENU</span>
             </button>
-
-            {/* Ícone de Roupas - APARECE EM TODAS AS TELAS */}
-            <a href="#produtos" className="hover:opacity-75 transition-opacity">
-              <img src="/iconroupa.PNG" alt="Ícone de Roupas" className="w-7 h-7" />
-            </a>
           </div>
 
           {/* --- Coluna Central (Logo) --- */}
