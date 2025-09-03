@@ -40,7 +40,7 @@ const LimitedOffers = () => {
 
         {/* Header da Seção */}
         <div className="text-center mb-12">
-          <h3 className="text-4xl font-black text-black mb-4">
+          <h3 className="text-4xl font-black text-black mb-4 font-display">
             <span className="text-orange-500">Promoções</span> Imperdíveis
           </h3>
           <p className="text-xl text-gray-600 font-medium">
@@ -84,7 +84,7 @@ const LimitedOffers = () => {
 
         {/* --- INÍCIO DA SEÇÃO DO COMPARADOR DE IMAGENS (COM A NOVA BIBLIOTECA) --- */}
         <div className="my-16 text-center">
-            <h3 className="text-4xl font-black text-black mb-4">
+            <h3 className="text-4xl font-black text-black mb-4 font-display">
                 O que é usar <span className="text-orange-500">DROP:</span>
             </h3>
             <p className="text-xl text-gray-600 mb-8 font-medium">
