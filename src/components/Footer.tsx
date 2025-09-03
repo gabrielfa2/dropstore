@@ -65,7 +65,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 DROP. Todos os direitos reservados.
+            © 2025 DRIP. Todos os direitos reservados.
           </p>
           
           <div className="flex gap-6 text-sm text-gray-400">
@@ -78,7 +78,7 @@ const Footer = () => {
         {/* Final Message */}
         <div className="text-center mt-8 pt-8 border-t border-gray-800">
           <p className="text-2xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text font-display">
-            DROP — mais que roupa, é estilo. 🔥
+            DRIP — mais que roupa, é estilo. 🔥
           </p>
         </div>
       </div>
