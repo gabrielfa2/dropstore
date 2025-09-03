@@ -48,7 +48,7 @@ const ProductShowcase = () => {
   ];
 
   return (
-    <section className="pt-0 pb-16">
+    <section className="pt-5 pb-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
