@@ -28,7 +28,7 @@ const Header = () => {
   return (
     <header className="w-full">
       {/* Banner de Urgência */}
-      <div className="bg-red-600 text-white py-3 px-4 text-center font-bold">
+      <div className="bg-red-600 text-white py-2 px-4 text-center font-bold">
         <div className="flex items-center justify-center gap-2 text-sm md:text-base">
           <span>🔥</span>
           <span>Frete grátis termina em</span>
