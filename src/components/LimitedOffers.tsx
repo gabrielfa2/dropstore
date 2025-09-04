@@ -67,7 +67,7 @@ const LimitedOffers = () => {
                   -45%
                 </div>
               </div>
-              <div className="mt-2">
+              <div className="mt-4">
                 <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wider">{product.brand}</p>
                 <h4 className="text-md md:text-lg font-bold text-black truncate">
                   {product.name}
