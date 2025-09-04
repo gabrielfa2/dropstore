@@ -195,6 +195,15 @@ const StyledWrapper = styled.div`
   }
 `;
 
+const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
+  const categories = [
+    { name: 'Camisetas', href: '/produtos?categoria=camisetas'},
+    { name: 'Calça', href: '/produtos?categoria=calcas'},
+    { name: 'Short', href: '/produtos?categoria=shorts'},
+    { name: 'Tênis', href: '/produtos?categoria=tenis'},
+    { name: 'Polo', href: '/produtos?categoria=polos'}
+  ];
+
   return (
     <>
       {/* Backdrop */}
