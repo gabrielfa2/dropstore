@@ -203,7 +203,7 @@ const ProductsPage = () => {
         <h4 className="text-md md:text-lg font-bold text-black truncate">
           {product.name}
         </h4>
-        <div className="mt-1 flex items-baseline gap-2">
+        <div className="mt-0 flex items-baseline gap-2">
           <p className="text-lg md:text-xl font-price font-bold text-black">
             R$ {product.price.toFixed(2).replace('.', ',')}
           </p>
