@@ -38,18 +38,6 @@ const Footer = () => {
               <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
             </ul>
           </div>
-
-          {/* Categorias */}
-          <div>
-            <h5 className="font-bold mb-4 text-orange-400">Categorias</h5>
-            <ul className="space-y-2 text-gray-400">
-              <li><a href="#" className="hover:text-white transition-colors">Masculino</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Feminino</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Acessórios</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Lançamentos</a></li>
-            </ul>
-          </div>
-
           {/* Newsletter */}
           <div>
             <h5 className="font-bold mb-4 text-orange-400">Fique por dentro!</h5>
