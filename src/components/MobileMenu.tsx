@@ -278,10 +278,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
           {/* Seção Inferior: Redes Sociais */}
           <div>
-            <h3 className="text-md font-bold text-black mb-2 text-center font-display">
-              REDES SOCIAIS
-            </h3>
-            <div className="flex justify-center scale-75">
+            <div className="flex justify-center scale-100">
               <SocialButton />
             </div>
           </div>
