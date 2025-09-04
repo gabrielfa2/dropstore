@@ -304,10 +304,10 @@ const ProductsPage = () => {
         </div>
 
         {/* --- BARRA DE FILTROS ATUALIZADA --- */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+        <div className="flex flex-wrap justify-center md:justify-between items-center gap-4 mb-8">
             
             {/* Filtros e Ordenação (agrupados à esquerda) */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               {/* Categoria */}
               <div className="relative">
                 <select
@@ -433,3 +433,4 @@ const ProductsPage = () => {
 };
 
 export default ProductsPage;
+
