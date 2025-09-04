@@ -63,7 +63,7 @@ const LimitedOffers = () => {
                   className="w-full h-full object-cover object-center"
                 />
                 {/* Selo de Desconto Adicionado */}
-                <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+                <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-red-600 text-white text-xs font-bold px-1 py-1 rounded">
                   -45%
                 </div>
               </div>
