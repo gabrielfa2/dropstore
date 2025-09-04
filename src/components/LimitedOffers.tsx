@@ -65,7 +65,7 @@ const LimitedOffers = () => {
               </div>
               <div className="mt-4">
                 <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wider">{product.brand}</p>
-                <h4 className="text-md md:text-lg font-bold text-black truncate">
+                <h4 className="text-md md:text-3lg font-bold text-black truncate">
                   {product.name}
                 </h4>
                 <div className="mt-0 flex items-baseline gap-2">
