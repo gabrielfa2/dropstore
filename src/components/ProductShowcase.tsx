@@ -53,7 +53,7 @@ const ProductShowcase = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-7">
-          <h3 className="text-4xl font-black text-black mb-3 font-display">
+          <h3 className="text-4xl font-black text-black mb-2 font-display">
             Quem usa DRIP, <span className="text-orange-500">usa MODA!</span>
           </h3>
           <p className="text-xl text-gray-600 font-medium">
