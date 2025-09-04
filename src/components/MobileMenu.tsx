@@ -100,7 +100,7 @@ const StyledWrapper = styled.div`
 
   .instagram {
     margin-top: 1.5em;
-    margin-left: 1.5em;
+    margin-left: 1.9em;
     fill: #cc39a4;
   }
 
