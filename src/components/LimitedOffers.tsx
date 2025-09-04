@@ -69,8 +69,7 @@ const LimitedOffers = () => {
                   {product.name}
                 </h4>
                 <div className="mt-1 flex items-baseline gap-2">
-                  {/* APLICAÇÃO DO GRADIENTE NO PREÇO */}
-                  <p className="text-lg md:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
+                  <p className="text-lg md:text-xl font-price font-bold text-black">
                     R$ {product.price.toFixed(2).replace('.', ',')}
                   </p>
                   <p className="text-sm md:text-md font-medium text-gray-400 line-through">
