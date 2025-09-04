@@ -269,20 +269,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                 ))}
               </div>
             </div>
-            
-            <div className="border-t border-gray-200 pt-3">
-              <div className="space-y-2">
-                <Link to="/sobre" onClick={onClose} className="block text-gray-600 hover:text-orange-500 transition-colors font-medium text-sm">
-                  Sobre nós
-                </Link>
-                <Link to="/contato" onClick={onClose} className="block text-gray-600 hover:text-orange-500 transition-colors font-medium text-sm">
-                  Contato
-                </Link>
-                <Link to="/suporte" onClick={onClose} className="block text-gray-600 hover:text-orange-500 transition-colors font-medium text-sm">
-                  Suporte
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* Seção Central: Botão Principal */}
