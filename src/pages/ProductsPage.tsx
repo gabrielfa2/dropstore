@@ -216,7 +216,7 @@ const ProductsPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-cream pt-8">
+    <div className="min-h-screen bg-cream pt-4">
       <div className="max-w-7xl mx-auto px-4">
         
         <div className="text-center mb-12">
