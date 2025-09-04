@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // 1. Importar o Link
 import { Menu, ShoppingBag } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 
@@ -95,12 +96,15 @@ const Header = () => {
 
           {/* --- Coluna Central (Logo) --- */}
           <div className="flex items-center justify-center w-1/3">
-            <img 
-              src="/logodrop.PNG" 
-              alt="DROP Logo"
-              // A logo também diminui de tamanho com a animação
-              className={`w-auto transition-all duration-300 ease-in-out ${isScrolled ? 'h-10' : 'h-12'}`}
-            />
+            {/* 2. Envolver a imagem com o Link para a página inicial ("/") */}
+            <Link to="/">
+              <img 
+                src="/logodrop.PNG" 
+                alt="DROP Logo"
+                // A logo também diminui de tamanho com a animação
+                className={`w-auto transition-all duration-300 ease-in-out ${isScrolled ? 'h-10' : 'h-12'}`}
+              />
+            </Link>
           </div>
 
           {/* --- Coluna da Direita --- */}
