@@ -17,7 +17,7 @@ const BrandCarousel = () => {
     <section className="py-12 border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4">
         <p className="text-center text-gray-600 mb-8 font-medium" style={{ fontFamily: "'Permanent Marker', cursive" }}>
-          Marcas parceiras
+          Marcas utilizadas
         </p>
         
         <div className="relative w-full overflow-hidden">
