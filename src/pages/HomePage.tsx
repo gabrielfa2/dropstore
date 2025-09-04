@@ -1,5 +1,6 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
+import InfoSlider from '../components/InfoSlider'; // Importe o novo componente
 import BrandCarousel from '../components/BrandCarousel';
 import FeaturesSection from '../components/FeaturesSection';
 import CollectionsSection from '../components/CollectionsSection';
@@ -12,6 +13,7 @@ const HomePage = () => {
   return (
     <>
       <HeroSection />
+      <InfoSlider /> {/* Adicione o slider aqui */}
       <ProductShowcase />
       <LimitedOffers />
       <FeaturesSection />
