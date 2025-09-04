@@ -220,7 +220,7 @@ const ProductsPage = () => {
       <div className="max-w-7xl mx-auto px-4">
         
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-black text-black mb-2 font-display">
+          <h1 className="text-4xl font-black text-black mb-2 font-display">
             Todos os <span className="text-orange-500">Produtos</span>
           </h1>
           <p className="text-xl text-gray-600 font-medium">
