@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const LimitedOffers = () => {
-  // Estrutura de dados atualizada para incluir o preço original
   const products = [
     {
       id: 1,
@@ -42,7 +41,6 @@ const LimitedOffers = () => {
     <section className="py-12">
       <div className="max-w-7xl mx-auto px-4">
 
-        {/* Header da Seção */}
         <div className="text-center mb-12">
           <h3 className="text-4xl font-black text-black mb-4 font-display">
             <span className="text-orange-500">Promoções</span> Imperdíveis
@@ -52,18 +50,15 @@ const LimitedOffers = () => {
           </p>
         </div>
 
-        {/* Grid de Produtos com Novo Design */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 md:gap-x-8">
           {products.map((product) => (
             <div key={product.id} className="group relative text-left cursor-pointer">
-              {/* Container da Imagem agora é 'relative' */}
               <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
                 <img 
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-full object-cover object-center"
                 />
-                {/* Selo de Desconto Adicionado */}
                 <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-red-600 text-white text-xs font-bold px-1 py-1 rounded">
                   -45%
                 </div>
@@ -73,9 +68,9 @@ const LimitedOffers = () => {
                 <h4 className="text-md md:text-lg font-bold text-black truncate">
                   {product.name}
                 </h4>
-                {/* Bloco de preço atualizado */}
                 <div className="mt-1 flex items-baseline gap-2">
-                  <p className="text-lg md:text-xl font-black text-orange-500">
+                  {/* APLICAÇÃO DO GRADIENTE NO PREÇO */}
+                  <p className="text-lg md:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
                     R$ {product.price.toFixed(2).replace('.', ',')}
                   </p>
                   <p className="text-sm md:text-md font-medium text-gray-400 line-through">
@@ -87,7 +82,6 @@ const LimitedOffers = () => {
           ))}
         </div>
 
-        {/* CTA Final */}
         <div className="text-center mt-12">
           <Link to="/produtos" className="inline-block bg-black text-white px-12 py-4 rounded-full text-xl font-bold hover:bg-gray-800 transform hover:scale-105 transition-all duration-300">
             Ver todos os produtos
@@ -99,4 +93,3 @@ const LimitedOffers = () => {
 };
 
 export default LimitedOffers;
-
