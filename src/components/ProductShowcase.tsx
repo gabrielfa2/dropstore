@@ -56,7 +56,7 @@ const ProductShowcase = () => {
           <h3 className="text-4xl font-black text-black mb-4 font-display">
             Quem usa DRIP, <span className="text-orange-500">usa MODA!</span>
           </h3>
-          <p className="pt-0 text-xl text-gray-600 font-medium">
+          <p className="text-xl text-gray-600 font-medium">
             Não fique de fora!
           </p>
         </div>
