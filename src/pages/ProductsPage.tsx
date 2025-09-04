@@ -204,8 +204,7 @@ const ProductsPage = () => {
           {product.name}
         </h4>
         <div className="mt-1 flex items-baseline gap-2">
-          {/* PREÇO ALTERADO PARA PRETO E FONTE NORMAL */}
-          <p className="text-lg md:text-xl font-normal text-black">
+          <p className="text-lg md:text-xl font-price text-black">
             R$ {product.price.toFixed(2).replace('.', ',')}
           </p>
           <p className="text-sm md:text-md font-medium text-gray-400 line-through">
