@@ -228,39 +228,24 @@ const ProductsPage = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 mb-8">
-            <div className="flex items-center justify-center gap-4">
-              <div className="relative">
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
-                >
-                  {categories.map(category => (
-                    <option key={category.value} value={category.value}>
-                      {category.label}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-              </div>
-
-              <div className="relative">
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
-                >
-                  {sortOptions.map(option => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
-              </div>
-            </div>
-
+        {/* Barra de Controles */}
+        <div className="mb-8">
+          {/* Linha Superior: Contagem de produtos e Botão de Filtros (Mobile) / View Toggles (Desktop) */}
+          <div className="flex justify-between items-center mb-4">
+            <p className="text-gray-600">
+              Mostrando <span className="font-bold">{filteredAndSortedProducts.length}</span> produtos
+            </p>
+            
+            {/* Botão de Filtros para Mobile */}
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="md:hidden flex items-center gap-2 bg-black text-white px-4 py-2 rounded-xl font-bold"
+            >
+              <Filter className="w-4 h-4" />
+              Filtros
+            </button>
+            
+            {/* View Toggles para Desktop */}
             <div className="hidden md:flex bg-gray-100 rounded-xl p-1">
               <button
                 onClick={() => setViewMode('grid')}
@@ -275,20 +260,45 @@ const ProductsPage = () => {
                 <List className="w-5 h-5" />
               </button>
             </div>
-        </div>
+          </div>
 
-        <div className="flex justify-between items-center mb-6">
-          <p className="text-gray-600">
-            Mostrando <span className="font-bold">{filteredAndSortedProducts.length}</span> produtos
-          </p>
-          
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="lg:hidden flex items-center gap-2 bg-black text-white px-4 py-2 rounded-xl font-bold"
-          >
-            <Filter className="w-4 h-4" />
-            Filtros
-          </button>
+          {/* Seletores de Filtro e Ordenação (Condicionalmente visível em mobile) */}
+          <div className={`
+            flex flex-col md:flex-row justify-center items-center gap-4 pt-4 md:pt-0
+            ${showFilters ? 'flex' : 'hidden md:flex'}
+          `}>
+              {/* Categoria */}
+              <div className="relative w-full md:w-auto">
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="w-full appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
+                >
+                  {categories.map(category => (
+                    <option key={category.value} value={category.value}>
+                      {category.label}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+              </div>
+
+              {/* Ordenar por */}
+              <div className="relative w-full md:w-auto">
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="w-full appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
+                >
+                  {sortOptions.map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
+              </div>
+          </div>
         </div>
 
         <div className={`grid gap-x-4 gap-y-8 md:gap-x-8 mb-12 ${
