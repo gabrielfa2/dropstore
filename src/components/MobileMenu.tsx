@@ -221,7 +221,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         }`}
       >
         {/* Header do Menu */}
-        <div className="flex items-center justify-between p-5 border-b border-gray-200 flex-shrink-0">
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0">
           <div className="flex items-center gap-3">
             <img
               src="/logodrop.PNG"
