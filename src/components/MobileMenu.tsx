@@ -195,15 +195,6 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
-  const categories = [
-    { name: 'Camisetas', href: '/produtos?categoria=camisetas', emoji: '👕' },
-    { name: 'Calça', href: '/produtos?categoria=calcas', emoji: '👖' },
-    { name: 'Short', href: '/produtos?categoria=shorts', emoji: '🩳' },
-    { name: 'Tênis', href: '/produtos?categoria=tenis', emoji: '👟' },
-    { name: 'Polo', href: '/produtos?categoria=polos', emoji: '👔' }
-  ];
-
   return (
     <>
       {/* Backdrop */}
