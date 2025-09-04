@@ -38,8 +38,8 @@ const LimitedOffers = () => {
   ];
 
   return (
-    <section className="py-3">
-      <div className="max-w-7xl mx-auto px-2">
+    <section className="py-12">
+      <div className="max-w-7xl mx-auto px-4">
 
         {/* Header da Seção */}
         <div className="text-center mb-12">
@@ -55,12 +55,17 @@ const LimitedOffers = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 md:gap-x-8">
           {products.map((product) => (
             <div key={product.id} className="group relative text-left cursor-pointer">
-              <div className="w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
+              {/* Container da Imagem agora é 'relative' */}
+              <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
                 <img 
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-full object-cover object-center"
                 />
+                {/* Selo de Desconto Adicionado */}
+                <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded">
+                  -45%
+                </div>
               </div>
               <div className="mt-4">
                 <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wider">{product.brand}</p>
