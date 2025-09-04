@@ -22,7 +22,7 @@ function App() {
     setTimeout(() => {
       navigate(path);
       setIsLoading(false);
-    }, 1000); // Atraso de 1 segundo
+    }, 713); // Atraso de 1 segundo
   };
 
   return (
