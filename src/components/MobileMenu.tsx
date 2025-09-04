@@ -134,7 +134,7 @@ const StyledWrapper = styled.div`
 
   .github {
     margin-top: -.6em;
-    margin-left: 1.2em;
+    margin-left: 2em;
   }
 
   .card4 {
