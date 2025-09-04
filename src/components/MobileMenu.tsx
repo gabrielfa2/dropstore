@@ -117,7 +117,7 @@ const StyledWrapper = styled.div`
 
   .twitter {
     margin-top: 1.5em;
-    margin-left: 1.2em;
+    margin-left: 1.5em;
     fill: #03A9F4;
   }
 
