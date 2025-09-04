@@ -232,7 +232,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </div>
           <button
             onClick={onClose}
-            className="p-3 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
             <X className="w-6 h-6 text-gray-600" />
           </button>
