@@ -11,10 +11,6 @@ export default {
         display: ['"Sedgwick Ave Display"', 'cursive'],
         price: ['"Libertinus Serif Display"', 'serif'], // Adicione esta linha
       },
-      fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['"Sedgwick Ave Display"', 'cursive'],
-      },
       colors: {
         'cream': '#fcf0e4',
         'card-bg': '#f9f5f0',
