@@ -69,7 +69,7 @@ const LimitedOffers = () => {
                   {product.name}
                 </h4>
                 <div className="mt-0 flex items-baseline gap-2">
-                  <p className="text-lg md:text-3xl font-price font-bold text-black">
+                  <p className="text-lg md:text-7xl font-price font-bold text-black">
                     R$ {product.price.toFixed(2).replace('.', ',')}
                   </p>
                   <p className="text-sm md:text-md font-medium text-gray-400 line-through">
