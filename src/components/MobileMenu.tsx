@@ -213,12 +213,12 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
       {/* Menu Panel */}
       <div 
-        className={`fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Header do Menu */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
           <div className="flex items-center gap-3">
             <img 
               src="/logodrop.PNG" 
@@ -235,8 +235,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* Conteúdo do Menu */}
-        <div className="p-6 space-y-8">
+        {/* Conteúdo do Menu (com scroll) */}
+        <div className="flex-grow overflow-y-auto p-6 space-y-8">
           {/* Categorias */}
           <div>
             <h3 className="text-lg font-bold text-black mb-4 font-display">
@@ -313,7 +313,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Footer do Menu */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gray-50 border-t border-gray-200">
+        <div className="p-6 bg-gray-50 border-t border-gray-200 flex-shrink-0">
           <p className="text-center text-sm text-gray-500">
             © 2025 DRIP - Mais que roupa, é estilo.
           </p>
