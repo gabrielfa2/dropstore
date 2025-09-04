@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Filter, Grid, List, ChevronDown, Star, Heart, ShoppingBag } from 'lucide-react';
 
 // Dados dos produtos expandidos
@@ -126,8 +127,11 @@ const allProducts = [
 ];
 
 const ProductsPage = () => {
+  const [searchParams] = useSearchParams();
+  const categoryFromUrl = searchParams.get('categoria') || 'todos';
+  
   // O estado searchTerm foi removido
-  const [selectedCategory, setSelectedCategory] = useState('todos');
+  const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl);
   const [sortBy, setSortBy] = useState('relevancia');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
@@ -137,9 +141,9 @@ const ProductsPage = () => {
     { value: 'todos', label: 'Todos os Produtos' },
     { value: 'camisetas', label: 'Camisetas' },
     { value: 'moletons', label: 'Moletons' },
-    { value: 'calcas', label: 'Calças' },
+    { value: 'calcas', label: 'Calça' },
     { value: 'shorts', label: 'Shorts' },
-    { value: 'polos', label: 'Polos' },
+    { value: 'polos', label: 'Polo' },
     { value: 'tenis', label: 'Tênis' }
   ];
 
@@ -184,6 +188,11 @@ const ProductsPage = () => {
 
     return filtered;
   }, [selectedCategory, sortBy]);
+
+  // Update category when URL changes
+  React.useEffect(() => {
+    setSelectedCategory(categoryFromUrl);
+  }, [categoryFromUrl]);
 
   const ProductCard = ({ product }) => (
     <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">

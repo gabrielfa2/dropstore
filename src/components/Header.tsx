@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, ShoppingBag } from 'lucide-react';
+import MobileMenu from './MobileMenu';
 
 const Header = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -10,6 +11,7 @@ const Header = () => {
   
   // Novo estado para controlar se o header está "flutuando"
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Efeito para o contador de tempo (sem alterações)
   useEffect(() => {
@@ -40,6 +42,13 @@ const Header = () => {
     };
   }, []);
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     // O container agora precisa de uma classe para a animação de altura
@@ -75,7 +84,10 @@ const Header = () => {
           
           {/* --- Coluna da Esquerda --- */}
           <div className="flex items-center justify-start w-1/3 space-x-2">
-            <button className="md:hidden p-2 flex items-center gap-1 text-sm font-semibold">
+            <button 
+              onClick={toggleMobileMenu}
+              className="md:hidden p-2 flex items-center gap-1 text-sm font-semibold hover:bg-gray-100 rounded-lg transition-colors"
+            >
               <Menu className="w-6 h-6" />
               <span>MENU</span>
             </button>
@@ -106,6 +118,9 @@ const Header = () => {
           </div>
         </div>
       </div>
+      
+      {/* Mobile Menu Component */}
+      <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
     </header>
   );
 };
