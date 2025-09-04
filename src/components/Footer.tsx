@@ -1,10 +1,17 @@
 import React from 'react';
 import { Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import FooterDivider from './FooterDivider'; // 1. Importe o novo componente
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-12">
+    <footer className="bg-black text-white pt-12"> {/* Removido o padding (py-12) para o divisor ficar no topo */}
       <div className="max-w-7xl mx-auto px-4">
+
+        {/* 2. Adicione o divisor animado aqui */}
+        <div className="mb-12"> {/* Este container cria o espaço entre a linha e o conteúdo */}
+          <FooterDivider />
+        </div>
+
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
