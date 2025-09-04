@@ -228,7 +228,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               alt="DROP Logo"
               className="h-8 w-auto"
             />
-            <span className="text-xl font-black text-black font-display">MENU</span>
+            <span className="text-xl font-black text-black font-display">MEN</span>
           </div>
           <button
             onClick={onClose}
