@@ -1,41 +1,45 @@
 import React from 'react';
 
 const LimitedOffers = () => {
-  // Estrutura de dados simplificada para o novo design
+  // Estrutura de dados atualizada para incluir o preço original
   const products = [
     {
       id: 1,
-      brand: 'DRIP',
+      brand: 'DROP',
       name: 'Camiseta Oversized Urban',
       price: 89.90,
+      originalPrice: 130.36,
       image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/617SjBz-tgL._AC_SX569_.jpg',
     },
     {
       id: 2,
-      brand: 'DRIP',
-      name: 'Oversized Street Style',
+      brand: 'DROP',
+      name: 'Moletom Street Style',
       price: 149.90,
+      originalPrice: 217.36,
       image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     },
     {
       id: 3,
-      brand: 'DRIP',
-      name: 'Camiseta Cargo Premium',
+      brand: 'DROP',
+      name: 'Calça Cargo Premium',
       price: 179.90,
+      originalPrice: 260.86,
       image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     },
     {
       id: 4,
-      brand: 'DRIP',
+      brand: 'DROP',
       name: 'Tênis High Top',
       price: 219.90,
+      originalPrice: 318.86,
       image: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/0aa24ecd8062b1acf005538baa23376d.png',
     }
   ];
 
   return (
     <section className="py-3">
-      <div className="max-w-7xl mx-auto px-2">
+      <div className="max-w-7xl mx-auto px-4">
 
         {/* Header da Seção */}
         <div className="text-center mb-12">
@@ -63,9 +67,15 @@ const LimitedOffers = () => {
                 <h4 className="text-md md:text-lg font-bold text-black truncate">
                   {product.name}
                 </h4>
-                <p className="mt-1 text-lg md:text-xl font-black text-black">
-                  R$ {product.price.toFixed(2).replace('.', ',')}
-                </p>
+                {/* Bloco de preço atualizado */}
+                <div className="mt-1 flex items-baseline gap-2">
+                  <p className="text-lg md:text-xl font-black text-orange-500">
+                    R$ {product.price.toFixed(2).replace('.', ',')}
+                  </p>
+                  <p className="text-sm md:text-md font-medium text-gray-400 line-through">
+                    R$ {product.originalPrice.toFixed(2).replace('.', ',')}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
