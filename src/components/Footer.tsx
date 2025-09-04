@@ -1,70 +1,85 @@
 import React from 'react';
 import { Instagram, Facebook, Twitter, Youtube } from 'lucide-react';
+import FooterDivider from './FooterDivider'; // 1. Importe o novo componente
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
-    <footer className="bg-black text-white py-10 px-4 md:px-8 lg:px-16 mt-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        {/* Coluna 1: Logo e Redes Sociais */}
-        <div className="flex flex-col items-start space-y-4">
-          {/* AQUI ESTÁ A MUDANÇA: Substituímos o texto pela imagem da logo */}
-          <img 
-            src="/logodrop.PNG" // Certifique-se de que este caminho está correto para sua imagem
-            alt="DROP Logo" 
-            className="h-10 w-auto" // Ajuste a altura (h-10) conforme necessário para o rodapé
-          />
-          <p className="text-gray-400">Mais que roupa, é mensagem.</p>
-          <div className="flex space-x-4">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <Instagram className="h-6 w-6 text-gray-400 hover:text-white transition-colors" />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <Facebook className="h-6 w-6 text-gray-400 hover:text-white transition-colors" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <Twitter className="h-6 w-6 text-gray-400 hover:text-white transition-colors" />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <Youtube className="h-6 w-6 text-gray-400 hover:text-white transition-colors" />
-            </a>
+    <footer className="bg-black text-white pt-12"> {/* Removido o padding (py-12) para o divisor ficar no topo */}
+      <div className="max-w-7xl mx-auto px-4">
+
+        {/* 2. Adicione o divisor animado aqui */}
+        <div className="mb-12"> {/* Este container cria o espaço entre a linha e o conteúdo */}
+          <FooterDivider />
+        </div>
+
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          {/* Brand */}
+          <div>
+            <h4 className="text-3xl font-black mb-4 font-display">DRIP</h4>
+            <p className="text-gray-400 mb-4">
+              Mais que roupa, é mensagem.
+            </p>
+            <div className="flex gap-4">
+              <Instagram className="w-6 h-6 text-gray-400 hover:text-pink-400 cursor-pointer transition-colors" />
+              <Facebook className="w-6 h-6 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+              <Twitter className="w-6 h-6 text-gray-400 hover:text-blue-300 cursor-pointer transition-colors" />
+              <Youtube className="w-6 h-6 text-gray-400 hover:text-red-400 cursor-pointer transition-colors" />
+            </div>
+          </div>
+
+          {/* Links Úteis */}
+          <div>
+            <h5 className="font-bold mb-4 text-orange-400">Links Úteis</h5>
+            <ul className="space-y-2 text-gray-400">
+              <li><a href="#" className="hover:text-white transition-colors">Sobre nós</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Contato</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">Suporte</a></li>
+              <li><a href="#" className="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+          {/* Newsletter */}
+          <div>
+            <h5 className="font-bold mb-4 text-orange-400">Fique por dentro!</h5>
+            <p className="text-gray-400 mb-4 text-sm">
+              Receba as novidades e promoções exclusivas
+            </p>
+            <div className="flex">
+              <input 
+                type="email" 
+                placeholder="Seu e-mail"
+                className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-orange-400"
+              />
+              <button className="bg-orange-500 px-4 py-2 rounded-r-lg hover:bg-orange-600 transition-colors font-bold">
+                OK
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Coluna 2: Links Úteis */}
-        <div className="flex flex-col items-start space-y-3">
-          <h3 className="text-orange-500 font-bold text-lg mb-2">Links Úteis</h3>
-          <a href="/sobre" className="text-gray-400 hover:text-white transition-colors">Sobre nós</a>
-          <a href="/contato" className="text-gray-400 hover:text-white transition-colors">Contato</a>
-          <a href="/suporte" className="text-gray-400 hover:text-white transition-colors">Suporte</a>
-          <a href="/faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a>
-        </div>
-
-        {/* Coluna 3 (vazia ou para futuros itens) */}
-        <div></div>
-
-        {/* Coluna 4: Fique por dentro! (Newsletter) */}
-        <div className="flex flex-col items-start space-y-3">
-          <h3 className="text-orange-500 font-bold text-lg mb-2">Fique por dentro!</h3>
-          <p className="text-gray-400">Receba as novidades e promoções exclusivas</p>
-          <div className="flex w-full max-w-sm">
-            <input 
-              type="email" 
-              placeholder="Seu e-mail" 
-              className="flex-grow p-3 rounded-l-md bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            />
-            <button className="bg-orange-500 text-white font-bold py-3 px-6 rounded-r-md hover:bg-orange-600 transition-colors">
-              OK
-            </button>
+        {/* Bottom Footer */}
+        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2025 DRIP. Todos os direitos reservados.
+          </p>
+          
+          <div className="flex gap-6 text-sm text-gray-400">
+            <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+            <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
+            <a href="#" className="hover:text-white transition-colors">Trocas e Devoluções</a>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} DROP. Todos os direitos reservados.
+        {/* Final Message */}
+        <div className="text-center mt-8 pt-8 border-t border-gray-800">
+          <p className="text-2xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text font-display">
+            DRIP — mais que roupa, é estilo. 🔥
+          </p>
+        </div>
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
