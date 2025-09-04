@@ -186,7 +186,6 @@ const ProductsPage = () => {
     setSelectedCategory(categoryFromUrl);
   }, [categoryFromUrl]);
 
-  // Componente de Card de Produto com o novo design
   const ProductCard = ({ product }) => (
     <div className="group relative text-left cursor-pointer">
       <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75 transition-opacity duration-300">
@@ -205,7 +204,8 @@ const ProductsPage = () => {
           {product.name}
         </h4>
         <div className="mt-1 flex items-baseline gap-2">
-          <p className="text-lg md:text-xl font-black text-orange-500">
+          {/* APLICAÇÃO DO GRADIENTE NO PREÇO */}
+          <p className="text-lg md:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">
             R$ {product.price.toFixed(2).replace('.', ',')}
           </p>
           <p className="text-sm md:text-md font-medium text-gray-400 line-through">
