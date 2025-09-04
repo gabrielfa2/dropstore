@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Menu, ShoppingBag } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 
-// A interface foi ajustada para que a prop onLogoClick seja opcional,
-// caso você queira reutilizar o Header em um lugar sem essa função.
 interface HeaderProps {
   onLogoClick?: () => void;
 }
@@ -50,17 +48,9 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleLogoInteraction = (e: React.MouseEvent) => {
-    if (onLogoClick) {
-      e.preventDefault(); // Previne a navegação padrão se a função existir
-      onLogoClick();
-    }
-    // Se onLogoClick não for fornecida, o Link funcionará normalmente
-  };
-
   return (
     <header className="w-full transition-all duration-300 ease-in-out">
-      {/* Banner de Urgência com a animação de esconder aplicada a TODAS as telas */}
+      {/* Banner de Urgência (agora some em todas as telas) */}
       <div className={`bg-red-600 text-white py-2 px-4 text-center font-bold transition-all duration-300 ease-in-out overflow-hidden ${isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-12 opacity-100'}`}>
         <div className="flex items-center justify-center gap-2 text-sm md:text-base">
           <span>🔥</span>
@@ -73,12 +63,10 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
         </div>
       </div>
 
+      {/* Wrapper do header com classes unificadas para todas as telas */}
       <div className={`
         transition-all duration-300 ease-in-out
         w-full z-20 
-        
-        md:static md:shadow-sm md:rounded-none md:p-4
-
         ${isScrolled 
           ? 'fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white/80 backdrop-blur-sm shadow-xl rounded-xl p-3' 
           : 'relative shadow-sm p-4'
