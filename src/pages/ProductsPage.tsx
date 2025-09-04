@@ -229,7 +229,7 @@ const ProductsPage = () => {
         </div>
 
         {/* Barra de Controles */}
-        <div className="mb-3">
+        <div className="mb-5">
           {/* Linha Superior: Contagem de produtos e Botão de Filtros (Mobile) / View Toggles (Desktop) */}
           <div className="flex justify-between items-center mb-4">
             <p className="text-gray-600">
