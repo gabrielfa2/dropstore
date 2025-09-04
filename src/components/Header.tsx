@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-// O Link foi removido pois a navegação será controlada pelo App.tsx
 import { Menu, ShoppingBag } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 
-// 1. Definimos a interface de Props para que o componente possa receber a função onLogoClick
+// A interface foi ajustada para que a prop onLogoClick seja opcional,
+// caso você queira reutilizar o Header em um lugar sem essa função.
 interface HeaderProps {
-  onLogoClick: () => void;
+  onLogoClick?: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
@@ -50,10 +50,18 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
     setIsMobileMenuOpen(false);
   };
 
+  const handleLogoInteraction = (e: React.MouseEvent) => {
+    if (onLogoClick) {
+      e.preventDefault(); // Previne a navegação padrão se a função existir
+      onLogoClick();
+    }
+    // Se onLogoClick não for fornecida, o Link funcionará normalmente
+  };
+
   return (
-    <header className={`w-full transition-all duration-300 ease-in-out ${isScrolled ? 'md:pt-0' : 'md:pt-0'}`}>
-      {/* Banner de Urgência */}
-      <div className={`bg-red-600 text-white py-2 px-4 text-center font-bold transition-all duration-300 ease-in-out ${isScrolled ? 'md:max-h-0 md:py-0 md:opacity-0' : 'md:max-h-12 md:opacity-100'}`}>
+    <header className="w-full transition-all duration-300 ease-in-out">
+      {/* Banner de Urgência com a animação de esconder aplicada a TODAS as telas */}
+      <div className={`bg-red-600 text-white py-2 px-4 text-center font-bold transition-all duration-300 ease-in-out overflow-hidden ${isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-12 opacity-100'}`}>
         <div className="flex items-center justify-center gap-2 text-sm md:text-base">
           <span>🔥</span>
           <span>Frete grátis termina em</span>
@@ -89,7 +97,6 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
           </div>
 
           <div className="flex items-center justify-center w-1/3">
-            {/* 2. O Link foi substituído por um <button> que ativa a função do loader */}
             <button onClick={onLogoClick} className="focus:outline-none" aria-label="Voltar para a página inicial">
               <img 
                 src="/logodrop.PNG" 
