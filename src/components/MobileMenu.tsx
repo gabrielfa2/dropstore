@@ -228,11 +228,11 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               alt="DROP Logo"
               className="h-8 w-auto"
             />
-            <span className="text-xl font-black text-black font-display">MEN</span>
+            <span className="text-xl font-black text-black font-display">MENU</span>
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-3 hover:bg-gray-100 rounded-full transition-colors"
           >
             <X className="w-6 h-6 text-gray-600" />
           </button>
