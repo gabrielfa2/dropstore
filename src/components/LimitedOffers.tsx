@@ -75,7 +75,7 @@ const LimitedOffers = () => {
                 </h4>
                 {/* Bloco de preço atualizado */}
                 <div className="mt-1 flex items-baseline gap-2">
-                  <p className="text-lg md:text-xl font-black text-black-500">
+                  <p className="text-lg md:text-xl font-black text-orange-100">
                     R$ {product.price.toFixed(2).replace('.', ',')}
                   </p>
                   <p className="text-sm md:text-md font-medium text-gray-400 line-through">
