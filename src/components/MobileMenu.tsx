@@ -8,13 +8,14 @@ interface MobileMenuProps {
   onClose: () => void;
 }
 
+// O componente GradientButton permanece o mesmo
 const GradientButton = () => {
   return (
     <div className="relative inline-flex items-center justify-center gap-4 group w-full">
       <div className="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200" />
-      <Link 
-        to="/produtos" 
-        role="button" 
+      <Link
+        to="/produtos"
+        role="button"
         className="group relative inline-flex items-center justify-center text-base rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30 w-full"
         title="Ver todos os produtos"
       >
@@ -28,6 +29,7 @@ const GradientButton = () => {
   );
 };
 
+// O componente SocialButton permanece o mesmo
 const SocialButton = () => {
   return (
     <StyledWrapper>
@@ -64,8 +66,9 @@ const SocialButton = () => {
     </StyledWrapper>
   );
 };
-
+// A estilização do SocialButton (StyledWrapper) permanece a mesma
 const StyledWrapper = styled.div`
+  /* ... Estilos originais ... */
   .main {
     display: flex;
     flex-direction: column;
@@ -204,7 +207,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Backdrop */}
-      <div 
+      <div
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 ${
           isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
@@ -212,22 +215,22 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       />
 
       {/* Menu Panel */}
-      <div 
+      <div
         className={`fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Header do Menu */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200 flex-shrink-0">
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 flex-shrink-0">
           <div className="flex items-center gap-3">
-            <img 
-              src="/logodrop.PNG" 
+            <img
+              src="/logodrop.PNG"
               alt="DROP Logo"
               className="h-8 w-auto"
             />
             <span className="text-xl font-black text-black font-display">MENU</span>
           </div>
-          <button 
+          <button
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
@@ -235,86 +238,72 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* Conteúdo do Menu (com scroll) */}
-        <div className="flex-grow overflow-y-auto p-6 space-y-8">
-          {/* Categorias */}
+        {/* Conteúdo do Menu (com scroll removido e layout flexível) 
+          - flex-1 faz este container crescer para ocupar o espaço disponível
+          - flex e flex-col organizam os itens internos verticalmente
+          - justify-between distribui o espaço entre os elementos filhos
+        */}
+        <div className="flex-1 flex flex-col justify-between p-4">
+          
+          {/* Seção Superior: Categorias e Links */}
           <div>
-            <h3 className="text-lg font-bold text-black mb-4 font-display">
-              CATEGORIAS
-            </h3>
-            <div className="space-y-3">
-              {categories.map((category, index) => (
-                <Link
-                  key={category.name}
-                  to={category.href}
-                  onClick={onClose}
-                  className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 transition-all duration-200 group"
-                  style={{
-                    animationDelay: `${index * 100}ms`
-                  }}
-                >
-                  <span className="text-2xl group-hover:scale-110 transition-transform">
-                    {category.emoji}
-                  </span>
-                  <span className="text-lg font-semibold text-gray-800 group-hover:text-orange-500 transition-colors">
-                    {category.name}
-                  </span>
+            <div className="mb-4">
+              <h3 className="text-md font-bold text-black mb-2 font-display">
+                CATEGORIAS
+              </h3>
+              <div className="space-y-1">
+                {categories.map((category) => (
+                  <Link
+                    key={category.name}
+                    to={category.href}
+                    onClick={onClose}
+                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-gray-50 transition-all duration-200 group"
+                  >
+                    <span className="text-xl group-hover:scale-110 transition-transform">
+                      {category.emoji}
+                    </span>
+                    <span className="text-md font-semibold text-gray-800 group-hover:text-orange-500 transition-colors">
+                      {category.name}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            <div className="border-t border-gray-200 pt-3">
+              <div className="space-y-2">
+                <Link to="/sobre" onClick={onClose} className="block text-gray-600 hover:text-orange-500 transition-colors font-medium text-sm">
+                  Sobre nós
                 </Link>
-              ))}
+                <Link to="/contato" onClick={onClose} className="block text-gray-600 hover:text-orange-500 transition-colors font-medium text-sm">
+                  Contato
+                </Link>
+                <Link to="/suporte" onClick={onClose} className="block text-gray-600 hover:text-orange-500 transition-colors font-medium text-sm">
+                  Suporte
+                </Link>
+              </div>
             </div>
           </div>
 
-          {/* Botão Ver Todos os Produtos */}
-          <div>
-            <h3 className="text-lg font-bold text-black mb-4 font-display">
-              EXPLORAR
-            </h3>
-            <div onClick={onClose}>
-              <GradientButton />
-            </div>
+          {/* Seção Central: Botão Principal */}
+          <div className="my-4" onClick={onClose}>
+            <GradientButton />
           </div>
 
-          {/* Redes Sociais */}
+          {/* Seção Inferior: Redes Sociais */}
           <div>
-            <h3 className="text-lg font-bold text-black mb-4 font-display">
+            <h3 className="text-md font-bold text-black mb-2 text-center font-display">
               REDES SOCIAIS
             </h3>
-            <div className="flex justify-center">
+            <div className="flex justify-center scale-75">
               <SocialButton />
-            </div>
-          </div>
-
-          {/* Informações Adicionais */}
-          <div className="pt-6 border-t border-gray-200">
-            <div className="space-y-3">
-              <Link 
-                to="/sobre" 
-                onClick={onClose}
-                className="block text-gray-600 hover:text-orange-500 transition-colors font-medium"
-              >
-                Sobre nós
-              </Link>
-              <Link 
-                to="/contato" 
-                onClick={onClose}
-                className="block text-gray-600 hover:text-orange-500 transition-colors font-medium"
-              >
-                Contato
-              </Link>
-              <Link 
-                to="/suporte" 
-                onClick={onClose}
-                className="block text-gray-600 hover:text-orange-500 transition-colors font-medium"
-              >
-                Suporte
-              </Link>
             </div>
           </div>
         </div>
 
         {/* Footer do Menu */}
-        <div className="p-6 bg-gray-50 border-t border-gray-200 flex-shrink-0">
-          <p className="text-center text-sm text-gray-500">
+        <div className="p-4 bg-gray-50 border-t border-gray-200 flex-shrink-0">
+          <p className="text-center text-xs text-gray-500">
             © 2025 DRIP - Mais que roupa, é estilo.
           </p>
         </div>
@@ -324,4 +313,3 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 };
 
 export default MobileMenu;
-
