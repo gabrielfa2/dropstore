@@ -150,7 +150,7 @@ const StyledWrapper = styled.div`
 
   .discord {
     margin-top: -.9em;
-    margin-left: 2em;
+    margin-left: 1.5em;
     fill: #8c9eff;
   }
 
