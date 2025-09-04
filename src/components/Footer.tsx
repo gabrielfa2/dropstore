@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <h4 className="text-3xl font-black mb-4 font-display">DRIP</h4>
             <p className="text-gray-400 mb-4">
-              Mais que roupa, é estilo.
+              Mais que roupa, é mensagem.
             </p>
             <div className="flex gap-4">
               <Instagram className="w-6 h-6 text-gray-400 hover:text-pink-400 cursor-pointer transition-colors" />
