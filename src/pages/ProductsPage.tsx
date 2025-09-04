@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Filter, Grid, List, Search, ChevronDown, Star, Heart, ShoppingBag } from 'lucide-react';
+import { Filter, Grid, List, ChevronDown, Star, Heart, ShoppingBag } from 'lucide-react';
 
 // Dados dos produtos expandidos
 const allProducts = [
@@ -126,7 +126,7 @@ const allProducts = [
 ];
 
 const ProductsPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  // O estado searchTerm foi removido
   const [selectedCategory, setSelectedCategory] = useState('todos');
   const [sortBy, setSortBy] = useState('relevancia');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -152,15 +152,14 @@ const ProductsPage = () => {
     { value: 'lancamentos', label: 'Lançamentos' }
   ];
 
-  // Filtrar e ordenar produtos
+  // Lógica de filtro atualizada sem o termo de busca
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = allProducts.filter(product => {
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesCategory = selectedCategory === 'todos' || product.category === selectedCategory;
-      return matchesSearch && matchesCategory;
+      return matchesCategory;
     });
 
-    // Ordenação
+    // Lógica de ordenação (sem alteração)
     switch (sortBy) {
       case 'menor-preco':
         filtered.sort((a, b) => a.price - b.price);
@@ -184,7 +183,7 @@ const ProductsPage = () => {
     }
 
     return filtered;
-  }, [searchTerm, selectedCategory, sortBy]);
+  }, [selectedCategory, sortBy]);
 
   const ProductCard = ({ product }) => (
     <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -304,31 +303,17 @@ const ProductsPage = () => {
           </p>
         </div>
 
-        {/* Barra de Busca e Filtros */}
-        <div className="bg-white rounded-2xl p-6 shadow-lg mb-8">
-          <div className="flex flex-col lg:flex-row gap-4 items-center">
+        {/* --- BARRA DE FILTROS ATUALIZADA --- */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
             
-            {/* Busca */}
-            <div className="relative flex-1 w-full lg:w-auto">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Buscar produtos..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-              />
-            </div>
-
-            {/* Filtros */}
-            <div className="flex flex-wrap gap-4 items-center">
-              
+            {/* Filtros e Ordenação (agrupados à esquerda) */}
+            <div className="flex flex-wrap gap-4">
               {/* Categoria */}
               <div className="relative">
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="appearance-none bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
+                  className="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
                 >
                   {categories.map(category => (
                     <option key={category.value} value={category.value}>
@@ -344,7 +329,7 @@ const ProductsPage = () => {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
+                  className="appearance-none bg-white border border-gray-300 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 cursor-pointer"
                 >
                   {sortOptions.map(option => (
                     <option key={option.value} value={option.value}>
@@ -354,25 +339,25 @@ const ProductsPage = () => {
                 </select>
                 <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 pointer-events-none" />
               </div>
-
-              {/* Toggle de Visualização */}
-              <div className="flex bg-gray-100 rounded-xl p-1">
-                <button
-                  onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-white shadow-sm' : 'hover:bg-gray-200'}`}
-                >
-                  <Grid className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-white shadow-sm' : 'hover:bg-gray-200'}`}
-                >
-                  <List className="w-5 h-5" />
-                </button>
-              </div>
             </div>
-          </div>
+
+            {/* Toggle de Visualização (à direita) */}
+            <div className="hidden md:flex bg-gray-100 rounded-xl p-1">
+              <button
+                onClick={() => setViewMode('grid')}
+                className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-white shadow-sm' : 'hover:bg-gray-200'}`}
+              >
+                <Grid className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => setViewMode('list')}
+                className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-white shadow-sm' : 'hover:bg-gray-200'}`}
+              >
+                <List className="w-5 h-5" />
+              </button>
+            </div>
         </div>
+
 
         {/* Resultados */}
         <div className="flex justify-between items-center mb-6">
@@ -413,7 +398,6 @@ const ProductsPage = () => {
             </p>
             <button
               onClick={() => {
-                setSearchTerm('');
                 setSelectedCategory('todos');
                 setSortBy('relevancia');
               }}
