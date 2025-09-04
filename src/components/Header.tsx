@@ -30,10 +30,11 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
   
   useEffect(() => {
     const handleScroll = () => {
+      // A lógica para definir se o scroll ocorreu permanece a mesma
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true }); // Otimização: { passive: true }
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -49,9 +50,16 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
   };
 
   return (
-    <header className="w-full transition-all duration-300 ease-in-out">
-      {/* Banner de Urgência (agora some em todas as telas) */}
-      <div className={`bg-red-600 text-white py-2 px-4 text-center font-bold transition-all duration-300 ease-in-out overflow-hidden ${isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-12 opacity-100'}`}>
+    // Adicionamos 'will-change-transform' para o navegador otimizar a animação
+    <header className="w-full transition-all duration-300 ease-in-out will-change-transform">
+      {/* Banner de Urgência OTIMIZADO */}
+      <div 
+        className={`
+          bg-red-600 text-white py-2 px-4 text-center font-bold 
+          transition-all duration-300 ease-in-out
+          ${isScrolled ? '-translate-y-full opacity-0' : 'translate-y-0 opacity-100'}
+        `}
+      >
         <div className="flex items-center justify-center gap-2 text-sm md:text-base">
           <span>🔥</span>
           <span>Frete grátis termina em</span>
@@ -63,15 +71,16 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
         </div>
       </div>
 
-      {/* Wrapper do header com classes unificadas para todas as telas */}
-      <div className={`
-        transition-all duration-300 ease-in-out
-        w-full z-20 
-        ${isScrolled 
-          ? 'fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white/80 backdrop-blur-sm shadow-xl rounded-xl p-3' 
-          : 'relative shadow-sm p-4'
-        }
-      `}>
+      {/* Wrapper do header OTIMIZADO */}
+      <div 
+        className={`
+          w-full z-20 transition-all duration-300 ease-in-out
+          ${isScrolled 
+            ? 'fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white/80 backdrop-blur-sm shadow-xl rounded-xl p-3' 
+            : 'relative shadow-sm p-4'
+          }
+        `}
+      >
         <div className="flex items-center justify-between">
           
           <div className="flex items-center justify-start w-1/3 space-x-2">
