@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LimitedOffers = () => {
   // Estrutura de dados atualizada para incluir o preço original
@@ -88,9 +89,9 @@ const LimitedOffers = () => {
 
         {/* CTA Final */}
         <div className="text-center mt-12">
-          <button className="bg-black text-white px-12 py-4 rounded-full text-xl font-bold hover:bg-gray-800 transform hover:scale-105 transition-all duration-300">
+          <Link to="/produtos" className="inline-block bg-black text-white px-12 py-4 rounded-full text-xl font-bold hover:bg-gray-800 transform hover:scale-105 transition-all duration-300">
             Ver todos os produtos
-          </button>
+          </Link>
         </div>
       </div>
     </section>

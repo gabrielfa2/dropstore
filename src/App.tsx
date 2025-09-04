@@ -1,14 +1,9 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import BrandCarousel from './components/BrandCarousel';
-import FeaturesSection from './components/FeaturesSection';
-import CollectionsSection from './components/CollectionsSection';
-import ProductShowcase from './components/ProductShowcase';
-import LimitedOffers from './components/LimitedOffers';
-import ImageSliderSection from './components/ImageSliderSection'; // Importe o novo componente
-import SocialProof from './components/SocialProof';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import ProductsPage from './pages/ProductsPage';
 
 function App() {
   return (
@@ -23,14 +18,12 @@ function App() {
         "
       />
       <Header />
-      <HeroSection />
-      <ProductShowcase />
-      <LimitedOffers />
-      <FeaturesSection />
-      <CollectionsSection/>
-      <ImageSliderSection /> {/* Adicione o novo componente aqui */}
-      <BrandCarousel />
-      <SocialProof />
+      
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/produtos" element={<ProductsPage />} />
+      </Routes>
+      
       <Footer />
     </div>
   );
