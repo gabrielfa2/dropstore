@@ -49,10 +49,10 @@ const ProductShowcase = () => {
   ];
 
   return (
-    <section className="pt-7 pb-16">
+    <section className="pt-6 pb-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className="pb-5 text-center mb-7">
+        <div className="text-center mb-7">
           <h3 className="text-4xl font-black text-black mb-4 font-display">
             Quem usa DRIP, <span className="text-orange-500">usa MODA!</span>
           </h3>
@@ -61,6 +61,7 @@ const ProductShowcase = () => {
           </p>
         </div>
 
+        
         {/* Carousel Container */}
         <div className="relative w-full overflow-hidden">
           {/* Fade effect nas laterais */}
