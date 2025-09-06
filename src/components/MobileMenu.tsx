@@ -197,7 +197,7 @@ const StyledWrapper = styled.div`
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const categories = [
-    { name: 'Camiseta', href: '/produtos?categoria=camisetas'},
+    { name: 'Camisa', href: '/produtos?categoria=camisetas'},
     { name: 'Calça', href: '/produtos?categoria=calcas'},
     { name: 'Short', href: '/produtos?categoria=shorts'},
     { name: 'Tênis', href: '/produtos?categoria=tenis'},
