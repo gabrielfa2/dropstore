@@ -56,7 +56,7 @@ const LimitedOffers = () => {
             <Link 
               to={`/produto/${product.id}`} 
               key={product.id} 
-              className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-400/20 flex-shrink-0 w-3/4 sm:w-[45%] md:w-auto aspect-[3/4]"
+              className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-400/20 flex-shrink-0 w-3/4 sm:w-[45%] md:w-auto aspect-[3/4]"
             >
               <img
                 src={product.imageUrl}
