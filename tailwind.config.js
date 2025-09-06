@@ -8,7 +8,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['"Sedgwick Ave Display"', 'cursive'],
+        // Corrigido para corresponder ao @font-face
+        display: ['Sedgwick Ave Display', 'cursive'], 
+        // Corrigido para 'Libertinus' e mantendo a chave 'price'
+        price: ['Libertinus', 'serif'], 
       },
       colors: {
         'cream': '#fcf0e4',
@@ -16,7 +19,6 @@ export default {
       },
       backgroundImage: {
         'glow': 'radial-gradient(ellipse at bottom, #fb923c 0%, transparent 60%)',
-        // ATUALIZADO: Referenciando o arquivo SVG externo
         'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.SVG")`,
       },
       animation: {
