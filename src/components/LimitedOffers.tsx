@@ -85,16 +85,6 @@ const LimitedOffers = () => {
             </Link>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <Link
-            to="/produtos"
-            className="inline-flex items-center gap-2 text-yellow-400 font-semibold text-lg hover:text-yellow-300 transition-colors group"
-          >
-            Ver todas as ofertas
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-        </div>
       </div>
     </div>
   );
