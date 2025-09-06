@@ -176,6 +176,13 @@ const relatedProducts = [
   }
 ];
 
+const getRandomViewers = () => {
+  const min = 102;
+  const max = 137;
+  // Retorna um inteiro aleatório entre 102 e 137 (inclusive)
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 const ProductDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -228,8 +235,7 @@ const ProductDetailPage = () => {
   const getDiscountPercentage = () => {
     if (!product.originalPrice) return 0;
     return Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
-  };
-
+    
   // Componente para renderizar estrelas de avaliação
   const StarRating = ({ rating, size = 'w-4 h-4' }: { rating: number; size?: string }) => {
     return (
@@ -813,3 +819,4 @@ const ProductDetailPage = () => {
 };
 
 export default ProductDetailPage;
+
