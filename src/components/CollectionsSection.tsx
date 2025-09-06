@@ -102,7 +102,7 @@ const CollectionCard = ({ collection }) => {
             <TypeAnimation
                 sequence={[collection.name]} 
                 /* Velocidade mais lenta */
-                speed={200}
+                speed={400}
                 repeat={0}          
                 cursor={false}      
               />
