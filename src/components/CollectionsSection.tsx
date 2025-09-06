@@ -16,8 +16,11 @@ const collections = [
     name: 'Polo',
     href: '/colecao/polo',
     imageSrc: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/158184-camisa-polo-adulto-head-play-preto1.webp',
-    gridClasses: 'col-span-1 md:col-span-2',
-    heightClasses: 'h-56 md:h-80',
+    /* --- CORREÇÃO APLICADA AQUI (LINHA 19) --- */
+    /* Alterado de col-span-1 para col-span-2 (para ficar full-width no mobile) */
+    gridClasses: 'col-span-2 md:col-span-2',
+    /* Alterado de h-56 para h-64 (para ter a mesma altura do card Oversized) */
+    heightClasses: 'h-64 md:h-80',
   },
   {
     id: 3,
@@ -41,9 +44,8 @@ const collections = [
     href: '/colecao/tenis',
     imageSrc: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     gridClasses: 'col-span-1 md:col-span-2',
-    /* --- CORREÇÃO APLICADA AQUI (LINHA 42) --- */
-    /* Alterado de h-32 para h-56, para igualar a altura dos outros cards de 1 coluna (como Polo e Shorts) no mobile */
-    heightClasses: 'h-56 md:h-80',
+    /* Esta foi a correção anterior, que está mantida: */
+    heightClasses: 'h-56 md:h-80', 
   },
 ];
 
@@ -91,8 +93,7 @@ const CollectionCard = ({ collection }) => {
       {/* Overlay para escurecer */}
       <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-50" />
       
-      {/* --- MUDANÇA DE POSIÇÃO (LINHA 103) --- */}
-      {/* Trocado 'items-center justify-center' por 'items-end justify-start p-6' */}
+      {/* Texto na posição inferior esquerda */ }
       <div className="relative h-full flex items-end justify-start p-6">
         {isAnimated && (
           <h4 
@@ -100,11 +101,8 @@ const CollectionCard = ({ collection }) => {
           >
             <TypeAnimation
                 sequence={[collection.name]} 
-                
-                /* --- MUDANÇA DE VELOCIDADE (LINHA 113) --- */
-                /* Valor MAIOR = Mais LENTO. Trocado para 85. */
-                speed={200}
-                
+                /* Velocidade mais lenta */
+                speed={85}
                 repeat={0}          
                 cursor={false}      
               />
