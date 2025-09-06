@@ -78,7 +78,7 @@ const LimitedOffers = () => {
                     {/* ADICIONADO 'font-price' ABAIXO */}
                     <p className="text-xl font-semibold text-orange-400 font-price">{product.price}</p>
                     {/* ADICIONADO 'font-price' ABAIXO */}
-                    <p className="text-sm text-zinc-300 line-through font-price">{product.originalPrice}</p>
+                    <p className="text-sm text-zinc-300 line-through font-inter">{product.originalPrice}</p>
                   </div>
                 </div>
               </div>
