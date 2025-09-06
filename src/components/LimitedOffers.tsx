@@ -69,6 +69,15 @@ const LimitedOffers = () => {
                   <Flame className="w-4 h-4" />
                   <span>ÚLTIMAS UNIDADES</span>
                 </div>
+
+                {/* Conteúdo de Texto */}
+                <div>
+                  <h3 className="text-lg font-bold text-white uppercase">{product.name}</h3>
+                  <div className="flex items-baseline gap-2 mt-1">
+                    <p className="text-xl font-semibold text-yellow-400">{product.price}</p>
+                    <p className="text-sm text-zinc-300 line-through">{product.originalPrice}</p>
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
