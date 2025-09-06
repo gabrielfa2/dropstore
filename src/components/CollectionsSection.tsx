@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const collections = [
-  // ... (seus dados de coleções continuam os mesmos)
   {
     id: 1,
     name: 'Oversized',
-    href: '#oversized',
+    href: '/colecao/oversized',
     imageSrc: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     gridClasses: 'col-span-2 md:col-span-1',
     heightClasses: 'h-64 md:h-80',
@@ -13,25 +12,33 @@ const collections = [
   {
     id: 2,
     name: 'Polo',
-    href: '#polo',
+    href: '/colecao/polo',
     imageSrc: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/158184-camisa-polo-adulto-head-play-preto1.webp',
     gridClasses: 'col-span-1 md:col-span-2',
     heightClasses: 'h-56 md:h-80',
   },
   {
     id: 3,
+    name: 'Calças',
+    href: '/colecao/calcas',
+    imageSrc: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    gridClasses: 'col-span-2 md:col-span-1',
+    heightClasses: 'h-64 md:h-80',
+  },
+  {
+    id: 4,
     name: 'Shorts',
-    href: '#shorts',
+    href: '/colecao/shorts',
     imageSrc: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     gridClasses: 'col-span-1 md:col-span-2',
     heightClasses: 'h-56 md:h-80',
   },
   {
-    id: 4,
+    id: 5,
     name: 'Tênis',
-    href: '#tenis',
+    href: '/colecao/tenis',
     imageSrc: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    gridClasses: 'col-span-2 md:col-span-1',
+    gridClasses: 'col-span-1 md:col-span-2',
     heightClasses: 'h-32 md:h-80',
   },
 ];

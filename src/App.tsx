@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
+import CollectionPage from './pages/CollectionPage';
 import Loader from './components/Loader';
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/produtos" element={<ProductsPage />} />
         <Route path="/produto/:id" element={<ProductDetailPage />} />
+        <Route path="/colecao/:collection" element={<CollectionPage />} />
       </Routes>
       
       <Footer />
