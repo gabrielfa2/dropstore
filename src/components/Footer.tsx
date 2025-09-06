@@ -69,13 +69,6 @@ const Footer = () => {
             <a href="#" className="hover:text-white transition-colors">Trocas e Devoluções</a>
           </div>
         </div>
-
-        {/* Final Message */}
-        <div className="text-center mt-8 pt-8 border-t border-gray-800">
-          <p className="text-2xl font-bold text-transparent bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text font-display">
-            DRIP — mais que roupa, é estilo. 🔥
-          </p>
-        </div>
       </div>
     </footer>
   );
