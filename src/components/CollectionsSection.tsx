@@ -100,7 +100,7 @@ const CollectionCard = ({ collection }) => {
             {/* O texto estático foi substituído pelo componente de animação */}
             <TypeAnimation
                 sequence={[collection.name]} // Digita o nome da coleção
-                speed={1}          // Velocidade de digitação
+                speed={100}          // Velocidade de digitação
                 repeat={0}          // Roda a animação apenas uma vez
                 cursor={false}      // Esconde o cursor piscante após terminar
               />
