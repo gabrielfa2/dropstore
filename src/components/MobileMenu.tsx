@@ -11,7 +11,7 @@ interface MobileMenuProps {
 // O componente GradientButton permanece o mesmo
 const GradientButton = () => {
   return (
-    <div className="relative inline-flex items-center justify-center gap-1 group w-full">
+    <div className="relative inline-flex items-center justify-center gap-4 group w-full">
       <div className="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200" />
       <Link
         to="/produtos"
