@@ -167,7 +167,7 @@ const productsByCategory: Record<string, Product[]> = {
       id: 12,
       brand: 'DRIP',
       name: 'Shorts Jeans Destroyed',
-      price: 99.90,
+      price: 179.90,
       originalPrice: 149.90,
       image: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=500',
       category: 'shorts',
