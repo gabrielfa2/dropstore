@@ -16,7 +16,7 @@ const products = [
     name: 'Tênis Urban Runner',
     price: 'R$ 299,90',
     originalPrice: 'R$ 399,90',
-    imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    imageUrl: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     stock: 3,
   },
   {
@@ -24,7 +24,7 @@ const products = [
     name: 'Calça Cargo Stride',
     price: 'R$ 159,90',
     originalPrice: 'R$ 219,90',
-    imageUrl: 'https://images.unsplash.com/photo-1604176424472-17cd6a210170?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    imageUrl: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     stock: 3,
   },
   {
@@ -32,7 +32,7 @@ const products = [
     name: 'Camiseta Básica Premium',
     price: 'R$ 79,90',
     originalPrice: 'R$ 119,90',
-    imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    imageUrl: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp',
     stock: 3,
   },
 ];
