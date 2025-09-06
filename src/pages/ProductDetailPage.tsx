@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { Eye } from 'lucide-react';     // 2. Importamos um ícone (que já está no projeto)
 
 import { useParams, Link, useNavigate } from 'react-router-dom';
