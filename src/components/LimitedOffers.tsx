@@ -52,7 +52,7 @@ const LimitedOffers = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 md:gap-x-8">
           {products.map((product) => (
-            <div key={product.id} className="group relative text-left cursor-pointer">
+            <Link key={product.id} to={`/produto/${product.id}`} className="group relative text-left cursor-pointer">
               <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75">
                 <img 
                   src={product.image} 
@@ -77,7 +77,7 @@ const LimitedOffers = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

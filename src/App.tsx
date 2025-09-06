@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import Loader from './components/Loader';
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/produtos" element={<ProductsPage />} />
+        <Route path="/produto/:id" element={<ProductDetailPage />} />
       </Routes>
       
       <Footer />

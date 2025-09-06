@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Filter, Grid, List, ChevronDown } from 'lucide-react';
 
 // Dados dos produtos expandidos
@@ -187,7 +188,7 @@ const ProductsPage = () => {
   }, [categoryFromUrl]);
 
   const ProductCard = ({ product }) => (
-    <div className="group relative text-left cursor-pointer">
+    <Link to={`/produto/${product.id}`} className="group relative text-left cursor-pointer">
       <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75 transition-opacity duration-300">
         <img 
           src={product.image} 
@@ -212,7 +213,7 @@ const ProductsPage = () => {
           </p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 
   return (
