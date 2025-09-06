@@ -8,31 +8,15 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['"Sedgwick Ave Display"', 'cursive'],
-        price: ['"Libertinus Serif Display"', 'serif'], // Adicione esta linha
-      },
-      colors: {
-        'cream': '#fcf0e4',
-        'card-bg': '#f9f5f0',
+        display: ['Sedgwick Ave Display', 'cursive'],
+        serif: ['Libertinus', 'serif'],
       },
       backgroundImage: {
-        'glow': 'radial-gradient(ellipse at bottom, #fb923c 0%, transparent 60%)',
-        // ATUALIZADO: Referenciando o arquivo SVG externo
-        'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.SVG")`,
+        'noise': "url('/noise.JPG')",
+        'glow': 'radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%)',
       },
-      animation: {
-        scroll: 'scroll 20s linear infinite',
-        'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
-      },
-      keyframes: {
-        scroll: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        'pulse-glow': {
-          '0%, 100%': { opacity: '0.1', transform: 'scale(0.8)' },
-          '50%': { opacity: '0.3', transform: 'scale(1.2)' },
-        },
+      colors: {
+        cream: '#F5F5DC',
       },
     },
   },
