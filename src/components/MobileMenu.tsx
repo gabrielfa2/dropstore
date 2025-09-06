@@ -243,7 +243,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           - flex e flex-col organizam os itens internos verticalmente
           - justify-between distribui o espaço entre os elementos filhos
         */}
-        <div className="flex-1 flex flex-col justify-between p-4">
+        <div className="flex-1 flex flex-col justify-start p-4">
           
           {/* Seção Superior: Categorias e Links */}
           <div>
