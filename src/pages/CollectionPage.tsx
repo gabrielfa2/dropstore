@@ -333,16 +333,15 @@ const CollectionPage = () => {
           </div>
         )}
       </div>
-      <div className="mt-4">
-        <p className="text-xs md:text-sm text-gray-500 uppercase tracking-wider">{product.brand}</p>
+      <div className="mt-1">
         <h4 className="text-md md:text-lg font-bold text-black truncate font-price">
           {product.name}
         </h4>
-        <div className="mt-0 flex items-baseline gap-2">
-          <p className="text-lg md:text-xl font-price font-bold text-black">
+        <div className="-mt-1 flex items-baseline gap-2">
+          <p className="text-2lg md:text-xl font-price font-bold text-black">
             R$ {product.price.toFixed(2).replace('.', ',')}
           </p>
-          <p className="text-sm md:text-md font-medium text-gray-400 line-through font-price">
+          <p className="text-sm md:text-md font-medium text-gray-400 line-through">
             R$ {product.originalPrice.toFixed(2).replace('.', ',')}
           </p>
         </div>
