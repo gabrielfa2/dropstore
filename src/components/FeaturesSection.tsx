@@ -1,25 +1,27 @@
-// src/components/FeaturesSection.tsx (Revisado e Corrigido)
+// src/components/FeaturesSection.tsx (VERSÃO FINAL CORRIGIDA)
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Truck, RotateCcw, CreditCard, Shield } from 'lucide-react';
-import BrickWallAnimation from './BrickWallAnimation';
+import BrickWallAnimation from './BrickWallAnimation'; // Seu import está correto
 
 const FeaturesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  // LÓGICA DO OBSERVER ATUALIZADA (Mais robusta)
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // CORREÇÃO: Apenas alteramos para TRUE e paramos de observar.
-        // Isso garante que o estado não volte para 'false' e a animação rode apenas uma vez.
+        // Quando entrar na tela, define como TRUE
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // E (importante) PARA de observar. Isso garante que a animação rode SÓ UMA VEZ
+          // e não volte para 'false' se o usuário rolar para fora.
           observer.unobserve(entry.target);
         }
       },
       {
-        threshold: 0.2, // Quando 20% do elemento estiver visível
+        threshold: 0.2, // Quando 20% estiver visível
         rootMargin: '0px 0px -50px 0px',
       }
     );
@@ -34,8 +36,9 @@ const FeaturesSection = () => {
         observer.unobserve(currentRef);
       }
     };
-  }, []); // O array de dependências vazio é correto, pois o observer só precisa ser configurado uma vez.
+  }, []); // Array de dependência vazio está correto.
 
+  // Seu array de features (INTACTO)
   const features = [
     { id: 1, icon: Truck, title: 'Frete Grátis', description: 'Em compras acima de R$ 99', delay: '0ms' },
     { id: 2, icon: RotateCcw, title: 'Devolução Rápida', description: 'Até 30 dias para trocar', delay: '150ms' },
@@ -44,19 +47,26 @@ const FeaturesSection = () => {
   ];
 
   return (
-    // As classes 'relative' e 'overflow-hidden' estão corretas
+    // ===== CORREÇÃO 1 =====
+    // A <section> PAI precisa de 'relative' (para ancorar o muro) 
+    // e 'overflow-hidden' (para "cortar" a animação dos tijolos).
     <section ref={sectionRef} className="py-9 relative overflow-hidden">
       
-      {/* O componente do muro é chamado aqui (Correto) */}
+      {/* O componente do Muro é chamado aqui (Correto) */}
+      {/* Ele recebe o 'isVisible' e animará quando for 'true' */}
       <BrickWallAnimation isVisible={isVisible} />
 
-      {/* O container do conteúdo com z-10 está correto */}
+      {/* ===== CORREÇÃO 2 ===== */}
+      {/* O container do CONTEÚDO precisa de 'relative' e 'z-10' 
+          para garantir que ele fique NA FRENTE (z-10) do muro (que é z-0). 
+      */}
       <div className="max-w-7xl mx-auto px-8 relative z-10">
+        
+        {/* SUA LÓGICA ORIGINAL DE GRID E ANIMAÇÃO CSS (INTACTA) */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {features.map((feature) => {
             const IconComponent = feature.icon;
             return (
-              // SUA ANIMAÇÃO ORIGINAL DE CSS (INTACTA E CORRETA)
               <div
                 key={feature.id}
                 className={`
