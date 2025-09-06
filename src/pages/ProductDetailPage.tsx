@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Eye } from 'lucide-react';     // 2. Importamos um ícone (que já está no projeto)
+// src/pages/ProductDetailPage.tsx (Código completo com correção de sintaxe e nova funcionalidade)
 
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { 
-  Star, 
-  Heart, 
-  Share2, 
-  Truck, 
-  RotateCcw, 
-  Shield, 
-  ChevronLeft, 
+import {
+  Star,
+  Heart,
+  Share2,
+  Truck,
+  RotateCcw,
+  Shield,
+  ChevronLeft,
   ChevronRight,
   Plus,
   Minus,
@@ -19,7 +19,8 @@ import {
   ChevronDown,
   User,
   ThumbsUp,
-  MessageCircle
+  MessageCircle,
+  Eye // <-- Ícone 'Eye' agora está junto com os outros imports do lucide-react
 } from 'lucide-react';
 
 // Interface para definir a estrutura do produto
@@ -60,6 +61,21 @@ interface Review {
   size: string;
   color: string;
 }
+
+// --- LÓGICA DA NOVA FUNCIONALIDADE (Início) ---
+
+/**
+ * Função Helper para gerar o número aleatório.
+ * Definimos fora do componente para performance (evita recriação).
+ */
+const getRandomViewers = () => {
+  const min = 102;
+  const max = 137;
+  // Retorna um inteiro aleatório entre 102 e 137 (inclusive)
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+// --- LÓGICA DA NOVA FUNCIONALIDADE (Fim) ---
+
 
 // Dados mockados do produto (em produção, viriam de uma API)
 const mockProduct: Product = {
@@ -176,13 +192,6 @@ const relatedProducts = [
   }
 ];
 
-const getRandomViewers = () => {
-  const min = 102;
-  const max = 137;
-  // Retorna um inteiro aleatório entre 102 e 137 (inclusive)
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
-
 const ProductDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -198,6 +207,13 @@ const ProductDetailPage = () => {
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  // --- APLICAÇÃO DA NOVA FUNCIONALIDADE ---
+  // Inicializamos o estado usando a "inicialização preguiçosa".
+  // O React só executará getRandomViewers UMA VEZ na montagem inicial.
+  const [viewerCount] = useState(getRandomViewers);
+  // --- FIM DA APLICAÇÃO ---
+
 
   // Função para navegar entre imagens
   const nextImage = () => {
@@ -235,7 +251,8 @@ const ProductDetailPage = () => {
   const getDiscountPercentage = () => {
     if (!product.originalPrice) return 0;
     return Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
-    
+  }; // <-- CORREÇÃO: Esta chave '}' estava faltando
+
   // Componente para renderizar estrelas de avaliação
   const StarRating = ({ rating, size = 'w-4 h-4' }: { rating: number; size?: string }) => {
     return (
@@ -813,10 +830,20 @@ const ProductDetailPage = () => {
             ))}
           </div>
         </div>
+        
+        {/* ===== NOVA LINHA DE PROVA SOCIAL APLICADA AQUI ===== */}
+        {/* Adicionado após os produtos relacionados, com animação de pulso */}
+        <div className="flex items-center justify-center gap-2 mt-16 text-sm text-gray-700 animate-pulse">
+          <Eye className="w-4 h-4 text-orange-500" />
+          <span>
+            <strong className="font-bold text-black">{viewerCount}</strong> pessoas estão vendo esse produto agora
+          </span>
+        </div>
+        {/* ======================================================= */}
+
       </div>
     </div>
   );
 };
 
 export default ProductDetailPage;
-
