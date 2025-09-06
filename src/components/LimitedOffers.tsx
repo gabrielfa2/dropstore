@@ -76,7 +76,7 @@ const LimitedOffers = () => {
                   <h3 className="text-lg font-bold text-white uppercase font-price">{product.name}</h3>
                   <div className="flex items-baseline gap-2 mt-1">
                     {/* ADICIONADO 'font-price' ABAIXO */}
-                    <p className="text-xl font-semibold text-orange-300 font-price">{product.price}</p>
+                    <p className="text-xl font-semibold text-orange-500 font-price">{product.price}</p>
                     {/* ADICIONADO 'font-price' ABAIXO */}
                     <p className="text-sm text-zinc-300 line-through font-price">{product.originalPrice}</p>
                   </div>
