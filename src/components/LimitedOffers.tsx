@@ -46,7 +46,7 @@ const LimitedOffers = () => {
             Ofertas <span className="text-yellow-400">Limitadas</span>
           </h2>
           <p className="text-lg text-zinc-400 mt-2 max-w-2xl mx-auto">
-            Estoque acabando!
+            As melhores camisetas com os melhores preços, mas por tempo limitado!
           </p>
         </div>
         
