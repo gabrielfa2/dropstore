@@ -39,8 +39,7 @@ const products = [
 
 const LimitedOffers = () => {
   return (
-    // ADICIONADO 'font-serif' AQUI
-    <div className="bg-zinc-900 py-12 md:py-20 overflow-hidden font-serif">
+    <div className="bg-zinc-900 py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-black text-white font-display uppercase tracking-wider">
@@ -73,10 +72,13 @@ const LimitedOffers = () => {
 
                 {/* Conteúdo de Texto */}
                 <div>
-                  <h3 className="text-lg font-bold text-white uppercase">{product.name}</h3>
+                    {/* ADICIONADO 'font-price' ABAIXO */}
+                  <h3 className="text-lg font-bold text-white uppercase font-price">{product.name}</h3>
                   <div className="flex items-baseline gap-2 mt-1">
-                    <p className="text-xl font-semibold text-yellow-400">{product.price}</p>
-                    <p className="text-sm text-zinc-300 line-through">{product.originalPrice}</p>
+                    {/* ADICIONADO 'font-price' ABAIXO */}
+                    <p className="text-xl font-semibold text-yellow-400 font-price">{product.price}</p>
+                    {/* ADICIONADO 'font-price' ABAIXO */}
+                    <p className="text-sm text-zinc-300 line-through font-price">{product.originalPrice}</p>
                   </div>
                 </div>
               </div>
