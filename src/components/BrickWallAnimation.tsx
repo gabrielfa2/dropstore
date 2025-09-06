@@ -30,7 +30,7 @@ const BrickWallAnimation: React.FC<BrickWallProps> = ({ isVisible }) => {
       delay: 0.3 // Um pequeno atraso geral para a animação não ser instantânea ao scroll
     });
 
-  }, [isVisible]); // Dependência: Roda este efeito quando 'isVisible' mudar
+  }, [isVisible]); // Dependência: Roda este efeito quando 'isVisible' muda
 
   // Cria um array de 80 elementos (8 linhas x 10 colunas) para renderizar os tijolos
   const bricks = Array.from({ length: 80 }, (_, i) => i);
