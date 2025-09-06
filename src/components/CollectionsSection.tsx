@@ -91,7 +91,7 @@ const CollectionCard = ({ collection }) => {
       <div className="noise-overlay absolute inset-0 group-hover:opacity-0 transition-opacity" />
       
       {/* Overlay para escurecer */}
-      <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-50" />
+      <div className="absolute inset-0 bg-black bg-opacity-30 transition-opacity duration-300 group-hover:bg-opacity-50" />
       
       {/* Texto na posição inferior esquerda */ }
       <div className="relative h-full flex items-end justify-start p-6">
