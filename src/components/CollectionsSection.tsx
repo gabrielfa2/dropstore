@@ -41,7 +41,9 @@ const collections = [
     href: '/colecao/tenis',
     imageSrc: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     gridClasses: 'col-span-1 md:col-span-2',
-    heightClasses: 'h-32 md:h-80',
+    /* --- CORREÇÃO APLICADA AQUI (LINHA 42) --- */
+    /* Alterado de h-32 para h-56, para igualar a altura dos outros cards de 1 coluna (como Polo e Shorts) no mobile */
+    heightClasses: 'h-56 md:h-80',
   },
 ];
 
@@ -90,21 +92,21 @@ const CollectionCard = ({ collection }) => {
       <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-50" />
       
       {/* --- MUDANÇA DE POSIÇÃO (LINHA 103) --- */}
-      {/* Trocado 'items-center justify-center' por 'items-end justify-start p-6' */}
+      {/* Trocado 'items-center justify-center' por 'items-end justify-start p-6' */}
       <div className="relative h-full flex items-end justify-start p-6">
         {isAnimated && (
           <h4 
             className="text-white text-3xl font-black uppercase tracking-widest group-hover:spray-animation font-display"
           >
             <TypeAnimation
-                sequence={[collection.name]} 
-                
-                /* --- MUDANÇA DE VELOCIDADE (LINHA 113) --- */
-                /* Valor MAIOR = Mais LENTO. Trocado para 85. */
-                speed={200}
-                
-                repeat={0}          
-                cursor={false}      
+                sequence={[collection.name]} 
+                
+                /* --- MUDANÇA DE VELOCIDADE (LINHA 113) --- */
+                /* Valor MAIOR = Mais LENTO. Trocado para 85. */
+                speed={85}
+                
+                repeat={0}          
+                cursor={false}      
               />
           </h4>
         )}
