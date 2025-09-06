@@ -89,21 +89,23 @@ const CollectionCard = ({ collection }) => {
       {/* Overlay para escurecer */}
       <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-50" />
       
-      {/* Texto com animação */}
-      <div className="relative h-full flex items-center justify-center">
+      {/* --- MUDANÇA DE POSIÇÃO (LINHA 103) --- */}
+      {/* Trocado 'items-center justify-center' por 'items-end justify-start p-6' */}
+      <div className="relative h-full flex items-end justify-start p-6">
         {isAnimated && (
-          /* 2. CÓDIGO MODIFICADO ABAIXO: */
           <h4 
-            /* Removemos a 'key' pois o TypeAnimation controla a própria renderização */
             className="text-white text-3xl font-black uppercase tracking-widest group-hover:spray-animation font-display"
           >
-            {/* O texto estático foi substituído pelo componente de animação */}
             <TypeAnimation
-                sequence={[collection.name]} // Digita o nome da coleção
-                speed={100}          // Velocidade de digitação
-                repeat={0}          // Roda a animação apenas uma vez
-                cursor={false}      // Esconde o cursor piscante após terminar
-              />
+                sequence={[collection.name]} 
+                
+                /* --- MUDANÇA DE VELOCIDADE (LINHA 113) --- */
+                /* Valor MAIOR = Mais LENTO. Trocado para 85. */
+                speed={85}
+                
+                repeat={0}          
+                cursor={false}      
+              />
           </h4>
         )}
       </div>
