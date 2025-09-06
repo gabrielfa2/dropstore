@@ -1,8 +1,9 @@
-// src/components/BrickWallAnimation.tsx (Revisado e Corrigido)
+// src/components/BrickWallAnimation.tsx (Sintaxe Corrigida)
 
-import React, 'useEffect'
-import { gsap } from 'gsap'
+import React, { useEffect } from 'react'; // <-- ESTA LINHA FOI CORRIGIDA
+import { gsap } from 'gsap';
 
+// Este componente recebe o 'isVisible' da sua lógica IntersectionObserver
 interface BrickWallProps {
   isVisible: boolean;
 }
@@ -25,18 +26,14 @@ const BrickWallAnimation: React.FC<BrickWallProps> = ({ isVisible }) => {
       },
       delay: 0.2,
     });
-  }, [isVisible])
+  }, [isVisible]);
 
   const bricks = Array.from({ length: 80 }, (_, i) => i); // 8 linhas x 10 colunas
 
   return (
-    // CONTAINER DO MURO (INTACTO)
-    // A chave é 'absolute inset-0', que o estica para cobrir o pai ('relative')
+    // CONTAINER DO MURO
     <div className="absolute inset-0 z-0 opacity-80 md:hidden">
-      {/* CORREÇÃO: 'grid-rows-8' define explicitamente 8 linhas.
-        Isso força a grade a se dividir verticalmente dentro do espaço disponível,
-        resolvendo o problema de altura.
-      */}
+      {/* O grid-rows-8 força a grade a ter 8 linhas na altura total */}
       <div className="grid h-full grid-cols-10 grid-rows-8">
         {bricks.map((index) => (
           <div
@@ -46,7 +43,7 @@ const BrickWallAnimation: React.FC<BrickWallProps> = ({ isVisible }) => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BrickWallAnimation
+export default BrickWallAnimation;
