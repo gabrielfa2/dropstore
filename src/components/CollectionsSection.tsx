@@ -101,7 +101,7 @@ const CollectionCard = ({ collection }) => {
                 
                 /* --- MUDANÇA DE VELOCIDADE (LINHA 113) --- */
                 /* Valor MAIOR = Mais LENTO. Trocado para 85. */
-                speed={85}
+                speed={200}
                 
                 repeat={0}          
                 cursor={false}      
