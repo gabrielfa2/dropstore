@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Flame } from 'lucide-react';
 
-// Dados de exemplo para os produtos.
+// Dados de exemplo para os produtos, agora com a propriedade 'stock'.
 const products = [
   {
     id: 1,
@@ -9,6 +9,7 @@ const products = [
     price: 'R$ 179,90',
     originalPrice: 'R$ 249,90',
     imageUrl: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    stock: 3,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const products = [
     price: 'R$ 299,90',
     originalPrice: 'R$ 399,90',
     imageUrl: 'https://images.unsplash.com/photo-1542291026-7eec264c27ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    stock: 3,
   },
   {
     id: 3,
@@ -23,6 +25,7 @@ const products = [
     price: 'R$ 159,90',
     originalPrice: 'R$ 219,90',
     imageUrl: 'https://images.unsplash.com/photo-1604176424472-17cd6a210170?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    stock: 3,
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const products = [
     price: 'R$ 79,90',
     originalPrice: 'R$ 119,90',
     imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    stock: 3,
   },
 ];
 
@@ -60,10 +64,22 @@ const LimitedOffers = () => {
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 flex flex-col justify-end">
-                <h3 className="text-lg font-bold text-white uppercase">{product.name}</h3>
-                <div className="flex items-baseline gap-2 mt-1">
-                  <p className="text-xl font-semibold text-yellow-400">{product.price}</p>
-                  <p className="text-sm text-zinc-300 line-through">{product.originalPrice}</p>
+                {/* Selo de Urgência */}
+                <div className="absolute top-3 right-3 bg-red-600/95 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 animate-pulse shadow-md">
+                  <Flame className="w-4 h-4" />
+                  <span>ÚLTIMAS UNIDADES</span>
+                </div>
+
+                {/* Conteúdo de Texto */}
+                <div>
+                  <h3 className="text-lg font-bold text-white uppercase">{product.name}</h3>
+                  <div className="flex items-baseline gap-2 mt-1">
+                    <p className="text-xl font-semibold text-yellow-400">{product.price}</p>
+                    <p className="text-sm text-zinc-300 line-through">{product.originalPrice}</p>
+                  </div>
+                  <p className="text-sm font-semibold text-yellow-300 mt-2">
+                    Restam apenas {product.stock} unidades!
+                  </p>
                 </div>
               </div>
             </Link>
@@ -85,3 +101,4 @@ const LimitedOffers = () => {
 };
 
 export default LimitedOffers;
+
