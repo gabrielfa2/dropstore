@@ -253,15 +253,40 @@ const CollectionPage = () => {
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
   // NOVO: Efeito para ouvir o evento de scroll
+  // ... (seus outros hooks useState permanecem aqui) ...
+
+  // NOVO: Estado para controlar o indicador de scroll
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+  // NOVO: Efeito para ouvir o evento de scroll
   useEffect(() => {
+    // 1. Quando este efeito rodar (porque a 'collection' mudou),
+    // garantimos que o indicador esteja visível.
+    setShowScrollIndicator(true);
+    
+    // 2. Garantimos também que o usuário veja a página do topo.
+    window.scrollTo(0, 0);
+
+    // 3. Define o handler de scroll
     const handleScroll = () => {
       // Se o usuário rolar mais de 50px para baixo, oculta o indicador
       if (window.scrollY > 50) {
         setShowScrollIndicator(false);
-        // Remove o listener após ser ocultado para melhorar a performance
+        // Remove o listener APÓS ser ocultado (para esta sessão da página)
         window.removeEventListener('scroll', handleScroll);
       }
     };
+
+    // 4. Adiciona o listener
+    window.addEventListener('scroll', handleScroll);
+
+    // 5. Limpa o listener quando o componente desmontar OU antes de rodar o efeito novamente (quando a coleção mudar)
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [collection]); // <-- ESTA É A MUDANÇA PRINCIPAL: O efeito agora depende da 'collection'
+
+    
 
     // Adiciona o listener quando o componente montar
     window.addEventListener('scroll', handleScroll);
