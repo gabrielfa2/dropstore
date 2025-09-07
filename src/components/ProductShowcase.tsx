@@ -1,108 +1,81 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'; // ADICIONADO: useState e useEffect
+
+// (Componente interno ProductColumn permanece o mesmo)
+const ProductColumn = ({ product }: { product: any }) => (
+  <div className="bg-card-bg rounded-lg shadow-lg overflow-hidden w-72">
+    <img src={product.image} alt={product.name} className="w-full h-80 object-cover" />
+    <div className="p-4">
+      <h3 className="font-semibold text-lg">{product.name}</h3>
+      <p className="text-gray-600">{product.category}</p>
+      <p className="text-xl font-price font-bold mt-2">{product.price}</p>
+    </div>
+  </div>
+);
 
 const ProductShowcase = () => {
-  // Array de imagens facilmente editável - adicione/remova/altere conforme necessário
-  const showcaseImages = [
-    {
-      id: 1,
-      src: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/print2.webp',
-      alt: 'Look urbano masculino',
-      caption: 'Estilo que fala por você 🔥'
-    },
-    {
-      id: 2,
-      src: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/printinsta.jpg',
-      alt: 'Moda feminina jovem',
-      caption: 'Seja a tendência ✨'
-    },
-    {
-      id: 3,
-      src: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/print2.webp',
-      alt: 'Street style',
-      caption: 'Autenticidade em cada peça'
-    },
-    {
-      id: 4,
-      src: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/printinsta.jpg',
-      alt: 'Look casual chic',
-      caption: 'Conforto com estilo 💫'
-    },
-    {
-      id: 5,
-      src: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/print2.webp',
-      alt: 'Moda jovem',
-      caption: 'Vista sua personalidade'
-    },
-    {
-      id: 6,
-      src: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/printinsta.jpg',
-      alt: 'Tendência urbana',
-      caption: 'O futuro da moda 🚀'
-    },
-    {
-      id: 7,
-      src: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/print2.webp',
-      alt: 'Estilo autêntico',
-      caption: 'Seja você mesmo'
-    }
+  // (Array de produtos permanece o mesmo)
+  const products = [
+    { image: '/antescerto.PNG', name: 'Vintage Washed Tee', category: 'T-Shirts', price: 'R$129,90' },
+    { image: '/depoiscerto.PNG', name: 'Acid Wash Hoodie', category: 'Hoodies', price: 'R$249,90' },
+    { image: '/antescerto.PNG', name: 'Urban Cargo Pants', category: 'Pants', price: 'R$279,90' },
+    { image: '/depoiscerto.PNG', name: 'Distressed Denim Jacket', category: 'Jackets', price: 'R$349,90' },
+    { image: '/antescerto.PNG', name: 'Oversized Graphic Tee', category: 'T-Shirts', price: 'R$149,90' },
+    { image: '/depoiscerto.PNG', name: 'Vintage Crewneck', category: 'Sweatshirts', price: 'R$219,90' },
+    { image: '/antescerto.PNG', name: 'Utility Vest', category: 'Vests', price: 'R$199,90' },
+    { image: '/depoiscerto.PNG', name: 'Washed Cap', category: 'Accessories', price: 'R$89,90' },
+    { image: '/antescerto.PNG', name: 'Relaxed Fit Jeans', category: 'Jeans', price: 'R$259,90' },
+    { image: '/depoiscerto.PNG', name: 'Fleece Lined Hoodie', category: 'Hoodies', price: 'R$299,90' },
   ];
 
+  // ADICIONADO: Estado para controlar a animação (mesma lógica do BrandCarousel)
+  const [animate, setAnimate] = useState(false);
+
+  // ADICIONADO: Hook para ativar a animação após a montagem
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 100); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section className="pt-6 pb-16">
+    <section className="py-24 bg-brick-wall overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-7">
-          <h3 className="text-4xl font-black text-black mb-1 font-display">
-            Quem usa DRIP, <span className="text-orange-500">usa MODA!</span>
-          </h3>
-          <p className="text-xl text-gray-600 font-medium">
-            Não fique de fora!
+        {/* ... Títulos ... */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold font-display text-gray-900 mb-4">Produtos</h2>
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+            Peças selecionadas que definem o streetwear moderno. Qualidade e estilo em cada detalhe.
           </p>
         </div>
-
         
-        {/* Carousel Container */}
-        <div className="relative w-full overflow-hidden">
-          {/* Fade effect nas laterais */}
-          <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-white to-transparent z-10"></div>
+        {/* Contêiner do Carrossel */}
+        <div className="relative w-full overflow-hidden h-[120vh] max-h-[1000px]">
+          {/* Fades (gradientes) */}
+          <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-cream to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-cream to-transparent z-10" />
           
-          {/* Carrossel contínuo */}
-          <div className="flex animate-[scroll_5s_linear_infinite] items-center space-x-6">
-            {/* Duplicamos o array para criar o loop infinito */}
-            {[...showcaseImages, ...showcaseImages].map((image, index) => (
-              <div
-                key={`${image.id}-${index}`}
-                className="flex-shrink-0 relative group cursor-pointer"
-              >
-                <div className="w-48 h-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Overlay com caption */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white text-sm font-bold text-center">
-                      {image.caption}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+          <div className="absolute inset-0 flex justify-center space-x-4 p-4">
+            
+            {/* --- ALTERAÇÃO AQUI --- */}
+            {/* Coluna 1 (Normal) - Classe de animação agora é condicional */}
+            <div className={`flex flex-col space-y-4 ${animate ? 'animate-marquee-slow' : ''}`}>
+              {[...products, ...products].map((product, i) => (
+                <ProductColumn key={i} product={product} />
+              ))}
+            </div>
 
-        {/* Call to Action com o novo botão */}
-        <div className="text-center mt-12">
-           <Link to="/produtos" className="relative group border-none bg-transparent p-0 outline-none cursor-pointer font-mono font-light uppercase text-base inline-block">
-             <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 rounded-lg transform translate-y-0.5 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-1 group-hover:duration-[250ms] group-active:translate-y-px" />
-             <span className="absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-l from-[hsl(217,33%,16%)] via-[hsl(217,33%,32%)] to-[hsl(217,33%,16%)]" />
-             <div className="relative flex items-center justify-between py-3 px-6 text-lg text-white rounded-lg transform -translate-y-1 bg-gradient-to-r from-[#f27121] via-[#e94057] to-[#8a2387] gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110">
-               <span className="select-none font-bold">Quero conhecer 🔥</span>
-             </div>
-           </Link>
+            {/* --- ALTERAÇÃO AQUI --- */}
+            {/* Coluna 2 (Reversa) - Classe de animação agora é condicional */}
+            <div className={`flex flex-col space-y-4 ${animate ? 'animate-marquee-slow-reverse' : ''}`}>
+              {[...products.slice().reverse(), ...products.slice().reverse()].map((product, i) => (
+                <ProductColumn key={product.name + i} product={product} />
+              ))}
+            </div>
+            {/* (Nota: Mudei a 'key' no segundo map para ser mais robusta, embora não seja a causa do bug) */}
+
+          </div>
         </div>
       </div>
     </section>
