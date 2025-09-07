@@ -9,7 +9,7 @@ const Footer = () => {
 
         
         {/* 2. Adicione o divisor animado aqui */}
-        <div className="mb-12"> {/* Este container cria o espaço entre a linha e o conteúdo */}
+        <div className="mb-2"> {/* Este container cria o espaço entre a linha e o conteúdo */}
           <FooterDivider />
         </div>
 
