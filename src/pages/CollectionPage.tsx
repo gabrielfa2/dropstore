@@ -382,7 +382,7 @@ const CollectionPage = () => {
       <div className="max-w-7xl mx-auto px-4 pb-16">
         {/* Controles */}
         <div className="mb-2">
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-2">
             <p className="text-gray-600">
               Mostrando <span className="font-bold">{sortedProducts.length}</span> produtos
             </p>
