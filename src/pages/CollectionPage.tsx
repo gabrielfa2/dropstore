@@ -218,7 +218,6 @@ const collectionConfig = {
   oversized: {
     title: 'Coleção Oversized',
     subtitle: 'Estilo urbano com caimento perfeito',
-    description: 'Descubra nossa linha de roupas oversized, onde o conforto encontra o estilo. Peças com modelagem ampla e moderna para quem busca autenticidade.',
     hero: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp'
   },
   polo: {
