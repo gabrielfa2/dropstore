@@ -355,7 +355,7 @@ const CollectionPage = () => {
           <Link to="/produtos" className="hover:text-orange-500 transition-colors">
             Produtos
           </Link>
-          <ChevronRight className="w-3 h-4" />
+          <ChevronRight className="w-4 h-4" />
           <span className="text-gray-900 font-medium">{config.title}</span>
         </nav>
       </div>
