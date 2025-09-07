@@ -38,20 +38,6 @@ const SocialProof = () => {
     setOpenFaqId(openFaqId === id ? null : id);
   };
   
-  // --- FIM DA LÓGICA DO FAQ ---
-
-  return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Header - Estrutura Corrigida */}
-        <div className="text-center mb-12">
-          <h3 className="text-4xl font-black text-black mb-4 font-display">
-            O futuro das roupas está <span className="text-purple-500">aqui!</span>
-          </h3>
-          <p className="text-xl text-gray-600">
-            Veja o que a galera tá falando 💬
-          </p>
-        </div>
 
         {/* --- INÍCIO DA NOVA SEÇÃO DE FAQ --- */}
         <div className="max-w-3xl mx-auto mt-16">
