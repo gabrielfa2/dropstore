@@ -23,7 +23,7 @@ const BrandCarousel = () => {
           <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
           
           {/* Contêiner interno: É o que realmente se move */}
-          <div className="flex animate-marquee items-center space-x-16 w-[200%]">
+          <div className="flex animate-marquee items-center space-x-16 w-max">
             {/* Duplique o array para o loop infinito */}
             {[...brands, ...brands].map((brand, index) => (
               <img
