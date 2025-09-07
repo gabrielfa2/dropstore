@@ -405,7 +405,7 @@ const CollectionPage = () => {
             <h1 className="text-4xl md:text-6xl font-price -mb-1 font-display">
               {config.title}
             </h1>
-            <p className="text-xl md:text-2xl font-price">
+            <p className="text-x md:text-2xl font-price">
               {config.subtitle}
             </p>
           </div>
