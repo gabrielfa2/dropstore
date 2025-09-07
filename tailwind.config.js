@@ -20,12 +20,11 @@ export default {
         'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.SVG")`,
       },
       animation: {
-        // Substituído 'scroll' por 'marquee'
-        marquee: 'marquee 50s linear infinite', 
+        // ATUALIZADO (de 10s para 40s)
+        marquee: 'marquee 40s linear infinite', 
         'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
       },
       keyframes: {
-        // Nova animação 'marquee'
         marquee: {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' },
@@ -35,7 +34,21 @@ export default {
           '50%': { opacity: '0.3', transform: 'scale(1.2)' },
         },
       },
+      // ADICIONADO
+      animationPlayState: {
+        'pause-animation': 'paused',
+      }
     },
   },
-  plugins: [],
+  // ADICIONADO
+  plugins: [
+    function ({ addUtilities, theme }) {
+      const newUtilities = {
+        '.pause-animation': {
+          'animation-play-state': theme('animationPlayState.pause-animation', 'paused'),
+        },
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 }
