@@ -38,7 +38,6 @@ const BrandCarousel = () => {
                   w-auto
                   object-contain
                   opacity-80
-                  hover:opacity-100
                   transition-all
                 "
               />
