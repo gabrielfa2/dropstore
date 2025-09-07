@@ -420,7 +420,7 @@ const CollectionPage = () => {
                           animate-bounce-vertical 
                           pointer-events-none 
                           transition-opacity duration-300">
-            <span className="text-xs font-semibold uppercase tracking-wider">Ver produtos</span>
+            <span className="text-xs font-price uppercase tracking-wider">Ver produtos</span>
             <ChevronsDown className="w-6 h-6" />
           </div>
         )}
