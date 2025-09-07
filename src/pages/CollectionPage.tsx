@@ -250,7 +250,7 @@ const CollectionPage = () => {
   // Validação da coleção
   if (!collection || !collectionConfig[collection as keyof typeof collectionConfig]) {
     return (
-      <div className="min-h-screen bg-cream flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-black text-black mb-4 font-display">
             Coleção não encontrada
