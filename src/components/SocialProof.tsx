@@ -45,7 +45,7 @@ const FaqSection = () => {
       </h3>
       <div className="space-y-4">
         {faqs.map((faq) => (
-          <div key={faq.id} className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div key={faq.id} className="bg-gray rounded-xl shadow-md overflow-hidden">
             <button
               onClick={() => toggleFaq(faq.id)}
               className="w-full flex justify-between items-center text-left p-5 font-semibold text-black focus:outline-none"
