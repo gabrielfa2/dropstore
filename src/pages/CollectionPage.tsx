@@ -411,7 +411,7 @@ const CollectionPage = () => {
 
         {/* NOVO: Indicador Flutuante de Scroll (Aparece somente em mobile) */}
         {showScrollIndicator && (
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 
+          <div className="absolute bottom-4 inset-x-0
                           md:hidden 
                           flex flex-col items-center justify-center 
                           text-white z-10 
@@ -422,6 +422,7 @@ const CollectionPage = () => {
             <ChevronsDown className="w-6 h-6" />
           </div>
         )}
+
       </div>
 
       <div className="max-w-7xl mx-auto px-4 pb-16">
