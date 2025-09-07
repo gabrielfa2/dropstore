@@ -1,6 +1,6 @@
-import React, { useState, useMemo, useEffect } from 'react'; // NOVO: Adicionado useEffect
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Filter, Grid, List, ChevronDown, ChevronRight, ChevronsDown } from 'lucide-react'; // NOVO: Adicionado ChevronsDown
+import { Filter, Grid, List, ChevronDown, ChevronRight, ChevronsDown } from 'lucide-react';
 
 // Interface para definir a estrutura de um produto
 interface Product {
@@ -21,7 +21,6 @@ interface Product {
 
 // Dados mockados dos produtos por categoria
 const productsByCategory: Record<string, Product[]> = {
-  // ... (Seus dados de produtos permanecem inalterados) ...
   oversized: [
     {
       id: 1,
@@ -216,7 +215,6 @@ const productsByCategory: Record<string, Product[]> = {
 
 // Configurações das coleções
 const collectionConfig = {
-  // ... (Suas configurações permanecem inalteradas) ...
   oversized: {
     title: 'Coleção Oversized',
     subtitle: 'Estilo urbano com caimento perfeito',
@@ -243,32 +241,29 @@ const collectionConfig = {
     hero: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   }
 };
+
 const CollectionPage = () => {
   const { collection } = useParams<{ collection: string }>();
   const [sortBy, setSortBy] = useState('relevancia');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
-  // NOVO: Efeito para ouvir o evento de scroll
-  // ... (seus outros hooks useState permanecem aqui) ...
 
-  // NOVO: Estado para controlar o indicador de scroll
+  // --- LÓGICA DO INDICADOR DE SCROLL ---
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
 
-  // NOVO: Efeito para ouvir o evento de scroll
   useEffect(() => {
-    // 1. Quando este efeito rodar (porque a 'collection' mudou),
-    // garantimos que o indicador esteja visível.
+    // 1. Reseta o indicador para visível
     setShowScrollIndicator(true);
     
-    // 2. Garantimos também que o usuário veja a página do topo.
+    // 2. Garante que a nova página da coleção comece no topo
     window.scrollTo(0, 0);
 
     // 3. Define o handler de scroll
     const handleScroll = () => {
-      // Se o usuário rolar mais de 50px para baixo, oculta o indicador
+      // Se rolar mais que 50px, oculta o indicador
       if (window.scrollY > 50) {
         setShowScrollIndicator(false);
-        // Remove o listener APÓS ser ocultado (para esta sessão da página)
+        // Remove o listener (apenas para esta "sessão" de página)
         window.removeEventListener('scroll', handleScroll);
       }
     };
@@ -276,50 +271,39 @@ const CollectionPage = () => {
     // 4. Adiciona o listener
     window.addEventListener('scroll', handleScroll);
 
-    // 5. Limpa o listener quando o componente desmontar OU antes de rodar o efeito novamente (quando a coleção mudar)
+    // 5. Função de limpeza: remove o listener se o componente for desmontado
+    // ou antes de rodar o efeito novamente (quando a coleção mudar)
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [collection]); // <-- ESTA É A MUDANÇA PRINCIPAL: O efeito agora depende da 'collection'
-
-    
-
-    // Adiciona o listener quando o componente montar
-    window.addEventListener('scroll', handleScroll);
-
-    // Limpa o listener quando o componente desmontar
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // O array vazio garante que isso rode apenas na montagem e desmontagem
+  }, [collection]); // Dependência: Roda esta lógica toda vez que a 'collection' mudar
+  // --- FIM DA LÓGICA DO INDICADOR ---
 
 
   // Validação da coleção
   if (!collection || !collectionConfig[collection as keyof typeof collectionConfig]) {
-    // ... (Sua lógica de coleção não encontrada permanece inalterada) ...
     return (
-        <div className="min-h-screen bg-white flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-4xl font-black text-black mb-4 font-display">
-              Coleção não encontrada
-            </h1>
-            <p className="text-gray-600 mb-8">A coleção que você procura não existe.</p>
-            <Link 
-              to="/produtos" 
-              className="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition-colors"
-            >
-              Ver todos os produtos
-            </Link>
-          </div>
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-black text-black mb-4 font-display">
+            Coleção não encontrada
+          </h1>
+          <p className="text-gray-600 mb-8">A coleção que você procura não existe.</p>
+          <Link 
+            to="/produtos" 
+            className="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition-colors"
+          >
+            Ver todos os produtos
+          </Link>
         </div>
-      );
+      </div>
+    );
   }
 
   const config = collectionConfig[collection as keyof typeof collectionConfig];
   const products = productsByCategory[collection] || [];
 
   const sortOptions = [
-    // ... (Suas opções de sort permanecem inalteradas) ...
     { value: 'relevancia', label: 'Mais Relevantes' },
     { value: 'menor-preco', label: 'Menor Preço' },
     { value: 'maior-preco', label: 'Maior Preço' },
@@ -328,7 +312,6 @@ const CollectionPage = () => {
   ];
 
   const sortedProducts = useMemo(() => {
-    // ... (Sua lógica de sort permanece inalterada) ...
     let sorted = [...products];
 
     switch (sortBy) {
@@ -356,7 +339,6 @@ const CollectionPage = () => {
   }, [products, sortBy]);
 
   const ProductCard = ({ product }: { product: Product }) => (
-    // ... (Seu componente ProductCard permanece inalterado) ...
     <Link to={`/produto/${product.id}`} className="group relative text-left cursor-pointer">
       <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75 transition-opacity duration-300">
         <img 
@@ -398,7 +380,6 @@ const CollectionPage = () => {
     <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 pt-1">
-        {/* ... (Seu breadcrumb permanece inalterado) ... */}
         <nav className="flex items-center gap-2 text-sm text-gray-600 mb-1">
           <Link to="/" className="hover:text-orange-500 transition-colors">
             Início
@@ -430,7 +411,7 @@ const CollectionPage = () => {
           </div>
         </div>
 
-        {/* NOVO: Indicador Flutuante de Scroll (Aparece somente em mobile) */}
+        {/* Indicador Flutuante de Scroll (Centralizado e Corrigido) */}
         {showScrollIndicator && (
           <div className="absolute bottom-4 inset-x-0
                           md:hidden 
@@ -443,13 +424,11 @@ const CollectionPage = () => {
             <ChevronsDown className="w-6 h-6" />
           </div>
         )}
-
       </div>
 
       <div className="max-w-7xl mx-auto px-4 pb-16">
         {/* Controles */}
         <div className="mb-2">
-          {/* ... (O restante da sua página permanece inalterado) ... */}
           <div className="flex justify-between items-center mb-4">
             <p className="text-gray-600">
               Mostrando <span className="font-bold">{sortedProducts.length}</span> produtos
@@ -513,7 +492,6 @@ const CollectionPage = () => {
 
         {/* Mensagem quando não há produtos */}
         {sortedProducts.length === 0 && (
-          // ... (Seu código de "Nenhum produto" permanece inalterado) ...
           <div className="text-center py-16">
             <div className="text-6xl mb-4">😔</div>
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -533,7 +511,6 @@ const CollectionPage = () => {
 
         {/* Call to Action */}
         <div className="text-center py-16 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-3xl">
-          {/* ... (Seu CTA permanece inalterado) ... */}
           <h3 className="text-3xl font-black text-white mb-4 font-display">
             Não encontrou o que procurava?
           </h3>
