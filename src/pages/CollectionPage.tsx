@@ -361,7 +361,7 @@ const CollectionPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative h-48 md:h-64 mb-12 overflow-hidden">
+      <div className="relative h-12 md:h-64 mb-12 overflow-hidden">
         <img
           src={config.hero}
           alt={config.title}
