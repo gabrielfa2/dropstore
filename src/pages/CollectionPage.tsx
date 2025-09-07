@@ -379,7 +379,7 @@ const CollectionPage = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-16">
+      <div className="max-w-7xl mx-auto px-4 pb-1">
         {/* Controles */}
         <div className="mb-2">
           <div className="flex justify-between items-center mb-4">
