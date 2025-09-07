@@ -65,8 +65,8 @@ const FaqSection = () => {
           </div>
         ))}
       </div>
-      <div className="text-center mt-10">
-        <a href="#" className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all mb-12">
+      <div className="text-center mt-16">
+        <a href="#" className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all">
           Ainda com dúvidas? Fale conosco!
         </a>
       </div>
