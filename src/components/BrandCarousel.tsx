@@ -17,13 +17,13 @@ const BrandCarousel = () => {
           Marcas utilizadas
         </p>
        
-        {/* Contêiner externo: Adicionado "group" */}
-        <div className="relative w-full overflow-hidden group">
+        {/* Contêiner externo: Oculta a rolagem (classe 'group' REMOVIDA) */}
+        <div className="relative w-full overflow-hidden">
           <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
           <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
           
-          {/* Contêiner interno: Adicionado "group-hover:pause-animation" */}
-          <div className="flex animate-marquee items-center space-x-16 w-max group-hover:pause-animation">
+          {/* Contêiner interno: (classe 'group-hover:pause-animation' REMOVIDA) */}
+          <div className="flex animate-marquee items-center space-x-16 w-max">
             {/* Duplique o array o suficiente para que a 'primeira metade' 
               seja maior que a tela. 4x ou 5x é seguro. 
             */}
@@ -38,6 +38,7 @@ const BrandCarousel = () => {
                   w-auto
                   object-contain
                   opacity-80
+                  hover:opacity-100
                   transition-all
                 "
               />
