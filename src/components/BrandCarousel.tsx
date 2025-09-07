@@ -2,22 +2,22 @@ import React from 'react';
 
 const BrandCarousel = () => {
   // 1. Estrutura de dados modificada para aceitar imagens
-  //    Cada item é um objeto com 'src' (caminho da imagem) e 'alt' (texto alternativo)
+  //     Cada item é um objeto com 'src' (caminho da imagem) e 'alt' (texto alternativo)
   const brands = [
-  { src: '/shopify.PNG', alt: 'Shopify' },
-  { src: '/google.WEBP', alt: 'Google' },
-  { src: '/meta.PNG', alt: 'Meta' },
-  { src: '/picpay-1.svg', alt: 'PicPay' },
-  { src: '/mercado.PNG', alt: 'Mercado Pago' },
-  { src: '/nubank.PNG', alt: 'Nubank' },
-  // Você pode adicionar mais objetos aqui quando tiver os logos correspondentes.
+    { src: '/shopify.PNG', alt: 'Shopify' },
+    { src: '/google.WEBP', alt: 'Google' },
+    { src: '/meta.PNG', alt: 'Meta' },
+    { src: '/picpay-1.svg', alt: 'PicPay' },
+    { src: '/mercado.PNG', alt: 'Mercado Pago' },
+    { src: '/nubank.PNG', alt: 'Nubank' },
+    // Você pode adicionar mais objetos aqui quando tiver os logos correspondentes.
   ];
 
   return (
     <section className="py-12 border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4">
         <p className="text-center text-gray-600 mb-8 font-medium" style={{ fontFamily: "'Permanent Marker', cursive" }}>
-          Marcas utilizadas
+          Marcos utilizados
         </p>
         
         <div className="relative w-full overflow-hidden">
@@ -35,15 +35,13 @@ const BrandCarousel = () => {
                 alt={brand.alt} // O texto alternativo para acessibilidade
                 // 3. Estilos aplicados diretamente na imagem
                 className="
-                  flex-shrink-0      // Impede que a imagem encolha
-                  h-10               // Altura fixa para todos os logos (ajuste conforme necessário)
-                  w-auto             // Largura automática para manter a proporção
-                  object-contain     // Garante que a imagem inteira seja visível
-                  filter grayscale   // Deixa os logos em escala de cinza
-                  hover:grayscale-0  // Remove o filtro ao passar o mouse
-                  opacity-80         // Leve transparência
-                  hover:opacity-100  // Opacidade total ao passar o mouse
-                  transition-all     // Animação suave para os efeitos
+                  flex-shrink-0       // Impede que a imagem encolha
+                  h-10                // Altura fixa para todos os logos (ajuste conforme necessário)
+                  w-auto              // Largura automática para manter a proporção
+                  object-contain      // Garante que a imagem inteira seja visível
+                  opacity-80          // Leve transparência
+                  hover:opacity-100   // Opacidade total ao passar o mouse
+                  transition-all      // Animação suave para os efeitos
                 "
               />
             ))}
