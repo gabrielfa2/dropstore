@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Filter, Grid, List, ChevronDown, ChevronRight } from 'lucide-react';
+import { Filter, Grid, List, ChevronDown, ChevronRight, ChevronsDown } from 'lucide-react';
 
 // Interface para definir a estrutura de um produto
 interface Product {
@@ -218,31 +218,26 @@ const collectionConfig = {
   oversized: {
     title: 'Coleção Oversized',
     subtitle: 'Estilo urbano com caimento perfeito',
-    description: 'Descubra nossa linha de roupas oversized, onde o conforto encontra o estilo. Peças com modelagem ampla e moderna para quem busca autenticidade.',
     hero: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/b_3eed98ea421395ee91f107b8c6717453.webp'
   },
   polo: {
     title: 'Coleção Polo',
     subtitle: 'Elegância casual para o dia a dia',
-    description: 'Polos premium com qualidade superior e design atemporal. Perfeitas para looks casuais e semi-formais.',
     hero: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/158184-camisa-polo-adulto-head-play-preto1.webp'
   },
   calcas: {
     title: 'Coleção Calças',
     subtitle: 'Versatilidade e estilo em cada modelo',
-    description: 'De cargo a jeans, nossa coleção de calças oferece opções para todos os estilos e ocasiões.',
     hero: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   },
   shorts: {
     title: 'Coleção Shorts',
     subtitle: 'Conforto e estilo para os dias quentes',
-    description: 'Shorts modernos e versáteis, ideais para o verão e looks descontraídos.',
     hero: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   },
   tenis: {
     title: 'Coleção Tênis',
     subtitle: 'Pisada firme, estilo único',
-    description: 'Tênis exclusivos que combinam conforto, durabilidade e design moderno.',
     hero: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   }
 };
@@ -253,10 +248,42 @@ const CollectionPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
 
+  // --- LÓGICA DO INDICADOR DE SCROLL ---
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+  useEffect(() => {
+    // 1. Reseta o indicador para visível
+    setShowScrollIndicator(true);
+    
+    // 2. Garante que a nova página da coleção comece no topo
+    window.scrollTo(0, 0);
+
+    // 3. Define o handler de scroll
+    const handleScroll = () => {
+      // Se rolar mais que 50px, oculta o indicador
+      if (window.scrollY > 50) {
+        setShowScrollIndicator(false);
+        // Remove o listener (apenas para esta "sessão" de página)
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    // 4. Adiciona o listener
+    window.addEventListener('scroll', handleScroll);
+
+    // 5. Função de limpeza: remove o listener se o componente for desmontado
+    // ou antes de rodar o efeito novamente (quando a coleção mudar)
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [collection]); // Dependência: Roda esta lógica toda vez que a 'collection' mudar
+  // --- FIM DA LÓGICA DO INDICADOR ---
+
+
   // Validação da coleção
   if (!collection || !collectionConfig[collection as keyof typeof collectionConfig]) {
     return (
-      <div className="min-h-screen bg-cream flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-black text-black mb-4 font-display">
             Coleção não encontrada
@@ -350,10 +377,10 @@ const CollectionPage = () => {
   );
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 pt-4">
-        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-6">
+      <div className="max-w-7xl mx-auto px-4 pt-1">
+        <nav className="flex items-center gap-2 text-sm text-gray-600 mb-1">
           <Link to="/" className="hover:text-orange-500 transition-colors">
             Início
           </Link>
@@ -367,7 +394,7 @@ const CollectionPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative h-64 md:h-80 mb-12 overflow-hidden">
+      <div className="relative h-38 md:h-64 mb-3 overflow-hidden">
         <img
           src={config.hero}
           alt={config.title}
@@ -375,23 +402,33 @@ const CollectionPage = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-black mb-4 font-display">
+            <h1 className="text-4xl md:text-6xl font-black mb-2 font-display">
               {config.title}
             </h1>
-            <p className="text-xl md:text-2xl font-medium mb-2">
+            <p className="text-xl md:text-2xl font-medium">
               {config.subtitle}
-            </p>
-            <p className="text-lg opacity-90">
-              {config.description}
             </p>
           </div>
         </div>
+
+        {/* Indicador Flutuante de Scroll (Centralizado e Corrigido) */}
+        {showScrollIndicator && (
+          <div className="absolute bottom-4 inset-x-0
+                          md:hidden 
+                          flex flex-col items-center justify-center 
+                          text-white z-10 
+                          animate-bounce-vertical 
+                          pointer-events-none 
+                          transition-opacity duration-300">
+            <span className="text-xs font-semibold uppercase tracking-wider">Ver produtos</span>
+            <ChevronsDown className="w-6 h-6" />
+          </div>
+        )}
       </div>
 
-      
       <div className="max-w-7xl mx-auto px-4 pb-16">
         {/* Controles */}
-        <div className="mb-8">
+        <div className="mb-2">
           <div className="flex justify-between items-center mb-4">
             <p className="text-gray-600">
               Mostrando <span className="font-bold">{sortedProducts.length}</span> produtos
@@ -497,4 +534,3 @@ const CollectionPage = () => {
 };
 
 export default CollectionPage;
-
