@@ -22,7 +22,7 @@ export default {
         'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.SVG")`,
       },
       animation: {
-        scroll: 'scroll 50s linear infinite',
+        scroll: 'scroll 1s linear infinite',
         'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
       },
       keyframes: {
