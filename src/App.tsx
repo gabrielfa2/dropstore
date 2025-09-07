@@ -43,15 +43,6 @@ function App() {
           <Loader />
         </div>
       )}
-
-      <div
-        className="
-          fixed bottom-0 left-1/2 -translate-x-1/2 w-[200%] h-2/3
-          bg-glow
-          blur-3xl opacity-25
-          -z-10 pointer-events-none
-        "
-      />
       
       {/* 3. Passe a função memorizada para o Header */}
       <Header onLogoClick={handleLogoClick} />
