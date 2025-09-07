@@ -2,34 +2,6 @@ import React, { useState } from 'react';
 import { Star, Heart, MessageCircle, Plus, Minus } from 'lucide-react';
 
 const SocialProof = () => {
-  // Dados dos depoimentos atualizados para usar caminhos de imagem local
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Ana, 19 anos',
-      text: 'Comprei na DRIP e já recebi mil elogios! 😍',
-      rating: 5,
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
-      socialIcon: '/insta.PNG'
-    },
-    {
-      id: 2,
-      name: 'Carlos, 22 anos',
-      text: 'Finalmente achei roupas que combinam comigo!',
-      rating: 5,
-      image: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=150',
-      socialIcon: '/xlogo.svg'
-    },
-    {
-      id: 3,
-      name: 'Júlia, 20 anos',
-      text: 'DRIP é vida! Sempre na moda 🔥',
-      rating: 5,
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
-      socialIcon: '/insta.PNG'
-    }
-  ];
-
   // Dados para o FAQ, baseados na sua loja
   const faqs = [
     {
