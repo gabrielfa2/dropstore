@@ -21,7 +21,7 @@ export default {
       },
       animation: {
         // Substituído 'scroll' por 'marquee'
-        marquee: 'marquee 10s linear infinite', 
+        marquee: 'marquee 40s linear infinite', 
         'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
       },
       keyframes: {
