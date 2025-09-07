@@ -17,13 +17,13 @@ const BrandCarousel = () => {
           Marcas utilizadas
         </p>
        
-        {/* Contêiner externo: Oculta a rolagem e cria o "recorte" */}
-        <div className="relative w-full overflow-hidden">
+        {/* Contêiner externo: Adicionado "group" */}
+        <div className="relative w-full overflow-hidden group">
           <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
           <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
           
-          {/* Contêiner interno: É o que realmente se move */}
-          <div className="flex animate-marquee items-center space-x-16 w-max">
+          {/* Contêiner interno: Adicionado "group-hover:pause-animation" */}
+          <div className="flex animate-marquee items-center space-x-16 w-max group-hover:pause-animation">
             {/* Duplique o array o suficiente para que a 'primeira metade' 
               seja maior que a tela. 4x ou 5x é seguro. 
             */}
