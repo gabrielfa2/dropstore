@@ -20,7 +20,7 @@ export default {
         'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.SVG")`,
       },
       animation: {
-        marquee: 'marquee 40s linear infinite',
+        marquee: 'marquee 50s linear infinite',
         'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
       },
       keyframes: {
