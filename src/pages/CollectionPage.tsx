@@ -366,7 +366,7 @@ const CollectionPage = () => {
       </div>
 
       {/* Hero Section */}
-      <div className="relative h-64 md:h-80 mb-12 overflow-hidden">
+      <div className="relative h-48 md:h-64 mb-12 overflow-hidden">
         <img
           src={config.hero}
           alt={config.title}
@@ -374,14 +374,11 @@ const CollectionPage = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-black mb-4 font-display">
+            <h1 className="text-4xl md:text-6xl font-black mb-2 font-display">
               {config.title}
             </h1>
-            <p className="text-xl md:text-2xl font-medium mb-2">
+            <p className="text-xl md:text-2xl font-medium">
               {config.subtitle}
-            </p>
-            <p className="text-lg opacity-90">
-              {config.description}
             </p>
           </div>
         </div>
@@ -495,5 +492,3 @@ const CollectionPage = () => {
 };
 
 export default CollectionPage;
-
-
