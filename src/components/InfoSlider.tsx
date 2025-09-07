@@ -34,7 +34,7 @@ const InfoSlider = () => {
   const currentSlide = slides[currentIndex];
 
   return (
-    <div className="bg-gray w-full py-3 overflow-hidden border-y border-gray-200">
+    <div className="bg-white w-full py-3 overflow-hidden border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4">
         <div className="relative flex items-center justify-center text-center h-6">
           <button
