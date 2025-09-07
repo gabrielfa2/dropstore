@@ -1,6 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react'; // NOVO: Adicionado useEffect
 import { useParams, Link } from 'react-router-dom';
-import { Filter, Grid, List, ChevronDown, ChevronRight } from 'lucide-react';
+import { Filter, Grid, List, ChevronDown, ChevronRight, ChevronsDown } from 'lucide-react'; // NOVO: Adicionado ChevronsDown
 
 // Interface para definir a estrutura de um produto
 interface Product {
@@ -21,6 +21,7 @@ interface Product {
 
 // Dados mockados dos produtos por categoria
 const productsByCategory: Record<string, Product[]> = {
+  // ... (Seus dados de produtos permanecem inalterados) ...
   oversized: [
     {
       id: 1,
@@ -215,6 +216,7 @@ const productsByCategory: Record<string, Product[]> = {
 
 // Configurações das coleções
 const collectionConfig = {
+  // ... (Suas configurações permanecem inalteradas) ...
   oversized: {
     title: 'Coleção Oversized',
     subtitle: 'Estilo urbano com caimento perfeito',
@@ -247,30 +249,56 @@ const CollectionPage = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
 
+  // NOVO: Estado para controlar o indicador de scroll
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+
+  // NOVO: Efeito para ouvir o evento de scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      // Se o usuário rolar mais de 50px para baixo, oculta o indicador
+      if (window.scrollY > 50) {
+        setShowScrollIndicator(false);
+        // Remove o listener após ser ocultado para melhorar a performance
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    // Adiciona o listener quando o componente montar
+    window.addEventListener('scroll', handleScroll);
+
+    // Limpa o listener quando o componente desmontar
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // O array vazio garante que isso rode apenas na montagem e desmontagem
+
+
   // Validação da coleção
   if (!collection || !collectionConfig[collection as keyof typeof collectionConfig]) {
+    // ... (Sua lógica de coleção não encontrada permanece inalterada) ...
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-black text-black mb-4 font-display">
-            Coleção não encontrada
-          </h1>
-          <p className="text-gray-600 mb-8">A coleção que você procura não existe.</p>
-          <Link 
-            to="/produtos" 
-            className="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition-colors"
-          >
-            Ver todos os produtos
-          </Link>
+        <div className="min-h-screen bg-white flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl font-black text-black mb-4 font-display">
+              Coleção não encontrada
+            </h1>
+            <p className="text-gray-600 mb-8">A coleção que você procura não existe.</p>
+            <Link 
+              to="/produtos" 
+              className="bg-orange-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-orange-600 transition-colors"
+            >
+              Ver todos os produtos
+            </Link>
+          </div>
         </div>
-      </div>
-    );
+      );
   }
 
   const config = collectionConfig[collection as keyof typeof collectionConfig];
   const products = productsByCategory[collection] || [];
 
   const sortOptions = [
+    // ... (Suas opções de sort permanecem inalteradas) ...
     { value: 'relevancia', label: 'Mais Relevantes' },
     { value: 'menor-preco', label: 'Menor Preço' },
     { value: 'maior-preco', label: 'Maior Preço' },
@@ -279,6 +307,7 @@ const CollectionPage = () => {
   ];
 
   const sortedProducts = useMemo(() => {
+    // ... (Sua lógica de sort permanece inalterada) ...
     let sorted = [...products];
 
     switch (sortBy) {
@@ -306,6 +335,7 @@ const CollectionPage = () => {
   }, [products, sortBy]);
 
   const ProductCard = ({ product }: { product: Product }) => (
+    // ... (Seu componente ProductCard permanece inalterado) ...
     <Link to={`/produto/${product.id}`} className="group relative text-left cursor-pointer">
       <div className="relative w-full aspect-[4/5] bg-gray-200 rounded-lg overflow-hidden group-hover:opacity-75 transition-opacity duration-300">
         <img 
@@ -347,6 +377,7 @@ const CollectionPage = () => {
     <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 pt-1">
+        {/* ... (Seu breadcrumb permanece inalterado) ... */}
         <nav className="flex items-center gap-2 text-sm text-gray-600 mb-1">
           <Link to="/" className="hover:text-orange-500 transition-colors">
             Início
@@ -377,11 +408,26 @@ const CollectionPage = () => {
             </p>
           </div>
         </div>
+
+        {/* NOVO: Indicador Flutuante de Scroll (Aparece somente em mobile) */}
+        {showScrollIndicator && (
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 
+                          md:hidden 
+                          flex flex-col items-center justify-center 
+                          text-white z-10 
+                          animate-bounce-vertical 
+                          pointer-events-none 
+                          transition-opacity duration-300">
+            <span className="text-xs font-semibold uppercase tracking-wider">Ver produtos</span>
+            <ChevronsDown className="w-6 h-6" />
+          </div>
+        )}
       </div>
 
       <div className="max-w-7xl mx-auto px-4 pb-16">
         {/* Controles */}
         <div className="mb-2">
+          {/* ... (O restante da sua página permanece inalterado) ... */}
           <div className="flex justify-between items-center mb-4">
             <p className="text-gray-600">
               Mostrando <span className="font-bold">{sortedProducts.length}</span> produtos
@@ -445,6 +491,7 @@ const CollectionPage = () => {
 
         {/* Mensagem quando não há produtos */}
         {sortedProducts.length === 0 && (
+          // ... (Seu código de "Nenhum produto" permanece inalterado) ...
           <div className="text-center py-16">
             <div className="text-6xl mb-4">😔</div>
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
@@ -464,6 +511,7 @@ const CollectionPage = () => {
 
         {/* Call to Action */}
         <div className="text-center py-16 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-3xl">
+          {/* ... (Seu CTA permanece inalterado) ... */}
           <h3 className="text-3xl font-black text-white mb-4 font-display">
             Não encontrou o que procurava?
           </h3>
