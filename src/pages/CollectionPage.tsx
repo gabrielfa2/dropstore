@@ -346,7 +346,7 @@ const CollectionPage = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 pt-4">
+      <div className="max-w-7xl mx-auto px-4 pt-2">
         <nav className="flex items-center gap-2 text-sm text-gray-600 mb-2">
           <Link to="/" className="hover:text-orange-500 transition-colors">
             Início
