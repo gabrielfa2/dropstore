@@ -49,7 +49,7 @@ const InfoSlider = () => {
             <span>{currentSlide.text}</span>
             {/* Mostra o código do cupom se ele existir no slide atual */}
             {currentSlide.code && (
-              <span className="ml-2 font-bold bg-gray-200 text-black px-2 py-0.5 rounded-md">
+              <span className="ml-2 font-bold bg-white text-black px-2 py-0.5 rounded-md">
                 {currentSlide.code}
               </span>
             )}
