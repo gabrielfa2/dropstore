@@ -20,11 +20,15 @@ export default {
         'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.SVG")`,
       },
       animation: {
-        // ATUALIZADO (de 10s para 40s)
-        marquee: 'marquee 30s linear infinite', 
+        marquee: 'marquee 40s linear infinite',
         'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
       },
       keyframes: {
+        // ADICIONADO: Definição da animação 'scroll' que estava em falta
+        scroll: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
         marquee: {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' },
@@ -34,13 +38,11 @@ export default {
           '50%': { opacity: '0.3', transform: 'scale(1.2)' },
         },
       },
-      // ADICIONADO
       animationPlayState: {
         'pause-animation': 'paused',
       }
     },
   },
-  // ADICIONADO
   plugins: [
     function ({ addUtilities, theme }) {
       const newUtilities = {
