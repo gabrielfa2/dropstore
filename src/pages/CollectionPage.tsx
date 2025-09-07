@@ -248,10 +248,6 @@ const CollectionPage = () => {
   const [sortBy, setSortBy] = useState('relevancia');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [showFilters, setShowFilters] = useState(false);
-
-  // NOVO: Estado para controlar o indicador de scroll
-  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
-
   // NOVO: Efeito para ouvir o evento de scroll
   // ... (seus outros hooks useState permanecem aqui) ...
 
