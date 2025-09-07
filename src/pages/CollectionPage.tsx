@@ -223,29 +223,24 @@ const collectionConfig = {
   polo: {
     title: 'Coleção Polo',
     subtitle: 'Elegância casual para o dia a dia',
-    description: 'Polos premium com qualidade superior e design atemporal. Perfeitas para looks casuais e semi-formais.',
     hero: 'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/158184-camisa-polo-adulto-head-play-preto1.webp'
   },
   calcas: {
     title: 'Coleção Calças',
     subtitle: 'Versatilidade e estilo em cada modelo',
-    description: 'De cargo a jeans, nossa coleção de calças oferece opções para todos os estilos e ocasiões.',
     hero: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   },
   shorts: {
     title: 'Coleção Shorts',
     subtitle: 'Conforto e estilo para os dias quentes',
-    description: 'Shorts modernos e versáteis, ideais para o verão e looks descontraídos.',
     hero: 'https://images.pexels.com/photos/4066290/pexels-photo-4066290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   },
   tenis: {
     title: 'Coleção Tênis',
     subtitle: 'Pisada firme, estilo único',
-    description: 'Tênis exclusivos que combinam conforto, durabilidade e design moderno.',
     hero: 'https://images.pexels.com/photos/267202/pexels-photo-267202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
   }
 };
-
 const CollectionPage = () => {
   const { collection } = useParams<{ collection: string }>();
   const [sortBy, setSortBy] = useState('relevancia');
