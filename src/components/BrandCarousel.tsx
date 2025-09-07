@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'; // ADICIONADO: useState e useEffect
 
 const BrandCarousel = () => {
   const brands = [
@@ -10,6 +10,20 @@ const BrandCarousel = () => {
     { src: '/nubank.PNG', alt: 'Nubank' },
   ];
 
+  // ADICIONADO: Estado para controlar a animação
+  const [animate, setAnimate] = useState(false);
+
+  // ADICIONADO: Hook para ativar a animação APÓS a montagem do componente
+  useEffect(() => {
+    // Usamos um pequeno timeout para garantir que o navegador renderize o DOM
+    // e calcule o layout 'w-max' antes de aplicar a classe de animação.
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 100); // Um pequeno atraso (100ms) é geralmente suficiente.
+
+    return () => clearTimeout(timer);
+  }, []); // O array vazio [] garante que isso rode apenas uma vez (na montagem)
+
   return (
     <section className="py-12 border-y border-gray-200">
       <div className="max-w-7xl mx-auto px-4">
@@ -17,16 +31,16 @@ const BrandCarousel = () => {
           Marcas utilizadas
         </p>
        
-        {/* Contêiner externo: Oculta a rolagem (classe 'group' REMOVIDA) */}
         <div className="relative w-full overflow-hidden">
           <div className="absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
           <div className="absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-white to-transparent z-10"></div>
           
-          {/* Contêiner interno: (classe 'group-hover:pause-animation' REMOVIDA) */}
-          <div className="flex animate-marquee items-center space-x-16 w-max">
-            {/* Duplique o array o suficiente para que a 'primeira metade' 
-              seja maior que a tela. 4x ou 5x é seguro. 
-            */}
+          {/* ALTERADO: A classe 'animate-marquee' agora é condicional.
+            Ela só será adicionada quando o estado 'animate' for verdadeiro.
+          */}
+          <div 
+            className={`flex items-center space-x-16 w-max ${animate ? 'animate-marquee' : ''}`}
+          >
             {[...brands, ...brands, ...brands, ...brands, ...brands].map((brand, index) => (
               <img
                 key={index}
