@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Star, Heart, MessageCircle, Plus, Minus } from 'lucide-react';
 
 const SocialProof = () => {
-  // Dados dos depoimentos atualizados para usar caminhos de imagem local
   // Dados para o FAQ, baseados na sua loja
   const faqs = [
     {
@@ -52,47 +51,6 @@ const SocialProof = () => {
           <p className="text-xl text-gray-600">
             Veja o que a galera tá falando 💬
           </p>
-        </div>
-
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg relative">
-              <div className="flex items-center gap-3 mb-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
-                <div>
-                  <h4 className="font-bold text-black">{testimonial.name}</h4>
-                  <div className="flex gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Ícone da Rede Social posicionado no canto superior direito */}
-              <div className="absolute top-6 right-6">
-                <img src={testimonial.socialIcon} alt="Ícone da rede social" className="w-6 h-6" />
-              </div>
-
-              <p className="text-gray-700 font-medium">"{testimonial.text}"</p>
-              
-              <div className="flex items-center gap-4 mt-4 text-gray-500">
-                <div className="flex items-center gap-1">
-                  <Heart className="w-4 h-4" />
-                  <span className="text-sm">127</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <MessageCircle className="w-4 h-4" />
-                  <span className="text-sm">23</span>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
 
         {/* --- INÍCIO DA NOVA SEÇÃO DE FAQ --- */}
