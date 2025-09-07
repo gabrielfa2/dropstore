@@ -43,7 +43,7 @@ function App() {
           <Loader />
         </div>
       )}
-      
+
       {/* 3. Passe a função memorizada para o Header */}
       <Header onLogoClick={handleLogoClick} />
       
