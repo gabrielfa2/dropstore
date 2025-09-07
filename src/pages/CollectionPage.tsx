@@ -378,7 +378,7 @@ const CollectionPage = () => {
             <h1 className="text-4xl md:text-6xl font-black mb-4 font-display">
               {config.title}
             </h1>
-            <p className="text-xl md:text-2xl font-black mb-2">
+            <p className="text-xl md:text-2xl font-medium mb-2">
               {config.subtitle}
             </p>
             <p className="text-lg opacity-90">
@@ -388,6 +388,7 @@ const CollectionPage = () => {
         </div>
       </div>
 
+      
       <div className="max-w-7xl mx-auto px-4 pb-16">
         {/* Controles */}
         <div className="mb-8">
