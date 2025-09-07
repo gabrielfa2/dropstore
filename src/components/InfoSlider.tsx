@@ -25,7 +25,7 @@ const InfoSlider = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, 5000); // Muda a cada 5 segundos
+    }, 10000); // Muda a cada 5 segundos
 
     // Limpa o timer quando o componente é desmontado
     return () => clearInterval(timer);
