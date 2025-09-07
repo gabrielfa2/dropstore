@@ -21,7 +21,7 @@ export default {
       },
       animation: {
         // ATUALIZADO (de 10s para 40s)
-        marquee: 'marquee 40s linear infinite', 
+        marquee: 'marquee 30s linear infinite', 
         'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
       },
       keyframes: {
