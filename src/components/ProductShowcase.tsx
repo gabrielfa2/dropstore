@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductShowcase = () => {
-  // Array de imagens facilmente editável - adicione/remova/altere conforme necessário
+  // Array de imagens
   const showcaseImages = [
     {
       id: 1,
@@ -48,6 +48,19 @@ const ProductShowcase = () => {
     }
   ];
 
+  // ADICIONADO: Estado para controlar a animação
+  const [animate, setAnimate] = useState(false);
+
+  // ADICIONADO: Hook para ativar a animação após a montagem do componente
+  useEffect(() => {
+    // Atraso para garantir que o layout seja calculado antes da animação começar
+    const timer = setTimeout(() => {
+      setAnimate(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []); // Roda apenas uma vez na montagem
+
   return (
     <section className="pt-6 pb-16">
       <div className="max-w-7xl mx-auto px-4">
@@ -61,16 +74,19 @@ const ProductShowcase = () => {
           </p>
         </div>
 
-        
         {/* Carousel Container */}
         <div className="relative w-full overflow-hidden">
-          {/* Fade effect nas laterais */}
+          {/* Efeito de fade nas laterais */}
           <div className="absolute left-0 top-0 h-full w-8 bg-gradient-to-r from-white to-transparent z-10"></div>
           <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-white to-transparent z-10"></div>
-          
-          {/* Carrossel contínuo */}
-          <div className="flex animate-[scroll_5s_linear_infinite] items-center space-x-6">
-            {/* Duplicamos o array para criar o loop infinito */}
+
+          {/* Carrossel contínuo - CLASSE DE ANIMAÇÃO APLICADA CONDICIONALMENTE */}
+          <div
+            className={`flex items-center space-x-6 ${
+              animate ? 'animate-[scroll_40s_linear_infinite]' : ''
+            }`}
+          >
+            {/* Array duplicado para criar o loop infinito */}
             {[...showcaseImages, ...showcaseImages].map((image, index) => (
               <div
                 key={`${image.id}-${index}`}
@@ -96,13 +112,13 @@ const ProductShowcase = () => {
 
         {/* Call to Action com o novo botão */}
         <div className="text-center mt-12">
-           <Link to="/produtos" className="relative group border-none bg-transparent p-0 outline-none cursor-pointer font-mono font-light uppercase text-base inline-block">
-             <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 rounded-lg transform translate-y-0.5 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-1 group-hover:duration-[250ms] group-active:translate-y-px" />
-             <span className="absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-l from-[hsl(217,33%,16%)] via-[hsl(217,33%,32%)] to-[hsl(217,33%,16%)]" />
-             <div className="relative flex items-center justify-between py-3 px-6 text-lg text-white rounded-lg transform -translate-y-1 bg-gradient-to-r from-[#f27121] via-[#e94057] to-[#8a2387] gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110">
-               <span className="select-none font-bold">Quero conhecer 🔥</span>
-             </div>
-           </Link>
+          <Link to="/produtos" className="relative group border-none bg-transparent p-0 outline-none cursor-pointer font-mono font-light uppercase text-base inline-block">
+            <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-25 rounded-lg transform translate-y-0.5 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:translate-y-1 group-hover:duration-[250ms] group-active:translate-y-px" />
+            <span className="absolute top-0 left-0 w-full h-full rounded-lg bg-gradient-to-l from-[hsl(217,33%,16%)] via-[hsl(217,33%,32%)] to-[hsl(217,33%,16%)]" />
+            <div className="relative flex items-center justify-between py-3 px-6 text-lg text-white rounded-lg transform -translate-y-1 bg-gradient-to-r from-[#f27121] via-[#e94057] to-[#8a2387] gap-3 transition duration-[600ms] ease-[cubic-bezier(0.3,0.7,0.4,1)] group-hover:-translate-y-1.5 group-hover:duration-[250ms] group-active:-translate-y-0.5 brightness-100 group-hover:brightness-110">
+              <span className="select-none font-bold">Quero conhecer 🔥</span>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
