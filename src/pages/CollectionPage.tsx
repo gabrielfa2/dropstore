@@ -402,7 +402,7 @@ const CollectionPage = () => {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="text-center text-white max-w-4xl mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-black mb-2 font-display">
+            <h1 className="text-4xl md:text-6xl font-price mb-2 font-display">
               {config.title}
             </h1>
             <p className="text-xl md:text-2xl font-price">
