@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Star, Heart, MessageCircle, Plus, Minus } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
-const SocialProof = () => {
+const FaqSection = () => {
   // Dados para o FAQ, baseados na sua loja
   const faqs = [
     {
@@ -38,46 +38,40 @@ const SocialProof = () => {
     setOpenFaqId(openFaqId === id ? null : id);
   };
   
-
-        {/* --- INÍCIO DA NOVA SEÇÃO DE FAQ --- */}
-        <div className="max-w-3xl mx-auto mt-16">
-          <h3 className="text-3xl font-black text-center text-black mb-8 font-display">
-            Dúvidas Frequentes
-          </h3>
-          <div className="space-y-4">
-            {faqs.map((faq) => (
-              <div key={faq.id} className="bg-white rounded-xl shadow-md overflow-hidden">
-                <button
-                  onClick={() => toggleFaq(faq.id)}
-                  className="w-full flex justify-between items-center text-left p-5 font-semibold text-black focus:outline-none"
-                >
-                  <span>{faq.question}</span>
-                  {openFaqId === faq.id ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-                </button>
-                <div
-                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                    openFaqId === faq.id ? 'max-h-screen' : 'max-h-0'
-                  }`}
-                >
-                  <p className="p-5 pt-0 text-gray-600">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            ))}
+  return (
+    <div className="max-w-3xl mx-auto mt-16">
+      <h3 className="text-3xl font-black text-center text-black mb-8 font-display">
+        Dúvidas Frequentes
+      </h3>
+      <div className="space-y-4">
+        {faqs.map((faq) => (
+          <div key={faq.id} className="bg-white rounded-xl shadow-md overflow-hidden">
+            <button
+              onClick={() => toggleFaq(faq.id)}
+              className="w-full flex justify-between items-center text-left p-5 font-semibold text-black focus:outline-none"
+            >
+              <span>{faq.question}</span>
+              {openFaqId === faq.id ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+            </button>
+            <div
+              className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                openFaqId === faq.id ? 'max-h-screen' : 'max-h-0'
+              }`}
+            >
+              <p className="p-5 pt-0 text-gray-600">
+                {faq.answer}
+              </p>
+            </div>
           </div>
-           <div className="text-center mt-8">
-             <a href="#" className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all">
-                Ainda com dúvidas? Fale conosco!
-             </a>
-           </div>
-        </div>
-        {/* --- FIM DA NOVA SEÇÃO DE FAQ --- */}
-
+        ))}
       </div>
-    </section>
+      <div className="text-center mt-8">
+        <a href="#" className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition-all">
+          Ainda com dúvidas? Fale conosco!
+        </a>
+      </div>
+    </div>
   );
 };
 
-export default SocialProof;
-
+export default FaqSection;
