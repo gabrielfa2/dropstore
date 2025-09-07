@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
             <h4 className="text-3xl font-black mb-4 font-display">DRIP</h4>
