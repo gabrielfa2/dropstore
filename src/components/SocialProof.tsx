@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Star, Heart, MessageCircle, Plus, Minus } from 'lucide-react';
 
 const SocialProof = () => {
+  // Dados dos depoimentos atualizados para usar caminhos de imagem local
+  const testimonials = [
+  ];
+
   // Dados para o FAQ, baseados na sua loja
   const faqs = [
     {
