@@ -7,7 +7,7 @@ const ImageSliderSection = () => {
     <div className="my-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Container principal com fundo e posicionamento relativo */}
-        <div className="relative isolate overflow-hidden bg-gray rounded-3xl p-8 md:p-16">
+        <div className="relative isolate overflow-hidden bg-gray-200 rounded-3xl p-8 md:p-16">
           
           {/* Elemento para a textura de tijolos */}
           <div className="absolute inset-0 bg-brick-wall opacity-60 mix-blend-multiply -z-10"></div>
