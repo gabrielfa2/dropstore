@@ -8,10 +8,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        // Corrigido para corresponder ao @font-face
-        display: ['Sedgwick Ave Display', 'cursive'], 
-        // Corrigido para 'Libertinus' e mantendo a chave 'price'
-        price: ['Libertinus', 'serif'], 
+        display: ['Sedgwick Ave Display', 'cursive'],
+        price: ['Libertinus', 'serif'],
       },
       colors: {
         'cream': '#fcf0e4',
@@ -22,12 +20,14 @@ export default {
         'brick-wall': `linear-gradient(rgba(252, 240, 228, 0.95), rgba(252, 240, 228, 0.95)), url("/brick-texture.SVG")`,
       },
       animation: {
-        scroll: 'scroll 10s linear infinite',
+        // Substituído 'scroll' por 'marquee'
+        marquee: 'marquee 25s linear infinite', 
         'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
       },
       keyframes: {
-        scroll: {
-          '0%': { transform: 'translateX(0)' },
+        // Nova animação 'marquee'
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' },
         },
         'pulse-glow': {
@@ -39,4 +39,3 @@ export default {
   },
   plugins: [],
 }
-
