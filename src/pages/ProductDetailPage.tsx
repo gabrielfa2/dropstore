@@ -272,7 +272,7 @@ const ProductDetailPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-white">
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 pt-4">
         <nav className="flex items-center gap-2 text-sm text-gray-600 mb-6">
