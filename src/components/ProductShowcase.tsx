@@ -64,7 +64,15 @@ const ProductShowcase = () => {
   return (
     <section className="pt-6 pb-16">
       <div className="max-w-7xl mx-auto px-4">
-
+        {/* Header */}
+        <div className="text-center mb-7">
+          <h3 className="text-4xl font-black text-black mb-1 font-display">
+            Quem usa DRIP, <span className="text-orange-500">usa MODA!</span>
+          </h3>
+          <p className="text-xl text-gray-600 font-medium">
+            Não fique de fora!
+          </p>
+        </div>
         {/* Carousel Container */}
         <div className="relative w-full overflow-hidden">
           {/* Efeito de fade nas laterais */}
