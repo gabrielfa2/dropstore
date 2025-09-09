@@ -11,7 +11,7 @@ const HeroSection = () => {
           block
           md:hidden
           w-full
-          aspect-[4/7]
+          aspect-[4/5]
           object-cover
         "
       />
