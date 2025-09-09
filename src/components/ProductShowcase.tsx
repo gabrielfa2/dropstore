@@ -69,7 +69,7 @@ const ProductShowcase = () => {
           <h3 className="text-4xl font-price text-black mb-1 font-display">
             Quem usa DRIP, <span className="text-orange-500">usa MODA!</span>
           </h3>
-          <p className="text-xl text-gray-600 font-black">
+          <p className="text-xl text-gray-600 font-price">
             Não fique de fora!
           </p>
         </div>
