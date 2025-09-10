@@ -61,17 +61,14 @@ const FeaturesSection = () => {
 
   return (
     <section ref={sectionRef} className="py-9 relative overflow-hidden">
-      {/* Container do Vídeo de Fundo */}
+      {/* Container da Imagem de Fundo (Alterado de vídeo para imagem) */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
-        <video
-          autoPlay
-          muted
-          playsInline
-          /* Alteração aqui para posicionar o vídeo à direita */
+        <img
+          src="/fundoparede.png"
+          alt="Fundo de parede de tijolos"
+          // As classes foram mantidas para preservar o posicionamento
           className="w-full h-full object-cover object-left translate-x-1/2"
-        >
-          <source src="/paredepronta.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
 
       {/* Conteúdo da Seção */}
@@ -104,11 +101,9 @@ const FeaturesSection = () => {
                 </div>
                 
                 <div>
-                  {/* Alteração na cor do texto do título */}
                   <h4 className="text-lg font-bold text-black mb-1">
                     {feature.title}
                   </h4>
-                  {/* Alteração na cor do texto da descrição */}
                   <p className="text-black text-sm">
                     {feature.description}
                   </p>
