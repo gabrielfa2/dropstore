@@ -38,6 +38,11 @@ const products = [
 ];
 
 const LimitedOffers = () => {
+  // Função auxiliar para converter o preço em string para número
+  const parsePrice = (priceString) => {
+    return parseFloat(priceString.replace('R$ ', '').replace(',', '.'));
+  };
+
   return (
     <div className="bg-zinc-900 py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4">
@@ -50,40 +55,51 @@ const LimitedOffers = () => {
           </p>
         </div>
         
-        {/* Container rolável em telas pequenas, grade em telas grandes */}
         <div className="flex overflow-x-auto gap-4 md:gap-6 pb-4 -mx-4 px-4 md:grid md:grid-cols-4 md:mx-0 md:px-0 scrollbar-hide">
-          {products.map((product) => (
-            <Link 
-              to={`/produto/${product.id}`} 
-              key={product.id} 
-              className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-400/20 flex-shrink-0 w-3/4 sm:w-[45%] md:w-auto aspect-[3/4]"
-            >
-              <img
-                src={product.imageUrl}
-                alt={product.name}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 flex flex-col justify-end">
-                {/* Selo de Urgência */}
-                <div className="absolute top-3 right-3 bg-red-600/95 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 animate-pulse shadow-md">
-                  <Flame className="w-4 h-4" />
-                  <span>ÚLTIMAS UNIDADES</span>
-                </div>
+          {products.map((product) => {
+            // --- 1. CÁLCULO DO DESCONTO ---
+            const originalPrice = parsePrice(product.originalPrice);
+            const currentPrice = parsePrice(product.price);
+            const discount = Math.round(((originalPrice - currentPrice) / originalPrice) * 100);
 
-                {/* Conteúdo de Texto */}
-                <div>
-                  {/* ADICIONADO 'font-price' ABAIXO */}
-                  <h3 className="text-lg font-bold text-white uppercase font-price">{product.name}</h3>
-                  <div className="flex items-baseline gap-2 -mt-1">
-                    {/* ADICIONADO 'font-price' ABAIXO */}
-                    <p className="text-xl font-semibold text-orange-400 font-price">{product.price}</p>
-                    {/* ADICIONADO 'font-price' ABAIXO */}
-                    <p className="text-sm text-zinc-300 line-through font-inter">{product.originalPrice}</p>
+            return (
+              <Link  
+                to={`/produto/${product.id}`}  
+                key={product.id}  
+                className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-yellow-400/20 flex-shrink-0 w-3/4 sm:w-[45%] md:w-auto aspect-[3/4]"
+              >
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+
+                {/* --- 2. BADGE DE DESCONTO (RENDERIZA APENAS SE HOUVER DESCONTO) --- */}
+                {discount > 0 && (
+                  <div className="absolute top-3 left-3 bg-red-600 text-white text-sm font-bold px-2 py-1 rounded-md z-10">
+                    -{discount}% OFF
+                  </div>
+                )}
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 flex flex-col justify-end">
+                  {/* Selo de Urgência */}
+                  <div className="absolute top-3 right-3 bg-red-600/95 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 animate-pulse shadow-md">
+                    <Flame className="w-4 h-4" />
+                    <span>ÚLTIMAS UNIDADES</span>
+                  </div>
+
+                  {/* Conteúdo de Texto */}
+                  <div>
+                    <h3 className="text-lg font-bold text-white uppercase font-price">{product.name}</h3>
+                    <div className="flex items-baseline gap-2 -mt-1">
+                      <p className="text-xl font-semibold text-orange-400 font-price">{product.price}</p>
+                      <p className="text-sm text-zinc-300 line-through font-inter">{product.originalPrice}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </div>
