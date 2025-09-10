@@ -15,7 +15,6 @@ const ImageSliderSection = () => {
         className="absolute inset-0 w-full h-full object-cover -z-20"
       >
         <source src="/fundoslider.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeo em HTML5.
       </video>
 
       {/* Conteúdo sobreposto ao vídeo */}
