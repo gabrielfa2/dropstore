@@ -29,7 +29,6 @@ const FeaturesSection = () => {
   }, []);
 
   const features = [
-    // ... seu array de features continua o mesmo
     {
       id: 1,
       icon: Truck,
@@ -62,17 +61,17 @@ const FeaturesSection = () => {
 
   return (
     <section ref={sectionRef} className="py-9 relative overflow-hidden">
-      {/* Container da Imagem de Fundo com o EFEITO APLICADO */}
+      {/* Container da Imagem de Fundo (Alterado de vídeo para imagem) */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <img
           src="/fundoparede.PNG"
           alt="Fundo de parede de tijolos"
-          // Classes de filtro adicionadas aqui para o efeito de borrão e escurecimento
-          className="w-full h-full object-cover blur-sm brightness-75"
+          // As classes foram mantidas para preservar o posicionamento
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Conteúdo da Seção (permanece nítido) */}
+      {/* Conteúdo da Seção */}
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {features.map((feature) => {
