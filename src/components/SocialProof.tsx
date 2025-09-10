@@ -43,7 +43,7 @@ const FaqSection = () => {
       <h3 className="text-3xl font-black text-center text-black mb-8 font-display">
         Dúvidas Frequentes
       </h3>
-      <div className="space-y-3">
+      <div className="space-y-4">
         {faqs.map((faq) => (
           <div key={faq.id} className="bg-gray-100 rounded-xl shadow-md overflow-hidden">
             <button
