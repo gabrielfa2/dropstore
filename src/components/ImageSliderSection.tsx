@@ -19,7 +19,7 @@ const ImageSliderSection = () => {
 
       {/* Conteúdo sobreposto ao vídeo */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full">
-        <h3 className="text-3xl font-black text-black mb-4 font-display">
+        <h3 className="text-4xl font-black text-black mb-4 font-display">
           O que é usar <span className="text-orange-500">DRIP:</span>
         </h3>
         <p className="text-lg text-gray-700 mb-8 font-medium">
