@@ -68,7 +68,7 @@ const FeaturesSection = () => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover scale-40"
+          className="w-full h-full object-cover scale-50"
         >
           <source src="/parede.mp4" type="video/mp4" />
         </video>
