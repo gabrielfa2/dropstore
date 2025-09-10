@@ -12,7 +12,7 @@ const ImageSliderSection = () => {
         loop 
         muted 
         playsInline 
-        className="absolute inset-0 w-full h-full object-cover -z-20"
+        className="absolute inset-0 w-full h-full object-cover -z-10"
       >
         <source src="/fundoslider.mp4" type="video/mp4" />
       </video>
