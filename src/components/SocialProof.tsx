@@ -58,7 +58,7 @@ const FaqSection = () => {
                 openFaqId === faq.id ? 'max-h-screen' : 'max-h-0'
               }`}
             >
-              <p className="p-3 pt-0 text-gray-600">
+              <p className="p-5 pt-0 text-gray-600">
                 {faq.answer}
               </p>
             </div>
