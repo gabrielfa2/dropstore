@@ -71,7 +71,6 @@ const FeaturesSection = () => {
           className="w-full h-full object-cover"
         >
           <source src="/parede.mp4" type="video/mp4" />
-          Seu navegador não suporta o elemento de vídeo.
         </video>
         {/* Overlay para escurecer o vídeo e melhorar a legibilidade */}
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
