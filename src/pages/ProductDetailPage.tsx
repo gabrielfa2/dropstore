@@ -81,8 +81,8 @@ const getRandomViewers = () => {
 const mockProduct: Product = {
   id: 1,
   brand: 'DROP',
-  name: 'Oversidez',
-  price: 89.90,
+  name: 'Deixar no design de produto unico e colocar api para testar foto com ia(só fazer um prompt abusurdo e deixar a foto pre pronta da camisa que a pessoa tá querendo testar. aí o input fica a camisa e o prompt pronto e a foto da pessoa',
+  price: 69.90,
   originalPrice: 130.36,
   description: 'Deixar no design de produto unico e colocar api para testar foto com ia(só fazer um prompt abusurdo e deixar a foto pre pronta da camisa que a pessoa tá querendo testar. aí o input fica a camisa e o prompt pronto e a foto da pessoa',
   images: [
