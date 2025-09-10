@@ -91,7 +91,7 @@ const FeaturesSection = () => {
                 }}
               >
                 <div className="flex-shrink-0 mb-4 md:hidden">
-                  <IconComponent className="w-10 h-10 text-orange-500 icon-outline-black" />
+                  <IconComponent className="w-10 h-10 text-orange-500 icon-outline-black-200" />
                 </div>
                 
                 <div className="hidden md:flex justify-center mb-4">
