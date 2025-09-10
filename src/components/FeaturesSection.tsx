@@ -66,7 +66,6 @@ const FeaturesSection = () => {
         <video
           autoPlay
           muted
-          loop
           playsInline
           /* Alteração aqui para posicionar o vídeo à direita */
           className="w-full h-full object-cover object-right"
