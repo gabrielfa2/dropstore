@@ -35,13 +35,22 @@ body {
   overflow: hidden;
 }
 
-.text-outline-white {
+.text-outline-black {
   text-shadow: 
     -1px -1px 0 #000,  
      1px -1px 0 #000,
     -1px  1px 0 #000,
      1px  1px 0 #000;
 }
+
+.text-outline-white {
+  text-shadow: 
+    -1px -1px 0 #fff,  
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     1px  1px 0 #fff;
+}
+
 
 /* Adicione este código ao FINAL do seu arquivo index.css */
 
