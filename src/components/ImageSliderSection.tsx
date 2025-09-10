@@ -28,7 +28,13 @@ const ImageSliderSection = () => {
 
         {/* Slider destacado */}
         <div className="w-full rounded-2xl overflow-hidden bg-white/10 backdrop-blur-md p-2 shadow-xl">
-          <ImgComparisonSlider value="30">
+          <ImgComparisonSlider 
+            value="30" 
+            style={{ 
+              '--divider-line-color': 'black', 
+              '--divider-handle-color': 'black',
+              '--divider-handle-glow': 'black'
+            }}>
             <img slot="first" src={"/depoiscerto.PNG"} alt="Antes" />
             <img slot="second" src={"/antescerto.PNG"} alt="Depois" />
           </ImgComparisonSlider>
