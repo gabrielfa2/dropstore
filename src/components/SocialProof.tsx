@@ -16,7 +16,7 @@ const FaqSection = () => {
     },
     {
       id: 3,
-      question: 'Como escolher o tamanho da minha oversized?',
+      question: 'Como escolher o tamanho da oversized?',
       answer: 'Nossa modelagem já é oversized! A dica é escolher o tamanho que você costuma usar para ter um caimento solto e estiloso. Se curte um visual ainda mais largo, pode pegar um tamanho acima. Sempre confira a tabela de medidas na página do produto!'
     },
     {
