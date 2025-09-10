@@ -73,7 +73,7 @@ const FeaturesSection = () => {
           <source src="/parede.mp4" type="video/mp4" />
         </video>
         {/* Overlay para escurecer o vídeo e melhorar a legibilidade */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-100"></div>
       </div>
 
       {/* Conteúdo da Seção */}
