@@ -81,10 +81,10 @@ const getRandomViewers = () => {
 const mockProduct: Product = {
   id: 1,
   brand: 'DROP',
-  name: 'Camiseta Oversized Urban Black Premium',
+  name: 'Oversidez',
   price: 89.90,
   originalPrice: 130.36,
-  description: 'A camiseta oversized que vai revolucionar seu guarda-roupa! Feita com algodão premium 100% nacional, oferece o máximo conforto e durabilidade. O corte oversized moderno garante um visual despojado e urbano, perfeito para quem quer se destacar com estilo autêntico.',
+  description: 'Deixar no design de produto unico e colocar api para testar foto com ia(só fazer um prompt abusurdo e deixar a foto pre pronta da camisa que a pessoa tá querendo testar. aí o input fica a camisa e o prompt pronto e a foto da pessoa',
   images: [
     'https://pub-61992242d95c4c08a5588448f8a876fc.r2.dev/617SjBz-tgL._AC_SX569_.jpg',
     'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=500',
