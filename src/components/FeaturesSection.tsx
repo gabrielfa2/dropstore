@@ -67,7 +67,7 @@ const FeaturesSection = () => {
           src="/fundoparede.PNG"
           alt="Fundo de parede de tijolos"
           // As classes foram mantidas para preservar o posicionamento
-          className="w-full h-full object-cover object-left translate-x-1/2"
+          className="w-full h-full object-cover"
         />
       </div>
 
