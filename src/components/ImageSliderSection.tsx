@@ -27,7 +27,7 @@ const ImageSliderSection = () => {
         </p>
 
         {/* Slider destacado */}
-        <div className="w-full rounded-2xl overflow-hidden bg-black/50 backdrop-blur-md p-2 shadow-xl">
+        <div className="w-full rounded-2xl overflow-hidden bg-black/30 backdrop-blur-md p-2 shadow-xl">
           <ImgComparisonSlider 
             value="30" 
             style={{ 
