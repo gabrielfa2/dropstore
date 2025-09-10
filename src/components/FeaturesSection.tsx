@@ -61,15 +61,20 @@ const FeaturesSection = () => {
 
   return (
     <section ref={sectionRef} className="py-9 relative overflow-hidden">
-      {/* Container do Vídeo de Fundo */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
+      {/* Container do Vídeo de Fundo (MODIFICADO) */}
+      <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
         <video
           autoPlay
           muted
           loop
           playsInline
-          /* Alteração aqui para posicionar o vídeo à direita */
-          className="w-full h-full object-cover object-right"
+          /* MODIFICAÇÃO PRINCIPAL: 
+            - O vídeo agora é posicionado de forma absoluta dentro do container.
+            - 'right-0' ancora ele na borda direita.
+            - 'w-[150%]' faz ele 50% mais largo que o container.
+            - 'max-w-none' é importante para garantir que a largura de 150% seja aplicada.
+          */
+          className="absolute right-0 h-full w-[150%] max-w-none object-cover"
         >
           <source src="/paredeok.mp4" type="video/mp4" />
         </video>
@@ -105,11 +110,9 @@ const FeaturesSection = () => {
                 </div>
                 
                 <div>
-                  {/* Alteração na cor do texto do título */}
                   <h4 className="text-lg font-bold text-black mb-1">
                     {feature.title}
                   </h4>
-                  {/* Alteração na cor do texto da descrição */}
                   <p className="text-black text-sm">
                     {feature.description}
                   </p>
