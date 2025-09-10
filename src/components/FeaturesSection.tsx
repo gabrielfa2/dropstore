@@ -61,21 +61,23 @@ const FeaturesSection = () => {
 
   return (
     <section ref={sectionRef} className="py-9 relative overflow-hidden">
-      {/* Container do Vídeo de Fundo */}
-      <div className="absolute top-0 left-0 w-full h-full z-0">
+      {/* Container do Vídeo de Fundo (MODIFICADO) */}
+      {/* Agora o container ocupa 50% da largura (w-1/2) e está
+        ancorado no topo (top-0) e na direita (right-0) da seção. 
+      */}
+      <div className="absolute top-0 right-0 w-1/2 h-full z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          /* Alteração aqui para posicionar o vídeo à direita */
-          className="w-full h-full object-cover object-right"
+          className="w-full h-full object-cover"
         >
           <source src="/paredeok.mp4" type="video/mp4" />
         </video>
       </div>
 
-      {/* Conteúdo da Seção */}
+      {/* Conteúdo da Seção (permanece centralizado) */}
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {features.map((feature) => {
@@ -105,11 +107,9 @@ const FeaturesSection = () => {
                 </div>
                 
                 <div>
-                  {/* Alteração na cor do texto do título */}
                   <h4 className="text-lg font-bold text-black mb-1">
                     {feature.title}
                   </h4>
-                  {/* Alteração na cor do texto da descrição */}
                   <p className="text-black text-sm">
                     {feature.description}
                   </p>
@@ -123,4 +123,4 @@ const FeaturesSection = () => {
   );
 };
 
-export default FeaturesSection
+export default FeaturesSection;
