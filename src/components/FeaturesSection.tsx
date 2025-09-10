@@ -61,24 +61,21 @@ const FeaturesSection = () => {
 
   return (
     <section ref={sectionRef} className="py-9 relative overflow-hidden">
-      {/* Container do Vídeo de Fundo (MODIFICADO) */}
-      {/*
-        A classe 'translate-x-1/2' move o container 50% para a direita.
-        A largura continua 'w-full', então ele não é cortado, apenas deslocado.
-      */}
-      <div className="absolute top-0 left-0 w-full h-full z-0 transform translate-x-1/2">
+      {/* Container do Vídeo de Fundo */}
+      <div className="absolute top-0 left-0 w-full h-full z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          /* Alteração aqui para posicionar o vídeo à direita */
+          className="w-full h-full object-cover object-right"
         >
           <source src="/paredeok.mp4" type="video/mp4" />
         </video>
       </div>
 
-      {/* Conteúdo da Seção (permanece centralizado) */}
+      {/* Conteúdo da Seção */}
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {features.map((feature) => {
@@ -108,9 +105,11 @@ const FeaturesSection = () => {
                 </div>
                 
                 <div>
+                  {/* Alteração na cor do texto do título */}
                   <h4 className="text-lg font-bold text-black mb-1">
                     {feature.title}
                   </h4>
+                  {/* Alteração na cor do texto da descrição */}
                   <p className="text-black text-sm">
                     {feature.description}
                   </p>
