@@ -101,7 +101,7 @@ const FeaturesSection = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-bold text-black mb-1 text-outline-white">
+                  <h4 className="text-lg font-bold text-orange mb-1 text-outline-white">
                     {feature.title}
                   </h4>
                   <p className="text-black-200 text-sm">
