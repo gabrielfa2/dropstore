@@ -4,7 +4,7 @@ import { ImgComparisonSlider } from '@img-comparison-slider/react';
 const ImageSliderSection = () => {
   return (
     // Seção com vídeo de fundo em 9:16
-    <div className="relative mx-auto my-10 px-4 aspect-[9/16] max-w-sm">
+    <div className="relative mx-auto my-1 px-4 aspect-[9/16] max-w-sm">
       
       {/* Vídeo de fundo */}
       <video 
