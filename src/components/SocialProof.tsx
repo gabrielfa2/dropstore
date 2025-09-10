@@ -39,7 +39,7 @@ const FaqSection = () => {
   };
   
   return (
-    <div className="max-w-3xl mx-auto mt-16 px-4">
+    <div className="max-w-3xl mx-auto mt-16 px-5">
       <h3 className="text-3xl font-black text-center text-black mb-8 font-display">
         Dúvidas Frequentes
       </h3>
