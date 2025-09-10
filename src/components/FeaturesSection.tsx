@@ -62,10 +62,11 @@ const FeaturesSection = () => {
   return (
     <section ref={sectionRef} className="py-9 relative overflow-hidden">
       {/* Container do Vídeo de Fundo (MODIFICADO) */}
-      {/* Agora o container ocupa 50% da largura (w-1/2) e está
-        ancorado no topo (top-0) e na direita (right-0) da seção. 
+      {/*
+        A classe 'translate-x-1/2' move o container 50% para a direita.
+        A largura continua 'w-full', então ele não é cortado, apenas deslocado.
       */}
-      <div className="absolute top-0 right-0 w-1/2 h-full z-0">
+      <div className="absolute top-0 left-0 w-full h-full z-0 transform translate-x-1/2">
         <video
           autoPlay
           muted
