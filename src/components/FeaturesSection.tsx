@@ -68,7 +68,8 @@ const FeaturesSection = () => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover"
+          /* Alteração aqui para posicionar o vídeo à direita */
+          className="w-full h-full object-cover object-right"
         >
           <source src="/paredeok.mp4" type="video/mp4" />
         </video>
@@ -104,10 +105,12 @@ const FeaturesSection = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-1">
+                  {/* Alteração na cor do texto do título */}
+                  <h4 className="text-lg font-bold text-black mb-1">
                     {feature.title}
                   </h4>
-                  <p className="text-gray-300 text-sm">
+                  {/* Alteração na cor do texto da descrição */}
+                  <p className="text-black text-sm">
                     {feature.description}
                   </p>
                 </div>
