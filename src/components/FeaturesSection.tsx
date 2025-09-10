@@ -62,7 +62,7 @@ const FeaturesSection = () => {
   return (
     <section ref={sectionRef} className="py-9 relative overflow-hidden">
       {/* Container do Vídeo de Fundo */}
-      <div className="absolute top-0 left-0 right-0 w-full h-full z-0">
+      <div className="absolute top-0 left-0 right-5 w-full h-full z-0">
         <video
           autoPlay
           muted
