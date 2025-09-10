@@ -71,7 +71,7 @@ const FeaturesSection = () => {
           /* Alteração aqui para posicionar o vídeo à direita */
           className="w-full h-full object-cover object-right"
         >
-          <source src="/paredeok.mp4" type="video/mp4" />
+          <source src="/paredepronta.mp4" type="video/mp4" />
         </video>
       </div>
 
