@@ -48,7 +48,7 @@ const FaqSection = () => {
           <div key={faq.id} className="bg-gray-100 rounded-xl shadow-md overflow-hidden">
             <button
               onClick={() => toggleFaq(faq.id)}
-              className="w-full flex justify-between items-center text-left p-4 font-semibold text-black focus:outline-none"
+              className="w-full flex justify-between items-center text-left p-5 font-semibold text-black focus:outline-none"
             >
               <span>{faq.question}</span>
               {openFaqId === faq.id ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
