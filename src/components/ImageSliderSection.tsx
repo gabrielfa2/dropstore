@@ -4,7 +4,7 @@ import { ImgComparisonSlider } from '@img-comparison-slider/react';
 const ImageSliderSection = () => {
   return (
     // Container para o espaçamento vertical e padding horizontal
-    <div className="my-16 px-4">
+    <div className="my-16 px-8">
       <div className="max-w-7xl mx-auto">
         {/* Container principal com fundo e posicionamento relativo */}
         <div className="relative isolate overflow-hidden rounded-3xl p-8 md:p-16">
