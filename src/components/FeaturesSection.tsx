@@ -68,7 +68,7 @@ const FeaturesSection = () => {
           muted
           playsInline
           /* Alteração aqui para posicionar o vídeo à direita */
-          className="w-full h-full object-cover object-left translate-x-4/5"
+          className="w-full h-full object-cover object-left translate-x-8/5"
         >
           <source src="/paredepronta.mp4" type="video/mp4" />
         </video>
