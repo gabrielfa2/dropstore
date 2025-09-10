@@ -76,7 +76,7 @@ const LimitedOffers = () => {
 
                 {/* --- 2. BADGE DE DESCONTO (RENDERIZA APENAS SE HOUVER DESCONTO) --- */}
                 {discount > 0 && (
-                  <div className="absolute top-3 left-3 bg-red-600 text-white text-sm font-bold px-2 py-1 rounded-md z-10">
+                  <div className="absolute top-3 left-3 bg-red-600 text-white text-sm font-bold px-1 py-1 rounded-md z-10">
                     -{discount}% OFF
                   </div>
                 )}
