@@ -7,8 +7,23 @@ const ImageSliderSection = () => {
     <div className="my-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Container principal com fundo e posicionamento relativo */}
-        <div className="relative isolate overflow-hidden bg-gray-200 rounded-3xl p-8 md:p-16">
+        <div className="relative isolate overflow-hidden rounded-3xl p-8 md:p-16">
           
+          {/* Vídeo de fundo */}
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="absolute inset-0 w-full h-full object-cover -z-20"
+          >
+            <source src="/fundoslider.mp4" type="video/mp4" />
+            Seu navegador não suporta vídeo em HTML5.
+          </video>
+
+          {/* Camada de overlay para dar contraste */}
+          <div className="absolute inset-0 bg-gray-200/70 -z-10"></div>
+
           {/* Elemento para a textura de tijolos */}
           <div className="absolute inset-0 bg-brick-wall opacity-60 mix-blend-multiply -z-10"></div>
           
