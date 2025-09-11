@@ -80,7 +80,7 @@ const FeaturesSection = () => {
                 key={feature.id}
                 className={`
                   flex flex-col items-center text-center
-                  bg-card-bg/80 backdrop-blur-sm rounded-2xl p-6 md:p-6 shadow-lg
+                  bg-card-bg/80 backdrop-blur-sm rounded-2xl p-6 md:p-4 shadow-lg
                   transition-all duration-700 transform
                   ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}
                   md:hover:scale-105 md:hover:-translate-y-2
