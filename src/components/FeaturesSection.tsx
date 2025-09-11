@@ -71,7 +71,7 @@ const FeaturesSection = () => {
       </div>
 
       {/* Conteúdo da Seção */}
-      <div className="relative z-10 max-w-7xl mx-auto px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {features.map((feature) => {
             const IconComponent = feature.icon;
