@@ -91,7 +91,7 @@ const FeaturesSection = () => {
               >
                 <div className="flex justify-center mb-4">
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full flex items-center justify-center">
-                    <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-black" />
+                    <IconComponent className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
                 </div>
                 
