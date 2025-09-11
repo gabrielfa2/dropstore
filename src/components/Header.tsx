@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// O Link foi removido pois a navegação será controlada pelo App.tsx
 import { Menu, ShoppingBag } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 import ShoppingCart from './ShoppingCart';
 
-// 1. Definimos a interface de Props para que o componente possa receber a função onLogoClick
 interface HeaderProps {
   onLogoClick: () => void;
 }
@@ -99,12 +97,11 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
           </div>
 
           <div className="flex items-center justify-center w-1/3">
-            {/* 2. O Link foi substituído por um <button> que ativa a função do loader */}
             <button onClick={onLogoClick} className="focus:outline-none" aria-label="Voltar para a página inicial">
               <img 
                 src="/logodrop.PNG" 
                 alt="DROP Logo"
-                className={`w-auto transition-all duration-300 ease-in-out ${isScrolled ? 'h-10' : 'h-12'}`}
+                className="w-auto h-8 transition-all duration-300 ease-in-out"
               />
             </button>
           </div>
