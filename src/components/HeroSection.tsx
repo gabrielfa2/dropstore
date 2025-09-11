@@ -53,9 +53,9 @@ const HeroSection = () => {
           top-0 
           left-1/2 
           -translate-x-1/2 
-          w-1/2 
-          md:w-1/3 
-          lg:w-1/4
+          w-2/3
+          md:w-1/2
+          lg:w-1/3
           transition-transform 
           duration-1000 
           ease-out
