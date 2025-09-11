@@ -2,21 +2,6 @@ import React from 'react';
 import { ImgComparisonSlider } from '@img-comparison-slider/react';
 
 const ImageSliderSection = () => {
-  return (
-    // Seção com vídeo de fundo em 9:16
-    <div className="relative mx-auto -my-1 px-4 aspect-[9/16] max-w-sm">
-      
-      {/* Vídeo de fundo */}
-      <video 
-        autoPlay 
-        loop 
-        muted 
-        playsInline 
-        className="absolute inset-0 w-full h-full object-cover -z-20"
-      >
-        <source src="/fundoslider.mp4" type="video/mp4" />
-      </video>
-
       {/* Conteúdo sobreposto ao vídeo */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center h-full">
         <h3 className="text-4xl font-black text-black mb-4 font-display">
