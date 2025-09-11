@@ -60,7 +60,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-12 relative overflow-hidden">
+    <section ref={sectionRef} className="py-9 relative overflow-hidden">
       {/* Container da Imagem de Fundo (Alterado de vídeo para imagem) */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <img
