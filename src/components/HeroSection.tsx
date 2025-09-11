@@ -5,7 +5,7 @@ const HeroSection = () => {
     <section className="w-full">
       {/* Banner Mobile - Sem alterações */}
       <img
-        src="/bannermobile.PNG"
+        src="/banner01.PNG"
         alt="bannermobile"
         className="
           block
