@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         display: ['Sedgwick Ave Display', 'cursive'],
+        features: ['Sedgwick Ave Display', 'cursive'],
         price: ['Libertinus', 'serif'],
       },
       colors: {
