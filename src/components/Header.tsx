@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // O Link foi removido pois a navegação será controlada pelo App.tsx
 import { Menu, ShoppingBag } from 'lucide-react';
 import MobileMenu from './MobileMenu';
+import ShoppingCart from './ShoppingCart';
 
 // 1. Definimos a interface de Props para que o componente possa receber a função onLogoClick
 interface HeaderProps {
@@ -17,6 +18,7 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -48,6 +50,14 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
+  const closeCart = () => {
+    setIsCartOpen(false);
   };
 
   return (
@@ -104,10 +114,10 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
               <img src="/iconlupa.PNG" alt="Ícone de Busca" className="w-6 h-6" />
             </a>
             
-            <button className="relative">
+            <button onClick={toggleCart} className="relative hover:opacity-75 transition-opacity">
               <ShoppingBag className="w-6 h-6" />
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
+                1
               </span>
             </button>
           </div>
@@ -115,6 +125,7 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
       </div>
       
       <MobileMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
+      <ShoppingCart isOpen={isCartOpen} onClose={closeCart} />
     </header>
   );
 };

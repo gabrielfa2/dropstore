@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import ShoppingCart from '../components/ShoppingCart';
 import {
   Star,
   Heart,
@@ -207,6 +208,7 @@ const ProductDetailPage = () => {
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   // --- APLICAÇÃO DA NOVA FUNCIONALIDADE ---
   // Inicializamos o estado usando a "inicialização preguiçosa".
@@ -242,6 +244,7 @@ const ProductDetailPage = () => {
     
     setIsAddingToCart(false);
     setShowSuccessMessage(true);
+    setIsCartOpen(true); // Abre o carrinho após adicionar
     
     // Esconde mensagem de sucesso após 3 segundos
     setTimeout(() => setShowSuccessMessage(false), 3000);
@@ -842,6 +845,9 @@ const ProductDetailPage = () => {
         {/* ======================================================= */}
 
       </div>
+      
+      {/* Carrinho */}
+      <ShoppingCart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
     </div>
   );
 };
