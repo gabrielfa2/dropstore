@@ -15,12 +15,6 @@
   box-sizing: border-box;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   line-height: 1.6;
   color: #1a1a1a;
@@ -36,39 +30,34 @@ body {
 }
 
 .text-outline-black {
-  text-shadow: 
-    -1px -1px 0 #000,  
+  text-shadow:
+    -1px -1px 0 #000,
      1px -1px 0 #000,
     -1px  1px 0 #000,
      1px  1px 0 #000;
 }
 
 .text-outline-white {
-  text-shadow: 
-    -1px -1px 0 #fff,  
+  text-shadow:
+    -1px -1px 0 #fff,
      1px -1px 0 #fff,
     -1px  1px 0 #fff,
      1px  1px 0 #fff;
 }
 
-
 .icon-outline-black {
-  filter: drop-shadow(1px 1px 0 #000) 
+  filter: drop-shadow(1px 1px 0 #000)
           drop-shadow(-1px -1px 0 #000)
           drop-shadow(1px -1px 0 #000)
           drop-shadow(-1px 1px 0 #000);
 }
 
 .icon-outline-white {
-  filter: drop-shadow(1px 1px 0 #fff) 
+  filter: drop-shadow(1px 1px 0 #fff)
           drop-shadow(-1px -1px 0 #fff)
           drop-shadow(1px -1px 0 #fff)
           drop-shadow(-1px 1px 0 #fff);
 }
-
-/* Adicione este código ao FINAL do seu arquivo index.css */
-
-@tailwind utilities;
 
 @layer utilities {
   .animate-bounce-vertical {
@@ -87,14 +76,6 @@ body {
   }
 }
 
-/* Utility class for line clamping */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 /* Scrollbar customization for cart */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -103,4 +84,27 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* --- CÓDIGO DA ANIMAÇÃO DO CARROSSEL DE MARCAS --- */
+
+.animate-marquee {
+  /* Otimização para usar a GPU, tornando a animação mais fluida */
+  will-change: transform;
+  animation: marquee 30s linear infinite;
+}
+
+/* Pausa a animação quando o mouse está sobre o carrossel */
+.group-hover\:pause:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    /* Anima até -50% para criar um loop perfeito com as 2 cópias do conteúdo */
+    transform: translateX(-50%);
+  }
 }
