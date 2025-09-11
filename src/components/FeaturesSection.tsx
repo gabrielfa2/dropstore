@@ -66,7 +66,7 @@ const FeaturesSection = () => {
         <img
           src="/fundoparede.PNG"
           alt="Fundo de parede de tijolos"
-          className="w-full h-full object-cover opacity-30 blur-sm"
+          className="w-full h-full object-cover opacity-50 blur-sm"
         />
       </div>
 
