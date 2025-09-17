@@ -73,7 +73,7 @@ const ProductShowcase = () => {
           {/* Carrossel contínuo - CLASSE DE ANIMAÇÃO APLICADA CONDICIONALMENTE */}
           <div
             className={`flex items-center space-x-6 ${
-              animate ? 'animate-[scroll_7s_linear_infinite]' : ''
+              animate ? 'animate-[marquee_7s_linear_infinite]' : ''
             }`}
           >
             {/* Array duplicado para criar o loop infinito */}
