@@ -82,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
           // Estilo QUANDO a página é rolada (com fundo e sombra)
           ? 'fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white/80 backdrop-blur-sm shadow-xl rounded-xl p-3' 
           // Estilo INICIAL (transparente e sem sombra)
-          : 'relative p-4'
+          : 'absolute p-4' // A MUDANÇA ESTÁ AQUI: de 'relative' para 'absolute'
         }
       `}>
       {/* ===== FIM DA ÁREA MODIFICADA ===== */}
@@ -130,4 +130,3 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
 };
 
 export default Header;
-
