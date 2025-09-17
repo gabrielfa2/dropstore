@@ -130,3 +130,4 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
 };
 
 export default Header;
+
