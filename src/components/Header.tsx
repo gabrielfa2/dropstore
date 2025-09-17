@@ -1,3 +1,5 @@
+// src/components/Header.tsx
+
 import React, { useState, useEffect } from 'react';
 import { Menu, ShoppingBag } from 'lucide-react';
 import MobileMenu from './MobileMenu';
@@ -73,17 +75,17 @@ const Header: React.FC<HeaderProps> = ({ onLogoClick }) => {
         </div>
       </div>
 
+      {/* ===== ÁREA MODIFICADA ===== */}
       <div className={`
-        transition-all duration-300 ease-in-out
-        w-full z-20 
-        
-        md:static md:shadow-sm md:rounded-none md:p-4
-
+        w-full z-20 transition-all duration-300 ease-in-out
         ${isScrolled 
+          // Estilo QUANDO a página é rolada (com fundo e sombra)
           ? 'fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl bg-white/80 backdrop-blur-sm shadow-xl rounded-xl p-3' 
-          : 'relative shadow-sm p-4'
+          // Estilo INICIAL (transparente e sem sombra)
+          : 'relative p-4'
         }
       `}>
+      {/* ===== FIM DA ÁREA MODIFICADA ===== */}
         <div className="flex items-center justify-between">
           
           <div className="flex items-center justify-start w-1/3 space-x-2">
